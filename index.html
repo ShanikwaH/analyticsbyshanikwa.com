@@ -3,50 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional data analyst portfolio of Shanikwa Haynes showcasing projects, skills, and experience in data analysis, visualization, and predictive analytics.">
-    <meta name="keywords" content="data analytics, data visualization, business intelligence, Python, SQL, R, Tableau, machine learning">
+    <meta name="description" content="Shanikwa Haynes - Data Analyst specializing in statistical modeling, predictive analytics, and data visualization. Expert in Python, R, SQL, and Tableau. Based in Calhoun, GA.">
+    <meta name="keywords" content="data analyst Shanikwa Haynes, statistical modeling, predictive analytics, Python R SQL, Tableau dashboard, Georgia data analyst">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Shanikwa Haynes | Data Analyst Portfolio">
+    <meta property="og:description" content="Data analyst specializing in statistical modeling and predictive analytics. View my projects and skills.">
+    <meta property="og:image" content="https://analyticsbyshanikwa.com/og-image.jpg">
+    <meta property="og:url" content="https://analyticsbyshanikwa.com">
+    <meta property="og:type" content="website">
+    
     <title>Shanikwa Haynes | Data Analyst Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    
+    <!-- Google Analytics - REPLACE G-XXXXXXXXXX with your actual tracking ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shanikwa Haynes",
+        "jobTitle": "Data Analyst",
+        "url": "https://analyticsbyshanikwa.com",
+        "email": "shanikwa@analyticsbyshanikwa.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Calhoun",
+            "addressRegion": "GA",
+            "addressCountry": "US"
+        },
+        "knowsAbout": ["Data Analysis", "Statistical Modeling", "Python", "R", "SQL", "Tableau"]
+    }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .skill-bar {
-            height: 8px;
-            border-radius: 4px;
-            background-color: #e5e7eb;
-            overflow: hidden;
-        }
-        .skill-progress {
-            height: 100%;
-            border-radius: 4px;
-            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .floating-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-    </style>
-</head>
+    
+    <!-- Rest of your existing styles -->
 <body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
     <nav class="bg-white shadow-sm fixed w-full z-10">
