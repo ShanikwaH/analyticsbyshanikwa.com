@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional data analyst portfolio of Shanikwa Haynes showcasing projects, skills, and experience in data analysis, visualization, and predictive analytics.">
+    <meta name="keywords" content="data analytics, data visualization, business intelligence, Python, SQL, R, Tableau, machine learning">
+    <title>Shanikwa Haynes | Data Analyst Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .floating-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <span class="text-xl font-bold gradient-text">Shanikwa Haynes</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-700 hover:text-blue-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">About</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projects</a>
+            <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600 transition">Skills</a>
+            <a href="#education" class="block py-2 text-gray-700 hover:text-blue-600 transition">Education</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Turning Data <span class="gradient-text">Into Insights</span></h1>
+                <p class="text-lg text-gray-600 mb-6">I'm Shanikwa Haynes, a passionate data analyst with expertise in statistical modeling, predictive analytics, and data visualization. I transform complex datasets into actionable business intelligence.</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">R</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">SQL</span>
+                    <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Tableau</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">View My Projects</a>
+                    <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition">Contact Me</a>
+                </div>
+            </div>
+            <div data-aos="fade-left" class="flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-green-400 rounded-2xl transform rotate-6"></div>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Professional portrait of Shanikwa Haynes" class="relative rounded-2xl w-full max-w-md border-4 border-white shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Data analysis workspace" class="rounded-lg shadow-lg w-full">
+            </div>
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Data-Driven Problem Solver</h3>
+                <p class="text-gray-600 mb-6">Currently pursuing my Master of Science in Data Analytics at Western Governors University, I bring a unique blend of analytical expertise and practical experience. My journey spans from criminal justice to data analytics, providing me with diverse perspectives on problem-solving and pattern recognition.</p>
+                <p class="text-gray-600 mb-6">I specialize in statistical modeling, predictive analytics, and creating compelling visualizations that drive decision-making. My approach combines rigorous analysis with clear communication to bridge the gap between data and business strategy.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center">
+                        <i data-feather="check-circle" class="text-green-500 mr-2"></i>
+                        <span>Statistical Modeling</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="check-circle" class="text-green-500 mr-2"></i>
+                        <span>Data Visualization</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="check-circle" class="text-green-500 mr-2"></i>
+                        <span>Predictive Analytics</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="check-circle" class="text-green-500 mr-2"></i>
+                        <span>Business Intelligence</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <i data-feather="map-pin" class="text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Based in Calhoun, GA</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="mail" class="text-blue-600 mr-3"></i>
+                        <a href="mailto:shanikwa.lhaynes@gmail.com" class="text-blue-600 hover:text-blue-800">shanikwa.lhaynes@gmail.com</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="phone" class="text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">706-837-8457</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project 1: Telecom Dashboard -->
+            <div data-aos="fade-up" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="bar-chart-2" class="text-white" size="64"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-gray-800">Telecom Churn Dashboard</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Tableau</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Interactive dashboard analyzing customer churn patterns by internet service, age, contract type, and region. Features 4 key visualizations with accessibility-focused design.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Customer Analytics</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">KPIs</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Retention Strategy</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Accessibility</span>
+                    </div>
+                    <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                        <li>• 4 interactive visualizations (bar, histogram, circle view)</li>
+                        <li>• Colorblind-safe palettes and enhanced tooltips</li>
+                        <li>• Executive KPIs for retention strategies</li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-blue-600 hover:text-blue-800 font-medium text-sm">View Project</a>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Correctional Costs Analysis -->
+            <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="trending-down" class="text-white" size="64"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-gray-800">Correctional Costs Analysis</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">R</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Multiple linear regression model analyzing state correctional spending patterns, identifying key predictors and cost-saving opportunities through data-driven recidivism strategies.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Regression Analysis</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">R tidyverse</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Policy Research</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Cost Reduction</span>
+                    </div>
+                    <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                        <li>• 45.98% variance explained (p < 0.001)</li>
+                        <li>• $56.7M cost per unit recidivism rate increase</li>
+                        <li>• 50-state dataset with comprehensive cleaning</li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-blue-600 hover:text-blue-800 font-medium text-sm">View Project</a>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium">
+                View All Projects on GitHub
+                <i data-feather="external-link" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">Programming & Analytics</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">SQL</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Python (Pandas, NumPy, Scikit-learn)</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">R (Tidyverse)</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Tableau</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">Tools & Technologies</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Excel & Data Analysis</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Statistical Modeling</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 87%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">HTML/CSS/JavaScript</span>
+                            <span class="text-gray-500">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Bash Scripting</span>
+                            <span class="text-gray-500">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mt-16">
+            <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Certifications</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div data-aos="fade-up" class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="award" class="text-blue-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Google Data Analytics Professional Certificate</h4>
+                    <p class="text-gray-600 text-sm">Coursera</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="award" class="text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Data Analytics Certificate Course</h4>
+                    <p class="text-gray-600 text-sm">Break Into Tech</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Education</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+        </div>
+        <div class="space-y-8">
+            <!-- Current Education -->
+            <div data-aos="fade-up" class="bg-white p-8 rounded-xl shadow-md">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-feather="book-open" class="text-blue-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Master of Science in Data Analytics</h3>
+                        <p class="text-blue-600 font-medium mb-1">Western Governors University</p>
+                        <p class="text-gray-600 mb-3">Data Science Specialization • Expected 2025</p>
+                        <p class="text-gray-600">Advanced coursework in statistical modeling, machine learning, predictive analytics, and data visualization.</p>
+                    </div>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">In Progress</span>
+                </div>
+            </div>
+
+            <!-- Bachelor's in Business -->
+            <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-xl shadow-md">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-feather="briefcase" class="text-green-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Bachelor of Science in Business Administration</h3>
+                        <p class="text-green-600 font-medium mb-1">Western Governors University</p>
+                        <p class="text-gray-600 mb-3">Business Management • Expected 2025</p>
+                        <p class="text-gray-600">Comprehensive business foundation with focus on operations, strategic management, and data-driven decision making.</p>
+                    </div>
+                    <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">In Progress</span>
+                </div>
+            </div>
+
+            <!-- Bachelor's in Criminal Justice -->
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-xl shadow-md">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i data-feather="shield" class="text-purple-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Bachelor of Science in Criminal Justice</h3>
+                        <p class="text-purple-600 font-medium mb-1">Dalton State College</p>
+                        <p class="text-gray-600 mb-3">Minor in Psychology • 2021</p>
+                        <p class="text-gray-600">Strong foundation in analytical thinking, research methodologies, and pattern recognition that translates well to data analysis.</p>
+                    </div>
+                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Completed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                <p class="text-gray-600 mb-8">Interested in data-driven solutions for your organization? Let's discuss how analytics can drive your business forward.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="mail" class="text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800">Email</h4>
+                            <a href="mailto:shanikwa.lhaynes@gmail.com" class="text-blue-600 hover:text-blue-800">shanikwa.lhaynes@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="phone" class="text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800">Phone</h4>
+                            <a href="tel:706-837-8457" class="text-blue-600 hover:text-blue-800">706-837-8457</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="map-pin" class="text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800">Location</h4>
+                            <p class="text-gray-600">Calhoun, Georgia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h4 class="font-medium text-gray-800 mb-4">Connect With Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/shanikwahaynes/" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition">
+                            <i data-feather="linkedin" class="text-gray-700"></i>
+                        </a>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition">
+                            <i data-feather="github" class="text-gray-700"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">Send Me a Message</h3>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold gradient-text mb-4">Shanikwa Haynes</h3>
+                    <p class="text-gray-400">Transforming data into actionable insights that drive business growth and operational efficiency. Specializing in statistical modeling and predictive analytics.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
+                        <li><a href="#education" class="text-gray-400 hover:text-white transition">Education</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://www.linkedin.com/in/shanikwahaynes/" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i data-feather="mail" class="inline w-4 h-4 mr-2"></i>shanikwa.lhaynes@gmail.com</p>
+                        <p><i data-feather="map-pin" class="inline w-4 h-4 mr-2"></i>Calhoun, GA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Shanikwa Haynes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Feather icons replacement
+        feather.replace();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animated skill bars
+        const observerOptions = {
+            threshold: 0.7
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.transition = 'width 1s ease-in-out';
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe skills section
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Simple animation for hero section
+        anime({
+            targets: '.gradient-text',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 1000,
+            easing: 'easeOutExpo'
+        });
+
+        // Form submission (basic handling)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
