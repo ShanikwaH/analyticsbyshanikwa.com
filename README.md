@@ -18,7 +18,7 @@ This is my personal portfolio website.
 
 # Credits
 
-My inspiration for putting this together came from [https://github.com/rafsanahmed28/Rafsan](https://github.com/rafsanahmed28/Rafsan)
+My inspiration for putting this together came from [Rafsan Ahmed](https://github.com/rafsanahmed28/Rafsan)
 
 Robot Animation: [Shunya Koide](https://codepen.io/shunyadezain)
 
