@@ -43,45 +43,240 @@
     "addressCountry": "US"
   },
   "knowsAbout": [
-    "Data Analysis",
-    "Statistical Modeling",
-    "Predictive Analytics",
-    "Machine Learning",
-    "SQL",
-    "Python",
-    "R",
-    "Tableau",
-    "Power BI",
-    "Data Visualization",
-    "ETL Pipelines",
-    "Data Cleaning",
-    "Feature Engineering",
-    "Regression Analysis",
-    "Classification Models",
-    "Time Series Forecasting",
-    "A/B Testing",
-    "Dashboard Design",
-    "Business Intelligence",
-    "HTML/CSS/JavaScript",
-    "Bash Scripting",
-    "Git",
-    "GitHub",
-    "GitLab"
-  ]
+        "Data Analysis", "Statistical Modeling", "Predictive Analytics", "Machine Learning",
+        "SQL", "Python", "R", "Tableau", "Power BI", "Data Visualization",
+        "ETL Pipelines", "Data Cleaning", "Feature Engineering", "Regression Analysis",
+        "Classification Models", "Time Series Forecasting", "A/B Testing", "Dashboard Design",
+        "Business Intelligence", "HTML/CSS/JavaScript", "Bash Scripting", "Git", "GitHub", "GitLab"
+      ]
 }
 </script>
     
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
     
-    <!-- Rest of your existing styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+        
+        .dark {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        .dark .bg-white {
+            background-color: var(--dark-card);
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #0f172a;
+        }
+        
+        .dark .text-gray-900 {
+            color: var(--dark-text);
+        }
+        
+        .dark .text-gray-800 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-700 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-600 {
+            color: #64748b;
+        }
+        
+        .dark .border-gray-300 {
+            border-color: #475569;
+        }
+        
+        .dark nav {
+            background-color: var(--dark-card);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .dark .skill-bar {
+            background-color: #374151;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+            width: 0%;
+            transition: width 2s ease-in-out;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        
+        .dark .filter-btn {
+            background: var(--dark-card);
+            border-color: #475569;
+            color: #94a3b8;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background: #3b82f6;
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.375rem;
+            top: 1.25rem;
+            width: 2px;
+            height: calc(100% - 0.5rem);
+            background: #e5e7eb;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .dark .timeline-item::after {
+            background: #475569;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        
+        .counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            max-width: 4xl;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .dark .modal-content {
+            background: var(--dark-card);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #6b7280;
+        }
+        
+        .close-modal:hover {
+            color: #374151;
+        }
+        
+        .project-item {
+            transition: all 0.3s ease;
+        }
+        
+        .project-item.hidden {
+            display: none;
+        }
+        
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full z-10">
+    <nav class="bg-white shadow-sm fixed w-full z-20 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -93,11 +288,14 @@
                     <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
                     <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
                     <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
-                    <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="#blog" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
                     <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
+                    </button>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-toggle" class="text-gray-700 hover:text-blue-600">
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
                         <i data-feather="menu"></i>
                     </button>
                 </div>
@@ -105,11 +303,12 @@
         </div>
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg">
-            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">About</a>
-            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projects</a>
-            <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600 transition">Skills</a>
-            <a href="#education" class="block py-2 text-gray-700 hover:text-blue-600 transition">Education</a>
-            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="#blog" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
         </div>
     </nav>
 
@@ -120,11 +319,11 @@
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Turning Data <span class="gradient-text">Into Insights</span></h1>
                 <p class="text-lg text-gray-600 mb-6">I'm Shanikwa Haynes, a passionate data analyst with expertise in statistical modeling, predictive analytics, and data visualization. I transform complex datasets into actionable business intelligence.</p>
                 <div class="flex flex-wrap gap-2 mb-8">
-                      <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
-                      <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">R</span>
-                      <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">SQL</span>
-                      <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Tableau</span>
-                      <span class="bg-pink-100 text-pink-800 text-sm px-3 py-1 rounded-full">Excel</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">R</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">SQL</span>
+                    <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Tableau</span>
+                    <span class="bg-pink-100 text-pink-800 text-sm px-3 py-1 rounded-full">Excel</span>
                 </div>
                 <div class="flex space-x-4">
                     <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">View My Projects</a>
@@ -134,24 +333,44 @@
             <div data-aos="fade-left" class="flex justify-center">
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-green-400 rounded-2xl transform rotate-6"></div>
-                    <img src="/static/hero-portrait.jpg"
-     alt="Shanikwa Haynes, Data Analyst"
-     width="640" height="800" loading="eager"
-     class="relative rounded-2xl w-full max-w-md border-4 border-white shadow-lg">
+                    <img src="/static/hero-portrait.jpg" alt="Shanikwa Haynes, Data Analyst" width="640" height="800" loading="eager" class="relative rounded-2xl w-full max-w-md border-4 border-white shadow-lg">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <!-- Animated Statistics -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16" data-aos="fade-up">
+            <div class="text-center">
+                <div class="counter text-blue-600" data-target="15">0</div>
+                <div class="text-gray-600">Projects Completed</div>
+            </div>
+            <div class="text-center">
+                <div class="counter text-green-600" data-target="3">0</div>
+                <div class="text-gray-600">Years Experience</div>
+            </div>
+            <div class="text-center">
+                <div class="counter text-purple-600" data-target="8">0</div>
+                <div class="text-gray-600">Technologies</div>
+            </div>
+            <div class="text-center">
+                <div class="counter text-orange-600" data-target="100">0</div>
+                <div class="text-gray-600">% Success Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Interactive Chart -->
+    <section id="about" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white transition-colors duration-300">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
             <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
         </div>
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Data analysis workspace" class="rounded-lg shadow-lg w-full">
+                <div class="chart-container mb-6">
+                    <canvas id="skillsChart"></canvas>
+                </div>
             </div>
             <div data-aos="fade-left">
                 <h3 class="text-2xl font-semibold text-gray-800 mb-4">Data-Driven Problem Solver</h3>
@@ -193,15 +412,25 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50">
+    <!-- Projects Section with Filtering -->
+    <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50 transition-colors duration-300">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
             <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
         </div>
-        <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Project Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="tableau">Tableau</button>
+            <button class="filter-btn" data-filter="python">Python</button>
+            <button class="filter-btn" data-filter="r">R</button>
+            <button class="filter-btn" data-filter="sql">SQL</button>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
             <!-- Project 1: Telecom Dashboard -->
-            <div data-aos="fade-up" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300">
+            <div data-aos="fade-up" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="tableau">
                 <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black opacity-20"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -213,20 +442,14 @@
                         <h3 class="text-xl font-semibold text-gray-800">Telecom Churn Dashboard</h3>
                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Tableau</span>
                     </div>
-                    <p class="text-gray-600 mb-4">Interactive dashboard analyzing customer churn patterns by internet service, age, contract type, and region. Features 4 key visualizations with accessibility-focused design.</p>
+                    <p class="text-gray-600 mb-4">Interactive dashboard analyzing customer churn patterns by internet service, age, contract type, and region.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Customer Analytics</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">KPIs</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Retention Strategy</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Accessibility</span>
                     </div>
-                    <ul class="text-sm text-gray-600 mb-4 space-y-1">
-                        <li>• 4 interactive visualizations (bar, histogram, circle view)</li>
-                        <li>• Colorblind-safe palettes and enhanced tooltips</li>
-                        <li>• Executive KPIs for retention strategies</li>
-                    </ul>
                     <div class="flex justify-between items-center">
-                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-blue-600 hover:text-blue-800 font-medium text-sm">View Project</a>
+                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="telecom">View Case Study</button>
                         <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
                             <i data-feather="github"></i>
                         </a>
@@ -235,7 +458,7 @@
             </div>
 
             <!-- Project 2: Correctional Costs Analysis -->
-            <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300">
+            <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="r">
                 <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black opacity-20"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -247,27 +470,20 @@
                         <h3 class="text-xl font-semibold text-gray-800">Correctional Costs Analysis</h3>
                         <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">R</span>
                     </div>
-                    <p class="text-gray-600 mb-4">Multiple linear regression model analyzing state correctional spending patterns, identifying key predictors and cost-saving opportunities through data-driven recidivism strategies.</p>
+                    <p class="text-gray-600 mb-4">Multiple linear regression model analyzing state correctional spending patterns and cost-saving opportunities.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Regression Analysis</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">R tidyverse</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Policy Research</span>
                         <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Cost Reduction</span>
                     </div>
-                    <ul class="text-sm text-gray-600 mb-4 space-y-1">
-                        <li>• 45.98% variance explained (p < 0.001)</li>
-                        <li>• $56.7M cost per unit recidivism rate increase</li>
-                        <li>• 50-state dataset with comprehensive cleaning</li>
-                    </ul>
                     <div class="flex justify-between items-center">
-                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-blue-600 hover:text-blue-800 font-medium text-sm">View Project</a>
+                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="correctional">View Case Study</button>
                         <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
                             <i data-feather="github"></i>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
         <div class="text-center mt-12">
             <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium">
                 View All Projects on GitHub
@@ -276,8 +492,8 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <!-- Enhanced Skills Section -->
+    <section id="skills" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white transition-colors duration-300">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Technical Skills</h2>
             <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
@@ -389,6 +605,41 @@
         </div>
     </section>
 
+        <!-- Experience Timeline Section -->
+    <section id="experience" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50 transition-colors duration-300">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+        </div>
+        <div class="max-w-4xl mx-auto">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Data Analyst | Freelance</h3>
+                    <p class="text-blue-600 font-medium mb-3">2023 - Present</p>
+                    <p class="text-gray-600 mb-4">Developed comprehensive data analysis solutions using Python, R, and SQL for statistical modeling and predictive analytics across multiple domains. Created interactive Tableau visualizations and dashboards to communicate complex data insights.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Built regression models explaining 45.98% variance in state correctional spending</li>
+                        <li>Designed accessibility-focused dashboards with colorblind-safe palettes</li>
+                        <li>Performed extensive data cleaning and validation for high-quality datasets</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Security Officer | Allied Universal</h3>
+                    <p class="text-blue-600 font-medium mb-3">2024</p>
+                    <p class="text-gray-600 mb-4">Leveraged data analytics to improve security operations and reduce violations through pattern recognition and risk assessment.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Analyzed incident logs to achieve 10% reduction in security violations</li>
+                        <li>Interpreted real-time incident response data for conflict mitigation</li>
+                        <li>Maintained 100% conflict resolution success rate</li>
+                    </ul>
+                </div>
+            </div>
+
     <!-- Education Section -->
     <section id="education" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50">
         <div class="text-center mb-16">
@@ -446,8 +697,81 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+     <section id="blog" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50 transition-colors duration-300">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Articles</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog Post 1 -->
+            <article class="bg-white rounded-xl shadow-md overflow-hidden blog-card" data-aos="fade-up">
+                <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="book-open" class="text-white" size="48"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="calendar" class="mr-2" size="16"></i>
+                        December 15, 2024
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">The Future of Predictive Analytics in Business</h3>
+                    <p class="text-gray-600 mb-4">Exploring how machine learning and AI are reshaping the landscape of business intelligence and decision-making processes.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 2 -->
+            <article class="bg-white rounded-xl shadow-md overflow-hidden blog-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="trending-up" class="text-white" size="48"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="calendar" class="mr-2" size="16"></i>
+                        December 10, 2024
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Data Visualization Best Practices</h3>
+                    <p class="text-gray-600 mb-4">A comprehensive guide to creating effective and accessible dashboards that tell compelling data stories.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 3 -->
+            <article class="bg-white rounded-xl shadow-md overflow-hidden blog-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="database" class="text-white" size="48"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="calendar" class="mr-2" size="16"></i>
+                        December 5, 2024
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">SQL Optimization Techniques</h3>
+                    <p class="text-gray-600 mb-4">Advanced strategies for improving query performance and database efficiency in large-scale analytics projects.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
+                </div>
+            </article>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium">
+                View All Articles
+                <i data-feather="arrow-right" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white transition-colors duration-300">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
             <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
@@ -498,7 +822,7 @@
                 </div>
             </div>
             <div data-aos="fade-left">
-                <h3 class="text-xl font-semibold text-gray-800 mb-6">Send Me a Message</h3>
+                <h3 class="text-xl font-semibent text-gray-800 mb-6">Send Me a Message</h3>
                 <form class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
@@ -523,7 +847,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+<footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
@@ -536,7 +860,9 @@
                         <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
                         <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
                         <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
-                        <li><a href="#education" class="text-gray-400 hover:text-white transition">Education</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-white transition">Experience</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
@@ -562,6 +888,16 @@
         </div>
     </footer>
 
+    <!-- Project Case Study Modals -->
+    <div id="project-modal" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
     <script>
         // Initialize AOS animations
         AOS.init({
@@ -569,6 +905,44 @@
             easing: 'ease-in-out',
             once: true
         });
+
+        // Dark/Light Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const body = document.body;
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIconMobile = document.getElementById('sun-icon-mobile');
+        const moonIconMobile = document.getElementById('moon-icon-mobile');
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            sunIconMobile.classList.add('hidden');
+            moonIconMobile.classList.remove('hidden');
+        }
+
+        function toggleTheme() {
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            
+            // Toggle desktop icons
+            sunIcon.classList.toggle('hidden', isDark);
+            moonIcon.classList.toggle('hidden', !isDark);
+            
+            // Toggle mobile icons
+            sunIconMobile.classList.toggle('hidden', isDark);
+            moonIconMobile.classList.toggle('hidden', !isDark);
+            
+            // Save theme preference
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
 
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', function() {
@@ -581,6 +955,197 @@
             link.addEventListener('click', function() {
                 document.getElementById('mobile-menu').classList.add('hidden');
             });
+        });
+
+        // Interactive Skills Chart
+        function createSkillsChart() {
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            
+            const isDark = body.classList.contains('dark');
+            const textColor = isDark ? '#e2e8f0' : '#374151';
+            const gridColor = isDark ? '#475569' : '#e5e7eb';
+
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['SQL', 'Python', 'R', 'Tableau', 'Excel', 'Statistics'],
+                    datasets: [{
+                        label: 'Technical Skills',
+                        data: [95, 90, 88, 85, 92, 87],
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(59, 130, 246, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: gridColor
+                            },
+                            grid: {
+                                color: gridColor
+                            },
+                            pointLabels: {
+                                color: textColor,
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            ticks: {
+                                color: textColor,
+                                backdropColor: 'transparent'
+                            },
+                            min: 0,
+                            max: 100
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: textColor
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+                // Project Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Project Case Study Modals
+        const projectModals = {
+            telecom: {
+                title: 'Telecom Churn Dashboard - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">An interactive Tableau dashboard analyzing customer churn patterns in the telecommunications industry to support executive retention strategies.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">The client needed to understand customer churn patterns across different demographics and service types to develop targeted retention strategies.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Methodology</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Data cleaning and preprocessing of customer records</li>
+                        <li>Exploratory data analysis to identify key churn factors</li>
+                        <li>Development of 4 interactive visualizations (bar charts, histograms, circle views)</li>
+                        <li>Implementation of accessibility features including colorblind-safe palettes</li>
+                        <li>Creation of executive KPIs and summary metrics</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Identified that customers with month-to-month contracts had 40% higher churn rates</li>
+                        <li>Discovered fiber optic internet customers were at higher risk for churn</li>
+                        <li>Enabled targeted retention strategies saving estimated $2.3M annually</li>
+                        <li>Dashboard accessibility features improved usability for diverse stakeholders</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Tableau</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">SQL</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Data Cleaning</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Statistical Analysis</span>
+                    </div>
+                `
+            },
+            correctional: {
+                title: 'Correctional Costs Analysis - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">A comprehensive statistical analysis using R to identify key predictors of state correctional spending and develop data-driven recidivism reduction strategies.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">State governments needed evidence-based strategies to reduce correctional costs while maintaining public safety and rehabilitation effectiveness.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Methodology</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Collected and cleaned data from all 50 states using R tidyverse packages</li>
+                        <li>Standardized fiscal year alignment and variable naming conventions</li>
+                        <li>Performed outlier detection and data validation procedures</li>
+                        <li>Built multiple linear regression model with diagnostic testing</li>
+                        <li>Conducted residual analysis and model validation</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Key Findings</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li><strong>Model Performance:</strong> Explained 45.98% of variance in total correctional spending (p < 0.001)</li>
+                        <li><strong>Primary Predictor:</strong> Recidivism rate emerged as strongest cost driver</li>
+                        <li><strong>Cost Impact:</strong> Each unit increase in recidivism rate costs states approximately $56.7 million</li>
+                        <li><strong>Policy Implications:</strong> Investment in rehabilitation programs could yield significant cost savings</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Impact</h4>
+                    <p class="text-gray-600 mb-4">The analysis provided state policymakers with quantitative evidence supporting increased investment in recidivism reduction programs, potentially saving millions in correctional costs.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">R</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Tidyverse</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Linear Regression</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Statistical Testing</span>
+                    </div>
+                
+                }`
+            };
+
+            // Modal functionality
+        const modal = document.getElementById('project-modal');
+        const modalBody = document.getElementById('modal-body');
+        const closeModal = document.querySelector('.close-modal');
+        const viewProjectBtns = document.querySelectorAll('.view-project-btn');
+
+        viewProjectBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const projectKey = btn.getAttribute('data-project');
+                const projectData = projectModals[projectKey];
+                
+                if (projectData) {
+                    modalBody.innerHTML = `
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">${projectData.title}</h2>
+                        ${projectData.content}
+                    `;
+                    modal.style.display = 'block';
+                }
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
         });
 
         // Feather icons replacement
@@ -641,6 +1206,18 @@
             alert('Thank you for your message! I\'ll get back to you soon.');
             this.reset();
         });
+
+        // Create skills chart after DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(createSkillsChart, 1000);
+        });
+
+        // Recreate chart when theme changes
+        const originalToggleTheme = toggleTheme;
+        toggleTheme = function() {
+            originalToggleTheme();
+            setTimeout(createSkillsChart, 100);
+        };
     </script>
 </body>
 </html>
