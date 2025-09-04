@@ -695,71 +695,21 @@
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Articles</h2>
             <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+            <p class="text-gray-600 mt-4">Read my latest insights on data analytics, statistical modeling, and business intelligence.</p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Blog Post 1 -->
-            <article class="bg-white rounded-xl shadow-md overflow-hidden blog-card" data-aos="fade-up">
-                <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="book-open" class="text-white" size="48"></i>
-                    </div>
+        <div class="text-center">
+            <div class="bg-white p-8 rounded-xl shadow-md max-w-2xl mx-auto" data-aos="fade-up">
+                <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-feather="edit-3" class="text-white" size="32"></i>
                 </div>
-                <div class="p-6">
-                    <div class="flex items-center text-sm text-gray-500 mb-3">
-                        <i data-feather="calendar" class="mr-2" size="16"></i>
-                        December 15, 2024
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">The Future of Predictive Analytics in Business</h3>
-                    <p class="text-gray-600 mb-4">Exploring how machine learning and AI are reshaping the landscape of business intelligence and decision-making processes.</p>
-                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
-                </div>
-            </article>
-            
-            <!-- Blog Post 2 -->
-            <article class="bg-white rounded-xl shadow-md overflow-hidden blog-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="trending-up" class="text-white" size="48"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center text-sm text-gray-500 mb-3">
-                        <i data-feather="calendar" class="mr-2" size="16"></i>
-                        December 10, 2024
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Data Visualization Best Practices</h3>
-                    <p class="text-gray-600 mb-4">A comprehensive guide to creating effective and accessible dashboards that tell compelling data stories.</p>
-                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
-                </div>
-            </article>
-            
-            <!-- Blog Post 3 -->
-            <article class="bg-white rounded-xl shadow-md overflow-hidden blog-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="database" class="text-white" size="48"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center text-sm text-gray-500 mb-3">
-                        <i data-feather="calendar" class="mr-2" size="16"></i>
-                        December 5, 2024
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">SQL Optimization Techniques</h3>
-                    <p class="text-gray-600 mb-4">Advanced strategies for improving query performance and database efficiency in large-scale analytics projects.</p>
-                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
-                </div>
-            </article>
-        </div>
-        
-        <div class="text-center mt-12">
-            <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium">
-                View All Articles
-                <i data-feather="arrow-right" class="ml-2"></i>
-            </a>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Follow My Data Analytics Journey</h3>
+                <p class="text-gray-600 mb-6">I regularly share insights about data analytics, statistical modeling, and real-world applications of data science. From project walkthroughs to industry best practices, explore my articles on Medium.</p>
+                <a href="https://medium.com/@shanikwa.lhaynes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium text-lg transition-colors">
+                    Read My Articles on Medium
+                    <i data-feather="external-link" class="ml-3"></i>
+                </a>
+                <p class="text-sm text-gray-500 mt-4">New articles published regularly covering data visualization, predictive analytics, and industry insights.</p>
+            </div>
         </div>
     </section>
 
@@ -810,6 +760,9 @@
                         </a>
                         <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition">
                             <i data-feather="github" class="text-gray-700"></i>
+                        </a>
+                            <a href="https://medium.com/@shanikwa.lhaynes" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition">
+                            <i data-feather="medium" class="text-gray-700"></i>  
                         </a>
                     </div>
                 </div>
@@ -932,6 +885,9 @@
             
             // Save theme preference
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            // Recreate chart with new theme
+            setTimeout(createSkillsChart, 100);
         }
 
         themeToggle.addEventListener('click', toggleTheme);
@@ -980,17 +936,26 @@
             });
         });
 
-        const heroSection = document.querySelector('#hero');
-        if (heroSection) {
-            heroObserver.observe(heroSection);
-        } else {
-            // If no specific hero section, run on page load
-            setTimeout(animateCounters, 1000);
-        }
+        // Observe hero section for counter animation
+        setTimeout(() => {
+            const heroSection = document.querySelector('section');
+            if (heroSection) {
+                heroObserver.observe(heroSection);
+            } else {
+                animateCounters();
+            }
+        }, 1000);
 
         // Interactive Skills Chart
         function createSkillsChart() {
-            const ctx = document.getElementById('skillsChart').getContext('2d');
+            const ctx = document.getElementById('skillsChart');
+            if (!ctx) return;
+            
+            // Clear existing chart
+            const existingChart = Chart.getChart(ctx);
+            if (existingChart) {
+                existingChart.destroy();
+            }
             
             const isDark = body.classList.contains('dark');
             const textColor = isDark ? '#e2e8f0' : '#374151';
@@ -1146,7 +1111,6 @@
                     </div>
                 `
             }
-
         };
 
         // Modal functionality
@@ -1243,13 +1207,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(createSkillsChart, 1000);
         });
-
-        // Recreate chart when theme changes
-        const originalToggleTheme = toggleTheme;
-        toggleTheme = function() {
-            originalToggleTheme();
-            setTimeout(createSkillsChart, 100);
-        };
     </script>
 </body>
 </html>
