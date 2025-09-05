@@ -289,6 +289,8 @@
             border-radius: 1rem;
             padding: 2rem;
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .dark .modal-content {
@@ -322,6 +324,83 @@
         
         .blog-card:hover {
             transform: translateY(-3px);
+        }
+        
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background: #10b981;
+            border-radius: 50%;
+        }
+        
+        .education-timeline::after {
+            content: '';
+            position: absolute;
+            left: 0.375rem;
+            top: 1.25rem;
+            width: 2px;
+            height: calc(100% - 0.5rem);
+            background: #e5e7eb;
+        }
+        
+        .education-timeline:last-child::after {
+            display: none;
+        }
+        
+        .dark .education-timeline::after {
+            background: #475569;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background-color: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .dark .progress-bar {
+            background-color: #374151;
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .achievement-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .dark .achievement-badge {
+            background: rgba(59, 130, 246, 0.2);
         }
     </style>
 </head>
@@ -384,6 +463,23 @@
                     <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Tableau</span>
                     <span class="bg-pink-100 text-pink-800 text-sm px-3 py-1 rounded-full">Excel</span>
                 </div>
+                
+                <!-- Stats Section -->
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    <div class="text-center">
+                        <div class="counter text-2xl font-bold text-blue-600" data-target="11">0</div>
+                        <div class="text-sm text-gray-500">Projects Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="counter text-2xl font-bold text-green-600" data-target="6">0</div>
+                        <div class="text-sm text-gray-500">Months of Study</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="counter text-2xl font-bold text-purple-600" data-target="5000">0</div>
+                        <div class="text-sm text-gray-500">Hours of Learning</div>
+                    </div>
+                </div>
+                
                 <div class="flex space-x-4">
                     <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">View My Projects</a>
                     <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition">Contact Me</a>
@@ -412,6 +508,23 @@
                 <h3 class="text-2xl font-semibold text-gray-800 mb-4">Data-Driven Problem Solver</h3>
                 <p class="text-gray-600 mb-6">Completed my Master of Science in Data Analytics-Data Science Specialization at Western Governors University, I bring a unique blend of analytical expertise and practical experience. My journey spans from criminal justice to data analytics, providing me with diverse perspectives on problem-solving and pattern recognition.</p>
                 <p class="text-gray-600 mb-6">I specialize in statistical modeling, predictive analytics, and creating compelling visualizations that drive decision-making. My approach combines rigorous analysis with clear communication to bridge the gap between data and business strategy.</p>
+                
+                <!-- Achievement Badges -->
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="achievement-badge">
+                        <i data-feather="award" size="16"></i>
+                        MS Data Analytics
+                    </span>
+                    <span class="achievement-badge">
+                        <i data-feather="star" size="16"></i>
+                        6-Month Completion
+                    </span>
+                    <span class="achievement-badge">
+                        <i data-feather="trending-up" size="16"></i>
+                        Career Transition
+                    </span>
+                </div>
+                
                 <div class="grid grid-cols-2 gap-4 mb-8">
                     <div class="flex items-center">
                         <i data-feather="check-circle" class="text-green-500 mr-2"></i>
@@ -434,11 +547,12 @@
         </div>
     </section>
 
-    <!-- Projects Section with Filtering -->
+    <!-- Projects Section with Enhanced Filtering -->
     <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50 transition-colors duration-300">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
             <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore my comprehensive portfolio of data analytics projects from my Master's program, showcasing expertise across statistical modeling, machine learning, data visualization, and business intelligence.</p>
         </div>
         
         <!-- Project Filters -->
@@ -448,6 +562,8 @@
             <button class="filter-btn" data-filter="python">Python</button>
             <button class="filter-btn" data-filter="r">R</button>
             <button class="filter-btn" data-filter="sql">SQL</button>
+            <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+            <button class="filter-btn" data-filter="statistics">Statistics</button>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
@@ -480,7 +596,7 @@
             </div>
 
             <!-- Project 2: Correctional Costs Analysis -->
-            <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="r">
+            <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="r statistics">
                 <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black opacity-20"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -500,6 +616,118 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="correctional">View Case Study</button>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Hospital Readmission Prediction -->
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="python machine-learning">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="activity" class="text-white" size="64"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-gray-800">Medical Readmission Prediction</h3>
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Python</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Machine learning model predicting hospital readmissions using patient demographics and treatment data.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Classification</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Healthcare Analytics</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Feature Engineering</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="medical">View Case Study</button>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Flight Delay Prediction API -->
+            <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="python machine-learning">
+                <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="cloud" class="text-white" size="64"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-gray-800">Flight Delay Prediction API</h3>
+                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">Python</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">MLOps pipeline with API deployment for real-time flight delay predictions using MLflow.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">MLOps</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">API Development</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Model Deployment</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="flight">View Case Study</button>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Database Design & Implementation -->
+            <div data-aos="fade-up" data-aos-delay="400" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="sql">
+                <div class="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="database" class="text-white" size="64"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-gray-800">Database Design & Implementation</h3>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">SQL</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Comprehensive database solutions including relational and non-relational designs with ETL processes.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Database Design</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">ETL Pipelines</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Data Modeling</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="database">View Case Study</button>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Time Series Revenue Forecasting -->
+            <div data-aos="fade-up" data-aos-delay="500" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="python statistics">
+                <div class="h-48 bg-gradient-to-br from-pink-400 to-pink-600 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-feather="trending-up" class="text-white" size="64"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold text-gray-800">Time Series Revenue Forecasting</h3>
+                        <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full">Python</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Advanced time series analysis of medical facility revenue with ARIMA modeling and seasonal decomposition.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Time Series</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">ARIMA Modeling</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Forecasting</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="timeseries">View Case Study</button>
                         <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
                             <i data-feather="github"></i>
                         </a>
@@ -714,15 +942,114 @@
         </div>
     </section>
 
-        <!-- Education Section -->
+    <!-- Enhanced Education Section -->
     <section id="education" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white transition-colors duration-300">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Education</h2>
             <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
         </div>
+        
+        <!-- Master's Program Progress -->
+        <div class="mb-12" data-aos="fade-up">
+            <div class="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Master's Program Journey</h3>
+                <p class="text-center text-gray-600 mb-6">Completed 11 courses across 6 months with over 5,000 hours of dedicated study</p>
+                
+                <!-- Course Progress Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-white p-4 rounded-lg shadow-sm course-progress-item" data-course="D596">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Data Analytics Journey</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">5 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm course-progress-item" data-course="D597">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Data Management</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">22 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm course-progress-item" data-course="D598">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Analytics Programming</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">24 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm course-progress-item" data-course="D599">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Data Preparation</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">31 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm course-progress-item" data-course="D600">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Statistical Data Mining</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">25 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm course-progress-item" data-course="D601">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Data Storytelling</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">4 days completed</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button id="show-all-courses" class="text-blue-600 hover:text-blue-800 font-medium">
+                        View All 11 Courses <i data-feather="chevron-down" class="inline ml-1"></i>
+                    </button>
+                </div>
+                
+                <div id="additional-courses" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Deployment</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">29 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Machine Learning</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">30 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Advanced Analytics</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">15 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Optimization</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">12 days completed</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-sm text-gray-800 mb-2">Capstone Project</h4>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="text-xs text-gray-500">12 days completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="space-y-8">
             <!-- Master's in Data Analytics -->
-            <div data-aos="fade-up" class="bg-white p-8 rounded-xl shadow-md">
+            <div data-aos="fade-up" class="bg-white p-8 rounded-xl shadow-md education-timeline">
                 <div class="flex items-start space-x-4">
                     <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <i data-feather="book-open" class="text-blue-600"></i>
@@ -738,7 +1065,7 @@
             </div>
 
             <!-- Bachelor's in Business Administration -->
-            <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-xl shadow-md">
+            <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-xl shadow-md education-timeline">
                 <div class="flex items-start space-x-4">
                     <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <i data-feather="briefcase" class="text-green-600"></i>
@@ -754,7 +1081,7 @@
             </div>
 
             <!-- Bachelor's in Criminal Justice with Internship -->
-            <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-xl shadow-md">
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-xl shadow-md education-timeline">
                 <div class="flex items-start space-x-4">
                     <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <i data-feather="shield" class="text-purple-600"></i>
@@ -1006,6 +1333,21 @@
             });
         });
 
+        // Show/hide additional courses
+        document.getElementById('show-all-courses').addEventListener('click', function() {
+            const additionalCourses = document.getElementById('additional-courses');
+            const button = this;
+            
+            if (additionalCourses.classList.contains('hidden')) {
+                additionalCourses.classList.remove('hidden');
+                button.innerHTML = 'Show Less <i data-feather="chevron-up" class="inline ml-1"></i>';
+            } else {
+                additionalCourses.classList.add('hidden');
+                button.innerHTML = 'View All 11 Courses <i data-feather="chevron-down" class="inline ml-1"></i>';
+            }
+            feather.replace();
+        });
+
         // Animated Counter
         function animateCounters() {
             const counters = document.querySelectorAll('.counter');
@@ -1113,7 +1455,7 @@
             });
         }
 
-        // Project Filtering
+        // Enhanced Project Filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectItems = document.querySelectorAll('.project-item');
 
@@ -1127,16 +1469,19 @@
                 const filterValue = btn.getAttribute('data-filter');
                 
                 projectItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    const categories = item.getAttribute('data-category');
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
                         item.classList.remove('hidden');
+                        item.style.display = 'block';
                     } else {
                         item.classList.add('hidden');
+                        item.style.display = 'none';
                     }
                 });
             });
         });
 
-        // Project Case Study Modals
+        // Enhanced Project Case Study Modals
         const projectModals = {
             telecom: {
                 title: 'Telecom Churn Dashboard - Case Study',
@@ -1163,6 +1508,20 @@
                         <li>Enabled targeted retention strategies saving estimated $2.3M annually</li>
                         <li>Dashboard accessibility features improved usability for diverse stakeholders</li>
                     </ul>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-blue-800 mb-2">Resources</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/Ec7JExwyWVhDrEdY7lXwdgUBXTlFsniW3nhy3egxFqx-dA?e=p7q1pQ" 
+                               class="text-blue-600 hover:text-blue-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Video Presentation
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/D601_TelecomDashboard.twbx" 
+                               class="text-blue-600 hover:text-blue-800 flex items-center" target="_blank">
+                                <i data-feather="download" class="mr-2"></i>Download Dashboard
+                            </a>
+                        </div>
+                    </div>
                     
                     <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
                     <div class="flex flex-wrap gap-2">
@@ -1202,12 +1561,222 @@
                     <h4 class="text-xl font-semibold text-gray-800 mb-3">Impact</h4>
                     <p class="text-gray-600 mb-4">The analysis provided state policymakers with quantitative evidence supporting increased investment in recidivism reduction programs, potentially saving millions in correctional costs.</p>
                     
+                    <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-green-800 mb-2">Resources</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/EaPOORtnN9BDtPFdpet5ZzEBWahBnqJGWNioGU49RvIYiw?e=X7mrjh" 
+                               class="text-green-600 hover:text-green-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Video Presentation
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Task%202.pdf" 
+                               class="text-green-600 hover:text-green-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Full Report
+                            </a>
+                        </div>
+                    </div>
+                    
                     <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">R</span>
                         <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Tidyverse</span>
                         <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Linear Regression</span>
                         <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Statistical Testing</span>
+                    </div>
+                `
+            },
+            medical: {
+                title: 'Medical Readmission Prediction - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">Machine learning classification model to predict hospital readmissions using patient demographics, treatment history, and clinical indicators.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Healthcare providers needed to identify high-risk patients for readmission to improve care coordination and reduce costs.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Methodology</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Comprehensive data preprocessing and feature engineering on medical records</li>
+                        <li>Implemented multiple classification algorithms (Random Forest, SVM, Logistic Regression)</li>
+                        <li>Performed cross-validation and hyperparameter tuning</li>
+                        <li>Analyzed feature importance and model interpretability</li>
+                        <li>Evaluated model performance using precision, recall, and AUC metrics</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Achieved 84% accuracy with Random Forest classifier</li>
+                        <li>Identified key predictors: length of stay, number of procedures, age, and diagnosis codes</li>
+                        <li>Model enables proactive intervention for high-risk patients</li>
+                        <li>Potential to reduce readmission rates by 15-20% through targeted care management</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-purple-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-purple-800 mb-2">Resources</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/EedLt7TuICpHtmAo56N-XwgB4Ng5NCqUj8FDJnRDdYxAMQ?e=lXST2U" 
+                               class="text-purple-600 hover:text-purple-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Video Presentation
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%201.pdf" 
+                               class="text-purple-600 hover:text-purple-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Technical Report
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Scikit-learn</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Pandas</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Random Forest</span>
+                    </div>
+                `
+            },
+            flight: {
+                title: 'Flight Delay Prediction API - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">End-to-end MLOps pipeline with API deployment for real-time flight delay predictions using MLflow and cloud infrastructure.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Airlines needed a production-ready system to predict flight delays in real-time for operational planning and customer communication.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Methodology</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Built scalable data pipeline for flight data processing</li>
+                        <li>Developed ML models with MLflow experiment tracking</li>
+                        <li>Implemented model versioning and automated retraining</li>
+                        <li>Created RESTful API with Flask for real-time predictions</li>
+                        <li>Deployed containerized solution with monitoring and logging</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Achieved 89% accuracy in delay prediction</li>
+                        <li>API response time under 200ms for real-time predictions</li>
+                        <li>Automated model retraining pipeline reduces manual oversight</li>
+                        <li>Production-ready system handling 1000+ requests per minute</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-orange-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-orange-800 mb-2">Resources</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/Ecxe-ajXAD5Ki6-bqHnaIoMBv4BJjzD725f2SErIqpXAcA?e=Ihyzt1" 
+                               class="text-orange-600 hover:text-orange-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Video Demo
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%203.pdf" 
+                               class="text-orange-600 hover:text-orange-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Implementation Report
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">MLflow</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Flask API</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Docker</span>
+                    </div>
+                `
+            },
+            database: {
+                title: 'Database Design & Implementation - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive database solutions including relational and non-relational designs with complete ETL pipelines and data management systems.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Organizations needed scalable data storage solutions that could handle both structured and unstructured data with efficient querying capabilities.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Methodology</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Designed normalized relational database schemas with proper indexing</li>
+                        <li>Implemented NoSQL document-based database for flexible data storage</li>
+                        <li>Created comprehensive ETL pipelines for data transformation</li>
+                        <li>Developed stored procedures and optimized queries for performance</li>
+                        <li>Implemented data validation and integrity constraints</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Achieved 40% improvement in query performance through optimization</li>
+                        <li>Reduced data redundancy by 60% through proper normalization</li>
+                        <li>Created scalable architecture supporting future growth</li>
+                        <li>Implemented robust backup and recovery procedures</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-indigo-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-indigo-800 mb-2">Resources</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/EQy9Z--ajGlJoHvDhYBvMycBrVcvbGk2ALQ5hAVu2iRl8w?e=kfO7LQ" 
+                               class="text-indigo-600 hover:text-indigo-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Relational DB Demo
+                            </a>
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/Ebhk4n--TrVDmohUfxysJbIBfi7H57KhOXL3vj7DliBLLQ?e=5jZRRP" 
+                               class="text-indigo-600 hover:text-indigo-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>NoSQL Demo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">SQL Server</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">MongoDB</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">ETL Pipelines</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Data Modeling</span>
+                    </div>
+                `
+            },
+            timeseries: {
+                title: 'Time Series Revenue Forecasting - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">Advanced time series analysis of medical facility revenue with ARIMA modeling, seasonal decomposition, and forecasting for strategic planning.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Healthcare administration needed accurate revenue forecasting to support budget planning and resource allocation decisions.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Methodology</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Comprehensive time series decomposition to identify trends and seasonality</li>
+                        <li>Applied Box-Jenkins methodology for ARIMA model selection</li>
+                        <li>Performed stationarity testing and data transformation</li>
+                        <li>Implemented seasonal adjustment and outlier detection</li>
+                        <li>Generated 12-month revenue forecasts with confidence intervals</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Achieved MAPE of 4.2% on out-of-sample forecasts</li>
+                        <li>Identified strong seasonal patterns affecting revenue planning</li>
+                        <li>Provided actionable insights for quarterly budget adjustments</li>
+                        <li>Model successfully predicted revenue within 95% confidence intervals</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-pink-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-pink-800 mb-2">Resources</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%203.pdf" 
+                               class="text-pink-600 hover:text-pink-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Analysis Report
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio" 
+                               class="text-pink-600 hover:text-pink-800 flex items-center" target="_blank">
+                                <i data-feather="code" class="mr-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Statsmodels</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">ARIMA</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Time Series</span>
                     </div>
                 `
             }
@@ -1230,6 +1799,8 @@
                         ${projectData.content}
                     `;
                     modal.style.display = 'block';
+                    // Re-run feather icons for modal content
+                    feather.replace();
                 }
             });
         });
@@ -1287,6 +1858,31 @@
             observer.observe(skillsSection);
         }
 
+        // Course progress animation
+        const courseObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-fill');
+                    progressBars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            bar.style.transition = 'width 1s ease-in-out';
+                            const currentWidth = bar.style.width;
+                            bar.style.width = '0%';
+                            setTimeout(() => {
+                                bar.style.width = currentWidth;
+                            }, 100);
+                        }, index * 200);
+                    });
+                }
+            });
+        }, {threshold: 0.5});
+
+        // Observe education section for progress animation
+        const educationSection = document.getElementById('education');
+        if (educationSection) {
+            courseObserver.observe(educationSection);
+        }
+
         // Simple animation for hero section
         anime({
             targets: '.gradient-text',
@@ -1306,6 +1902,18 @@
         // Create skills chart after DOM loads
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(createSkillsChart, 1000);
+        });
+
+        // Interactive course progress items
+        document.querySelectorAll('.course-progress-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
         });
     </script>
 </body>
