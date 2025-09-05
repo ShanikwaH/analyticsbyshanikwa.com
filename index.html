@@ -73,6 +73,8 @@
             --dark-bg: #0f172a;
             --dark-card: #1e293b;
             --dark-text: #e2e8f0;
+            --footer-light-bg: #f8fafc;
+            --footer-dark-bg: #0f172a;
         }
         
         body {
@@ -116,6 +118,50 @@
         
         .dark nav {
             background-color: var(--dark-card);
+        }
+        
+        /* Footer theming styles */
+        footer {
+            background-color: var(--footer-light-bg);
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+        
+        .dark footer {
+            background-color: var(--footer-dark-bg);
+            color: var(--dark-text);
+        }
+        
+        footer .text-gray-400 {
+            color: #6b7280;
+        }
+        
+        .dark footer .text-gray-400 {
+            color: #94a3b8;
+        }
+        
+        footer .border-gray-800 {
+            border-color: #d1d5db;
+        }
+        
+        .dark footer .border-gray-800 {
+            border-color: #374151;
+        }
+        
+        footer .bg-gray-800 {
+            background-color: #e5e7eb;
+        }
+        
+        footer .bg-gray-800:hover {
+            background-color: #d1d5db;
+        }
+        
+        .dark footer .bg-gray-800 {
+            background-color: #374151;
+        }
+        
+        .dark footer .bg-gray-800:hover {
+            background-color: #475569;
         }
         
         .gradient-text {
@@ -460,6 +506,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         
         <div class="text-center mt-12">
             <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium">
@@ -840,8 +887,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <!-- Footer with Fixed Theme -->
+    <footer class="py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
@@ -851,13 +898,13 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
-                        <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
-                        <li><a href="#experience" class="text-gray-400 hover:text-white transition">Experience</a></li>
-                        <li><a href="#education" class="text-gray-400 hover:text-white transition">Education</a></li>
-                        <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-600 transition">About</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-blue-600 transition">Projects</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-blue-600 transition">Skills</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-blue-600 transition">Experience</a></li>
+                        <li><a href="#education" class="text-gray-400 hover:text-blue-600 transition">Education</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-blue-600 transition">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-600 transition">Contact</a></li>
                     </ul>
                 </div>
                 <div>
@@ -872,7 +919,7 @@
                         <a href="https://medium.com/@shanikwa.lhaynes"
                         class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition"
                         aria-label="Medium">
-                        <i class="fa-brands fa-medium text-gray-700 text-[20px]" aria-hidden="true"></i>
+                        <i class="fa-brands fa-medium text-white text-[20px]" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="space-y-2 text-gray-400">
