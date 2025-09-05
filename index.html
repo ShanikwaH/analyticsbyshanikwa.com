@@ -289,8 +289,6 @@
             border-radius: 1rem;
             padding: 2rem;
             position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
         }
         
         .dark .modal-content {
@@ -324,83 +322,6 @@
         
         .blog-card:hover {
             transform: translateY(-3px);
-        }
-        
-        .education-timeline {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 0.75rem;
-            height: 0.75rem;
-            background: #10b981;
-            border-radius: 50%;
-        }
-        
-        .education-timeline::after {
-            content: '';
-            position: absolute;
-            left: 0.375rem;
-            top: 1.25rem;
-            width: 2px;
-            height: calc(100% - 0.5rem);
-            background: #e5e7eb;
-        }
-        
-        .education-timeline:last-child::after {
-            display: none;
-        }
-        
-        .dark .education-timeline::after {
-            background: #475569;
-        }
-        
-        .progress-bar {
-            height: 6px;
-            background-color: #e5e7eb;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
-            border-radius: 3px;
-            transition: width 1s ease-in-out;
-        }
-        
-        .dark .progress-bar {
-            background-color: #374151;
-        }
-        
-        .stats-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            color: white;
-            text-align: center;
-        }
-        
-        .achievement-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-        
-        .dark .achievement-badge {
-            background: rgba(59, 130, 246, 0.2);
         }
     </style>
 </head>
@@ -463,23 +384,6 @@
                     <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Tableau</span>
                     <span class="bg-pink-100 text-pink-800 text-sm px-3 py-1 rounded-full">Excel</span>
                 </div>
-                
-                <!-- Stats Section -->
-                <div class="grid grid-cols-3 gap-4 mb-8">
-                    <div class="text-center">
-                        <div class="counter text-2xl font-bold text-blue-600" data-target="11">0</div>
-                        <div class="text-sm text-gray-500">Projects Completed</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="counter text-2xl font-bold text-green-600" data-target="6">0</div>
-                        <div class="text-sm text-gray-500">Months of Study</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="counter text-2xl font-bold text-purple-600" data-target="5000">0</div>
-                        <div class="text-sm text-gray-500">Hours of Learning</div>
-                    </div>
-                </div>
-                
                 <div class="flex space-x-4">
                     <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">View My Projects</a>
                     <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition">Contact Me</a>
@@ -508,23 +412,6 @@
                 <h3 class="text-2xl font-semibold text-gray-800 mb-4">Data-Driven Problem Solver</h3>
                 <p class="text-gray-600 mb-6">Completed my Master of Science in Data Analytics-Data Science Specialization at Western Governors University, I bring a unique blend of analytical expertise and practical experience. My journey spans from criminal justice to data analytics, providing me with diverse perspectives on problem-solving and pattern recognition.</p>
                 <p class="text-gray-600 mb-6">I specialize in statistical modeling, predictive analytics, and creating compelling visualizations that drive decision-making. My approach combines rigorous analysis with clear communication to bridge the gap between data and business strategy.</p>
-                
-                <!-- Achievement Badges -->
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="achievement-badge">
-                        <i data-feather="award" size="16"></i>
-                        MS Data Analytics
-                    </span>
-                    <span class="achievement-badge">
-                        <i data-feather="star" size="16"></i>
-                        6-Month Completion
-                    </span>
-                    <span class="achievement-badge">
-                        <i data-feather="trending-up" size="16"></i>
-                        Career Transition
-                    </span>
-                </div>
-                
                 <div class="grid grid-cols-2 gap-4 mb-8">
                     <div class="flex items-center">
                         <i data-feather="check-circle" class="text-green-500 mr-2"></i>
