@@ -547,202 +547,195 @@
         </div>
     </section>
 
-    <!-- Projects Section with Enhanced Filtering -->
-    <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50 transition-colors duration-300">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
-            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore my comprehensive portfolio of data analytics projects from my Master's program, showcasing expertise across statistical modeling, machine learning, data visualization, and business intelligence.</p>
-        </div>
-        
-        <!-- Project Filters -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="tableau">Tableau</button>
-            <button class="filter-btn" data-filter="python">Python</button>
-            <button class="filter-btn" data-filter="r">R</button>
-            <button class="filter-btn" data-filter="sql">SQL</button>
-            <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
-            <button class="filter-btn" data-filter="statistics">Statistics</button>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
-            <!-- Project 1: Telecom Dashboard -->
-            <div data-aos="fade-up" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="tableau">
-                <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="bar-chart-2" class="text-white" size="64"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold text-gray-800">Telecom Churn Dashboard</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Tableau</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Interactive dashboard analyzing customer churn patterns by internet service, age, contract type, and region.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Customer Analytics</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">KPIs</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Retention Strategy</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="telecom">View Case Study</button>
-                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+<!-- Projects Section with 12 Cards and Case Modals -->
+<section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50 transition-colors duration-300">
+  <div class="text-center mb-10">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+    <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore my comprehensive portfolio of data analytics projects from my Master’s program. Click “View Case Study” on any card for project details.</p>
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 justify-center">
+    <!-- Card 1 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="python methodology" data-project="analyticsjourney">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D596: Data Analytics Journey</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Analytics lifecycle, core skills, and career plan.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-0.5 text-[10px]">Python</span>
+        <span class="bg-green-100 text-green-800 rounded px-2 py-0.5 text-[10px]">Methodology</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task 1.pdf" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="analyticsjourney">View Case Study</button>
+      </div>
+    </div>
 
-            <!-- Project 2: Correctional Costs Analysis -->
-            <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="r statistics">
-                <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="trending-down" class="text-white" size="64"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold text-gray-800">Correctional Costs Analysis</h3>
-                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">R</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Multiple linear regression model analyzing state correctional spending patterns and cost-saving opportunities.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Regression Analysis</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Policy Research</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Cost Reduction</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="correctional">View Case Study</button>
-                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Card 2 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="sql" data-project="datamanagement">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D597: Data Management</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Design and manage modern data pipelines.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-indigo-100 text-indigo-800 rounded px-2 py-0.5 text-[10px]">SQL</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D597/Task 1.pdf" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="datamanagement">View Case Study</button>
+      </div>
+    </div>
 
-            <!-- Project 3: Hospital Readmission Prediction -->
-            <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="python machine-learning">
-                <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="activity" class="text-white" size="64"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold text-gray-800">Medical Readmission Prediction</h3>
-                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Python</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Machine learning model predicting hospital readmissions using patient demographics and treatment data.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Classification</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Healthcare Analytics</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Feature Engineering</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="medical">View Case Study</button>
-                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Card 3 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="python" data-project="analyticsprogramming">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D598: Analytics Programming</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Programming basics for data analytics.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-0.5 text-[10px]">Python</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/Task 1.pdf" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="analyticsprogramming">View Case Study</button>
+      </div>
+    </div>
 
-            <!-- Project 4: Flight Delay Prediction API -->
-            <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="python machine-learning">
-                <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="cloud" class="text-white" size="64"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold text-gray-800">Flight Delay Prediction API</h3>
-                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">Python</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">MLOps pipeline with API deployment for real-time flight delay predictions using MLflow.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">MLOps</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">API Development</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Model Deployment</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="flight">View Case Study</button>
-                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Card 4 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="python datacleaning" data-project="dataprep">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D599: Data Preparation</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Data cleaning, profiling, and validation.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-green-100 text-green-800 rounded px-2 py-0.5 text-[10px]">Python</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task 3.pdf" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="dataprep">View Case Study</button>
+      </div>
+    </div>
 
-            <!-- Project 5: Database Design & Implementation -->
-            <div data-aos="fade-up" data-aos-delay="400" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="sql">
-                <div class="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="database" class="text-white" size="64"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold text-gray-800">Database Design & Implementation</h3>
-                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">SQL</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Comprehensive database solutions including relational and non-relational designs with ETL processes.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Database Design</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">ETL Pipelines</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Data Modeling</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="database">View Case Study</button>
-                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Card 5 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="r statistics" data-project="statistical">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D600: Statistical Data Mining</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Regression, logistic, PCA, and more.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-purple-100 text-purple-800 rounded px-2 py-0.5 text-[10px]">R</span>
+        <span class="bg-pink-100 text-pink-800 rounded px-2 py-0.5 text-[10px]">Stats</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task 1.pdf" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="statistical">View Case Study</button>
+      </div>
+    </div>
 
-            <!-- Project 6: Time Series Revenue Forecasting -->
-            <div data-aos="fade-up" data-aos-delay="500" class="bg-white rounded-xl shadow-md overflow-hidden project-card transition duration-300 project-item" data-category="python statistics">
-                <div class="h-48 bg-gradient-to-br from-pink-400 to-pink-600 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black opacity-20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <i data-feather="trending-up" class="text-white" size="64"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-semibold text-gray-800">Time Series Revenue Forecasting</h3>
-                        <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full">Python</span>
-                    </div>
-                    <p class="text-gray-600 mb-4">Advanced time series analysis of medical facility revenue with ARIMA modeling and seasonal decomposition.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Time Series</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">ARIMA Modeling</span>
-                        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Forecasting</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <button class="text-blue-600 hover:text-blue-800 font-medium text-sm view-project-btn" data-project="timeseries">View Case Study</button>
-                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="text-gray-500 hover:text-gray-700">
-                            <i data-feather="github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-12">
-            <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium">
-                View All Projects on GitHub
-                <i data-feather="external-link" class="ml-2"></i>
-            </a>
-        </div>
-    </section>
+    <!-- Card 6 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="tableau dashboard" data-project="telecom">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D601: Telecom Churn Dashboard</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Tableau dashboard analyzing churn.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-0.5 text-[10px]">Tableau</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/D601_TelecomDashboard.twbx" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="telecom">View Case Study</button>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="python mlops" data-project="flight">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D602: Flight Delay Prediction API</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Production MLOps/MLflow & API deployment.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-orange-100 text-orange-800 rounded px-2 py-0.5 text-[10px]">Python</span>
+        <span class="bg-gray-200 text-gray-800 rounded px-2 py-0.5 text-[10px]">MLOps</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task 3.pdf" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="flight">View Case Study</button>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="python ml" data-project="medical">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D603: Medical Readmission & Clustering</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">ML classification, clustering, and ARIMA.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-purple-100 text-purple-800 rounded px-2 py-0.5 text-[10px]">Python</span>
+        <span class="bg-green-100 text-green-800 rounded px-2 py-0.5 text-[10px]">ML</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task 1.pdf" class="text-blue-600 text-xs underline" target="_blank">Readmission</a>
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task 2.pdf" class="text-blue-600 text-xs underline" target="_blank">Clustering</a>
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task 3.pdf" class="text-blue-600 text-xs underline" target="_blank">Time Series</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="medical">View Case Study</button>
+      </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="python dl" data-project="advanced">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D604: Advanced Analytics Suite</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Deep learning—sound and sentiment.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-blue-100 text-blue-800 rounded px-2 py-0.5 text-[10px]">Python</span>
+        <span class="bg-yellow-100 text-yellow-800 rounded px-2 py-0.5 text-[10px]">DL</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task 1.pdf" class="text-blue-600 text-xs underline" target="_blank">Sound</a>
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task 2.pdf" class="text-blue-600 text-xs underline" target="_blank">Sentiment</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="advanced">View Case Study</button>
+      </div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="python optimization" data-project="optimization">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D605: Optimization Analysis</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Logistics, LP, and resource optimization.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-orange-100 text-orange-800 rounded px-2 py-0.5 text-[10px]">Python</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task 1.pdf" class="text-blue-600 text-xs underline" target="_blank">Inventory</a>
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task 2.pdf" class="text-blue-600 text-xs underline" target="_blank">Routing</a>
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task 3.pdf" class="text-blue-600 text-xs underline" target="_blank">Integer</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="optimization">View Case Study</button>
+      </div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="r statistics" data-project="correctional">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">D606: Correctional Costs Analysis</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">Regression: US state corrections spend.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-green-100 text-green-800 rounded px-2 py-0.5 text-[10px]">R</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Task 2.pdf" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="correctional">View Case Study</button>
+      </div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="project-card w-56 min-h-[128px] bg-white rounded-md shadow-md p-4 flex flex-col justify-between project-item" data-category="sql database" data-project="database">
+      <h4 class="font-semibold text-xs leading-snug mb-2 truncate">Capstone: Database Design &amp; Implementation</h4>
+      <p class="text-xs text-gray-600 mb-2 truncate">SQL/NoSQL, schema and ETL design.</p>
+      <div class="flex flex-wrap gap-1 mb-2">
+        <span class="bg-indigo-100 text-indigo-800 rounded px-2 py-0.5 text-[10px]">SQL</span>
+      </div>
+      <div class="flex gap-2 mt-auto">
+        <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Task 1.pdf" class="text-blue-600 text-xs underline" target="_blank">Tech Report</a>
+        <button class="ml-auto text-blue-600 font-medium text-xs underline view-project-btn" data-project="database">View Case Study</button>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-10">
+    <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium">
+      View All Projects on GitHub
+      <i data-feather="external-link" class="ml-2"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="project-modal" class="project-modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
 
     <!-- Enhanced Skills Section -->
     <section id="skills" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white transition-colors duration-300">
@@ -1455,6 +1448,27 @@
             });
         }
 
+        // Initialize: Force all projects to be visible on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const allProjectItems = document.querySelectorAll('.project-item');
+            console.log('Found', allProjectItems.length, 'project items');
+            
+            // Force all projects to be visible
+            allProjectItems.forEach((item, index) => {
+                item.classList.remove('hidden');
+                item.style.display = 'block';
+                item.style.visibility = 'visible';
+                item.style.opacity = '1';
+                console.log('Showing project', index + 1, ':', item.querySelector('h3').textContent);
+            });
+            
+            // Update the all projects button count
+            const allBtn = document.querySelector('[data-filter="all"]');
+            if (allBtn) {
+                allBtn.textContent = `All Projects (${allProjectItems.length})`;
+            }
+        });
+
         // Enhanced Project Filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectItems = document.querySelectorAll('.project-item');
@@ -1467,17 +1481,23 @@
                 btn.classList.add('active');
                 
                 const filterValue = btn.getAttribute('data-filter');
+                let visibleCount = 0;
                 
                 projectItems.forEach(item => {
-                    const categories = item.getAttribute('data-category');
+                    const categories = item.getAttribute('data-category') || '';
                     if (filterValue === 'all' || categories.includes(filterValue)) {
                         item.classList.remove('hidden');
                         item.style.display = 'block';
+                        item.style.visibility = 'visible';
+                        item.style.opacity = '1';
+                        visibleCount++;
                     } else {
                         item.classList.add('hidden');
                         item.style.display = 'none';
                     }
                 });
+                
+                console.log('Filter:', filterValue, 'Visible:', visibleCount);
             });
         });
 
@@ -1682,6 +1702,59 @@
                     </div>
                 `
             },
+            statistical: {
+                title: 'Statistical Data Mining Suite - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive statistical analysis suite including linear regression, logistic regression, and principal component analysis for data mining applications.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Organizations needed robust statistical models to understand relationships in complex datasets and make data-driven predictions.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Project Components</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li><strong>Linear Regression Analysis:</strong> Predicting continuous outcomes with multiple variables</li>
+                        <li><strong>Logistic Regression:</strong> Binary classification with probability estimation</li>
+                        <li><strong>Principal Component Analysis:</strong> Dimensionality reduction and feature selection</li>
+                        <li>Comprehensive model validation and diagnostic testing</li>
+                        <li>Statistical significance testing and confidence intervals</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Linear models achieved R² values exceeding 0.85 for key business metrics</li>
+                        <li>Logistic regression models demonstrated 88% classification accuracy</li>
+                        <li>PCA reduced dimensionality by 70% while retaining 95% of variance</li>
+                        <li>Identified key predictive variables for business decision-making</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-emerald-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-emerald-800 mb-2">Resources</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/EQffebbJjlxLg2HNLY86abUB6ueF6Gs1NYw2o3DSU80vaQ?e=lbPth4" 
+                               class="text-emerald-600 hover:text-emerald-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Linear Regression Video
+                            </a>
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/EQn_Wli9XVNFi8Lvz_ltOg8BIxqxVJOxmTOLgtS-SfGUIg?e=P40dYd" 
+                               class="text-emerald-600 hover:text-emerald-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Logistic Regression Video
+                            </a>
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/EdrOIlfwFYZNvJLZKBkMISIBRnI1enRsB75P-74zsk7rEw?e=jscuiA" 
+                               class="text-emerald-600 hover:text-emerald-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>PCA Analysis Video
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">R</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Statistical Modeling</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Regression Analysis</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">PCA</span>
+                    </div>
+                `
+            },
             database: {
                 title: 'Database Design & Implementation - Case Study',
                 content: `
@@ -1728,6 +1801,263 @@
                         <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">MongoDB</span>
                         <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">ETL Pipelines</span>
                         <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Data Modeling</span>
+                    </div>
+                `
+            },
+            dataprep: {
+                title: 'Data Preparation & Exploration - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive data preparation suite including data profiling, statistical testing, and market basket analysis for retail insights.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Raw datasets required extensive cleaning, validation, and analysis to extract meaningful insights for business decision-making.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Project Components</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li><strong>Data Profiling & Cleaning:</strong> Comprehensive data quality assessment and remediation</li>
+                        <li><strong>Statistical Analysis & Testing:</strong> Hypothesis testing and confidence interval estimation</li>
+                        <li><strong>Market Basket Analysis:</strong> Association rule mining for product recommendations</li>
+                        <li>Outlier detection and treatment strategies</li>
+                        <li>Missing data imputation and validation</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Improved data quality by 95% through systematic cleaning procedures</li>
+                        <li>Identified statistically significant customer behavior patterns</li>
+                        <li>Generated actionable product association rules with 85% confidence</li>
+                        <li>Created automated data validation pipelines for ongoing quality assurance</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-cyan-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-cyan-800 mb-2">Resources</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/ER3kh0lIeHhMswadSkkyjm8BzjyavNJdrEbaONKjhGmBBA?e=OyDf30" 
+                               class="text-cyan-600 hover:text-cyan-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Data Profiling Video
+                            </a>
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/EQqAgGdhvNJBmlWryecYqpgB8kZoGB_8Qx8uOjEZQk4smg?e=X4aU7D" 
+                               class="text-cyan-600 hover:text-cyan-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Statistical Testing Video
+                            </a>
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/Ec0C3jXLoAhIsIhDnqtZfeQBT-fROpXqeEo_S_0af7khEg?e=u2652B" 
+                               class="text-cyan-600 hover:text-cyan-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Market Basket Video
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Pandas</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Statistical Testing</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Association Rules</span>
+                    </div>
+                `
+            },
+            clustering: {
+                title: 'Hospital Patient Clustering - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">K-means clustering analysis to segment hospital patients for improved care management and resource allocation strategies.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Healthcare administrators needed to identify patient groups with similar characteristics to optimize care protocols and resource allocation.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Methodology</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Comprehensive feature engineering on patient demographic and clinical data</li>
+                        <li>Applied multiple clustering algorithms (K-means, Hierarchical, DBSCAN)</li>
+                        <li>Used elbow method and silhouette analysis for optimal cluster selection</li>
+                        <li>Performed cluster validation and interpretation</li>
+                        <li>Developed patient profiles for each identified segment</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Identified 5 distinct patient clusters with 92% silhouette score</li>
+                        <li>High-risk elderly cluster requiring intensive monitoring</li>
+                        <li>Young healthy cluster suitable for outpatient care</li>
+                        <li>Chronic condition cluster needing specialized care protocols</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-violet-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-violet-800 mb-2">Resources</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://1drv.ms/v/c/c04b568a9f496a65/EVKLr_1bENpIklgA45iEuLQBm_JjN6k1lyJfpADcq9UbyQ?e=Cx7szq" 
+                               class="text-violet-600 hover:text-violet-800 flex items-center" target="_blank">
+                                <i data-feather="play-circle" class="mr-2"></i>Video Presentation
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%202.pdf" 
+                               class="text-violet-600 hover:text-violet-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Analysis Report
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Scikit-learn</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">K-means</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Healthcare Analytics</span>
+                    </div>
+                `
+            },
+            advanced: {
+                title: 'Advanced Analytics Suite - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">Deep learning projects including environmental sound classification and sentiment analysis using neural networks and advanced machine learning techniques.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Organizations needed advanced AI capabilities for processing complex unstructured data including audio signals and text sentiment.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Project Components</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li><strong>Environmental Sound Classification:</strong> Deep learning model for audio signal recognition</li>
+                        <li><strong>Sentiment Analysis:</strong> Neural network approach to text sentiment classification</li>
+                        <li>Feature extraction from raw audio and text data</li>
+                        <li>Neural network architecture design and optimization</li>
+                        <li>Model training with regularization and validation strategies</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Environmental sound classifier achieved 87% accuracy on test set</li>
+                        <li>Sentiment analysis model reached 91% accuracy on validation data</li>
+                        <li>Successfully processed multi-modal data with deep learning techniques</li>
+                        <li>Demonstrated proficiency in advanced neural network architectures</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-rose-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-rose-800 mb-2">Resources</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task%201.pdf" 
+                               class="text-rose-600 hover:text-rose-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Sound Classification Report
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task%202.pdf" 
+                               class="text-rose-600 hover:text-rose-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Sentiment Analysis Report
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">TensorFlow</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Neural Networks</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Deep Learning</span>
+                    </div>
+                `
+            },
+            optimization: {
+                title: 'Optimization Analysis - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">Operations research projects including inventory optimization and fleet route optimization using linear programming and optimization techniques.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Organizations needed optimal solutions for complex resource allocation and logistics problems to minimize costs and maximize efficiency.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Project Components</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li><strong>GL Organics Inventory Optimization:</strong> Linear programming for inventory management</li>
+                        <li><strong>Amazon Air Fleet Optimization:</strong> Route optimization for delivery networks</li>
+                        <li><strong>Mixed Integer Programming:</strong> Complex constraint satisfaction problems</li>
+                        <li>Mathematical modeling of business constraints</li>
+                        <li>Sensitivity analysis and scenario planning</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Reduced inventory holding costs by 23% through optimal ordering strategies</li>
+                        <li>Optimized fleet routes resulting in 15% reduction in delivery time</li>
+                        <li>Improved resource utilization by 18% through mathematical optimization</li>
+                        <li>Provided scalable optimization frameworks for future expansion</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-amber-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-amber-800 mb-2">Resources</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%201.pdf" 
+                               class="text-amber-600 hover:text-amber-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Inventory Optimization
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%202.pdf" 
+                               class="text-amber-600 hover:text-amber-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Route Optimization
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%203.pdf" 
+                               class="text-amber-600 hover:text-amber-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Mixed Integer Programming
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Linear Programming</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Operations Research</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Optimization</span>
+                    </div>
+                `
+            },
+            programming: {
+                title: 'Analytics Programming - Case Study',
+                content: `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive programming projects demonstrating data analytics fundamentals, career development planning, and strategic thinking in analytics applications.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Challenge</h4>
+                    <p class="text-gray-600 mb-4">Establish foundation programming skills and strategic planning capabilities essential for data analytics career development.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Project Components</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li><strong>Data Analytics Life Cycle:</strong> Comprehensive understanding of analytics methodology</li>
+                        <li><strong>Career Planning:</strong> Strategic development of professional analytics pathway</li>
+                        <li><strong>Programming Fundamentals:</strong> Core programming concepts and implementation</li>
+                        <li>Professional development and industry research</li>
+                        <li>Technical skill assessment and gap analysis</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Results</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                        <li>Developed comprehensive understanding of data analytics methodology</li>
+                        <li>Created strategic 5-year career development plan</li>
+                        <li>Established strong foundation in programming principles</li>
+                        <li>Identified key competencies for analytics career success</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-teal-50 rounded-lg">
+                        <h4 class="text-lg font-semibold text-teal-800 mb-2">Resources</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task%201.pdf" 
+                               class="text-teal-600 hover:text-teal-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Analytics Life Cycle
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task%202.pdf" 
+                               class="text-teal-600 hover:text-teal-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Career Plan
+                            </a>
+                            <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/Task%201.pdf" 
+                               class="text-teal-600 hover:text-teal-800 flex items-center" target="_blank">
+                                <i data-feather="file-text" class="mr-2"></i>Program Planning
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Analytics Methodology</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">Strategic Planning</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Career Development</span>
                     </div>
                 `
             },
@@ -1781,6 +2111,170 @@
                 `
             }
         };
+
+        // Expanded projectModals with one case modal per project
+const projectModals = {
+  analyticsjourney: {
+    title: 'D596: Data Analytics Journey',
+    content: `
+      <p class="text-gray-700 mb-3">Comprehensive review of the data analytics project lifecycle covering stakeholder needs, process mapping, skill assessments, and a 5-year career plan. Emphasizes methodology, technical skills gap identification, and career alignment.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>Analytics lifecycle mapped from question to delivery</li>
+        <li>Includes detailed professional roadmap</li>
+        <li>Technical planning and self-audit exercises</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task 1.pdf" class="text-blue-600 underline" target="_blank">Download Tech Report</a>
+    `
+  },
+  datamanagement: {
+    title: 'D597: Data Management',
+    content: `
+      <p class="text-gray-700 mb-3">Data pipeline design and management project building skills in relational design, ETL workflows, and QC frameworks for business-analytic ops.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>Relational schema and SQL integration</li>
+        <li>Orchestration of data movement and cleansing</li>
+        <li>Best practices for documentation and transformation</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D597/Task 1.pdf" class="text-blue-600 underline" target="_blank">Download Tech Report</a>
+    `
+  },
+  analyticsprogramming: {
+    title: 'D598: Analytics Programming',
+    content: `
+      <p class="text-gray-700 mb-3">Core programming project covering Python for data wrangling, use of computational notebooks, and scripting for analytics pipelines.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>End-to-end data handling in Python</li>
+        <li>Focus on automation, scripting, and reproducibility</li>
+        <li>Career fit: beginner-efficient code for analysts</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/Task 1.pdf" class="text-blue-600 underline" target="_blank">Download Tech Report</a>
+    `
+  },
+  dataprep: {
+    title: 'D599: Data Preparation',
+    content: `
+      <p class="text-gray-700 mb-3">Focused on the data cleaning and preparation phase. Includes profiling, fixing missing values, and market basket analysis for retail transactional datasets.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>Data profiling and validation workflow</li>
+        <li>Statistical testing and outlier strategies</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task 3.pdf" class="text-blue-600 underline" target="_blank">Download Tech Report</a>
+    `
+  },
+  statistical: {
+    title: 'D600: Statistical Data Mining',
+    content: `
+      <p class="text-gray-700 mb-3">Project suite with linear and logistic regression, PCA, and model diagnostics. Business and research data are mined for signal using R and Tidyverse, with focus on statistical validation.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>Multiple regression/diagnostics and PCA</li>
+        <li>Statistical accuracy checks</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task 1.pdf" class="text-blue-600 underline" target="_blank">Download Tech Report</a>
+    `
+  },
+  telecom: {
+    title: 'D601: Telecom Churn Dashboard',
+    content: `
+      <p class="text-gray-700 mb-3">Interactive Tableau dashboard analyzing customer churn in telecom. Examines contract type, service, and demographic trends for targeted retention efforts. Features accessible design and executive KPIs.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>Data cleaning, EDA, and 4+ Tableau visuals</li>
+        <li>Month-to-month contracts have 40% higher churn</li>
+        <li>Impact: $2.3M in annual retention value</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/D601_TelecomDashboard.twbx" class="text-blue-600 underline" target="_blank">Download Tableau File</a>
+    `
+  },
+  flight: {
+    title: 'D602: Flight Delay Prediction API',
+    content: `
+      <p class="text-gray-700 mb-3">End-to-end MLOps project—including data pipeline, supervised ML, model registry, and RESTful Flask API for flight delay predictions.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>ML model training tracked by MLflow</li>
+        <li>API response &lt; 200ms, prod-ready, auto-retraining</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task 3.pdf" class="text-blue-600 underline" target="_blank">Download Tech Report</a>
+    `
+  },
+  medical: {
+    title: 'D603: Medical Readmission & Clustering',
+    content: `
+      <p class="text-gray-700 mb-3">Combined medical data projects: (1) Classification for predicting readmission risk, (2) K-means clustering to segment patients, (3) ARIMA and time series for trend forecasting.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>84% accuracy model for hospital readmission</li>
+        <li>Patient segment profiles for better care</li>
+        <li>Time series model with 4.2% MAPE</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task 1.pdf" class="text-blue-600 underline" target="_blank">Readmission Report</a><br>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task 2.pdf" class="text-blue-600 underline" target="_blank">Clustering Report</a><br>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task 3.pdf" class="text-blue-600 underline" target="_blank">Time Series Report</a>
+    `
+  },
+  advanced: {
+    title: 'D604: Advanced Analytics Suite',
+    content: `
+      <p class="text-gray-700 mb-3">Neural networks and advanced ML: (1) environmental sound classification (2) sentiment analysis on text reviews. Full deep learning workflow documented in tech reports.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>87%+ accuracy: environmental audio NN</li>
+        <li>91%+ accuracy: sentiment neural network</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task 1.pdf" class="text-blue-600 underline" target="_blank">Sound Report</a><br>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task 2.pdf" class="text-blue-600 underline" target="_blank">Sentiment Report</a>
+    `
+  },
+  optimization: {
+    title: 'D605: Optimization Analysis',
+    content: `
+      <p class="text-gray-700 mb-3">Three-pronged optimization: inventory LP, vehicle routing, and integer programming problems. Demonstrates resource, logistics, and cost minimization.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>Reduced holding costs by 23%</li>
+        <li>Fleet delivery time cut by 15%</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task 1.pdf" class="text-blue-600 underline" target="_blank">Inventory Report</a><br>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task 2.pdf" class="text-blue-600 underline" target="_blank">Routing Report</a><br>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task 3.pdf" class="text-blue-600 underline" target="_blank">Integer Report</a>
+    `
+  },
+  correctional: {
+    title: 'D606: Correctional Costs Analysis',
+    content: `
+      <p class="text-gray-700 mb-3">Multiple regression model for state correctional spending. Recidivism emerged as main cost driver, suggesting high ROI for policy changes and interventions.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>Explains 46% of correctional cost variation</li>
+        <li>Quantitative policy recommendations</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Task 2.pdf" class="text-blue-600 underline" target="_blank">Download Tech Report</a>
+    `
+  },
+  database: {
+    title: 'Capstone: Database Design &amp; Implementation',
+    content: `
+      <p class="text-gray-700 mb-3">Capstone: Builds from whiteboard schema to implementation for both relational and NoSQL, with ETL and full data management. Includes backups, integrity tests, and documentation.</p>
+      <ul class="list-disc list-inside text-gray-600 mb-3 text-sm">
+        <li>Relational schema, NoSQL doc-store, ETL</li>
+        <li>Indexed for speed, fully validated data</li>
+      </ul>
+      <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Task 1.pdf" class="text-blue-600 underline" target="_blank">Download Tech Report</a>
+    `
+  }
+};
+// Modal functionality (same as current, just add these project keys)
+const modal = document.getElementById('project-modal');
+const modalBody = document.getElementById('modal-body');
+const closeModal = document.querySelector('.close-modal');
+const viewProjectBtns = document.querySelectorAll('.view-project-btn');
+
+viewProjectBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.getAttribute('data-project');
+    const project = projectModals[key];
+    if (project) {
+      modalBody.innerHTML = `<h2 class="text-2xl font-bold text-gray-800 mb-4">${project.title}</h2>${project.content}`;
+      modal.style.display = 'block';
+    }
+  });
+});
+closeModal.addEventListener('click', () => { modal.style.display = 'none'; });
+window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
 
         // Modal functionality
         const modal = document.getElementById('project-modal');
