@@ -483,15 +483,19 @@
             border-radius: 50%;
             pointer-events: none;
         }
-
+        
         .sample-data-section {
-    background: #f8fafc;
-    padding: 3rem 0;
-    border-radius: 12px;
-    margin: 2rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    margin: 5rem 0 3rem 0; /* Increased top margin */
+    position: relative;
+    overflow: hidden;
+    clear: both; /* Ensures it clears any floated elements */
+    z-index: 1; /* Lower z-index to prevent overlap */
 }
 
-.sample-download {
+        .sample-download {
     display: flex;
     justify-content: space-between;
     align-items: center;
