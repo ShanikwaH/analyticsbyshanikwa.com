@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Portfolio Projects by Shanikwa Haynes - Data Analysis, Visualization, and Machine Learning Projects">
+    <meta name="keywords" content="data analysis projects, Python projects, R projects, SQL projects, Tableau dashboards, machine learning projects">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Projects | Shanikwa Haynes - Data Analyst">
+    <meta property="og:description" content="Explore data analysis, visualization, and machine learning projects by Shanikwa Haynes.">
+    <meta property="og:image" content="https://analyticsbyshanikwa.com/og-image.jpg">
+    <meta property="og:url" content="https://analyticsbyshanikwa.com/projects">
+    <meta property="og:type" content="website">
+    
+    <title>Projects | Shanikwa Haynes - Data Analyst Portfolio</title>
+    
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P47R83QBPK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P47R83QBPK');
+    </script>
+    
+    <!-- External CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Load JavaScript after CSS -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #e2e8f0;
+            --footer-light-bg: #f8fafc;
+            --footer-dark-bg: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+        
+        .dark {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        .dark .bg-white {
+            background-color: var(--dark-card);
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #0f172a;
+        }
+        
+        .dark .text-gray-900 {
+            color: var(--dark-text);
+        }
+        
+        .dark .text-gray-800 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-700 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-600 {
+            color: #64748b;
+        }
+        
+        .dark .border-gray-300 {
+            border-color: #475569;
+        }
+        
+        .dark nav {
+            background-color: var(--dark-card);
+        }
+        
+        footer {
+            background-color: var(--footer-light-bg);
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+        
+        .dark footer {
+            background-color: var(--footer-dark-bg);
+            color: var(--dark-text);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 1200px;
+            border-radius: 10px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .dark .modal-content {
+            background-color: var(--dark-card);
+            border-color: #475569;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+
+        .dark .close:hover,
+        .dark .close:focus {
+            color: #fff;
+        }
+
+        /* Header and navigation styles */
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: white;
+        }
+
+        .header-logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .fixed-nav {
+            top: 0;
+        }
+
+        /* Tab styles */
+        .tab-container {
+            display: flex;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .dark .tab-container {
+            border-bottom-color: #475569;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: #6b7280;
+            transition: all 0.3s;
+        }
+
+        .dark .tab-btn {
+            color: #94a3b8;
+        }
+
+        .tab-btn.active {
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .project-report {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .dark .project-report {
+            border-color: #475569;
+        }
+
+        .project-video {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .task-card {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dark .task-card {
+            background: var(--dark-card);
+        }
+
+        .course-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .interactive-hover {
+            transition: all 0.3s ease;
+        }
+
+        .interactive-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .project-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        .dark .filter-btn {
+            background: var(--dark-card);
+            border-color: #475569;
+            color: #94a3b8;
+        }
+
+        .project-item {
+            transition: all 0.3s ease;
+        }
+
+        .project-item.hidden {
+            display: none;
+        }
+
+        .completion-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .completed {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header with Logo -->
+    <div class="header-container">
+        <img src="https://raw.githubusercontent.com/ShanikwaH/analyticsbyshanikwa.com/main/analytics_logo.svg" 
+             alt="Analytics by Shanikwa Logo" 
+             class="header-logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-20 transition-colors duration-300 fixed-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex space-x-8 items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-xl font-semibold text-gray-800">Shanikwa Haynes</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="projects.html" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="https://shanikwah.github.io/shanikwa-ai-portfolio" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
+                    <a href="https://ai-bi-dashboard-yajxi5tkqxsrpguy7yh8zu.streamlit.app/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
+                    <a href="index.html#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="index.html#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="index.html#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
+                    <a href="index.html#blog" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Toggle mobile menu" title="Toggle mobile menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 py-2 bg-white">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Home</a>
+            <a href="index.html#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">About</a>
+            <a href="projects.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projects</a>
+            <a href="https://shanikwah.github.io/shanikwa-ai-portfolio" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="block py-2 text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
+            <a href="https://ai-bi-dashboard-yajxi5tkqxsrpguy7yh8zu.streamlit.app/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="block py-2 text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
+            <a href="index.html#skills" class="block py-2 text-gray-700 hover:text-blue-600 transition">Skills</a>
+            <a href="index.html#experience" class="block py-2 text-gray-700 hover:text-blue-600 transition">Experience</a>
+            <a href="index.html#education" class="block py-2 text-gray-700 hover:text-blue-600 transition">Education</a>
+            <a href="index.html#blog" class="block py-2 text-gray-700 hover:text-blue-600 transition">Blog</a>
+            <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">My Projects</h1>
+                <p class="text-xl text-gray-600">Comprehensive portfolio of data analytics and data science projects</p>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="tableau">Tableau</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="r">R</button>
+                <button class="filter-btn" data-filter="sql">SQL</button>
+                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- D596 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d596" data-category="analytics">
+                    <div class="h-32 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="compass" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D596: The Data Analytics Journey</h3>
+                    <p class="text-gray-600 mb-4">Foundation course on data analytics lifecycle and career planning</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 5 days</span>
+                        <span>Completed: Mar 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">Analytics</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D597 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d597" data-category="sql database">
+                    <div class="h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="database" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D597: Data Management</h3>
+                    <p class="text-gray-600 mb-4">Database design and implementation (SQL & NoSQL)</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 22 days</span>
+                        <span>Completed: Apr 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">SQL</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D598 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d598" data-category="python">
+                    <div class="h-32 bg-gradient-to-br from-green-400 to-green-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="code" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D598: Analytics Programming</h3>
+                    <p class="text-gray-600 mb-4">Python programming for data analytics</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 24 days</span>
+                        <span>Completed: May 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Python</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D599 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d599" data-category="python">
+                    <div class="h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="search" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D599: Data Preparation & Exploration</h3>
+                    <p class="text-gray-600 mb-4">Data cleaning, statistical testing, and market basket analysis</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 31 days</span>
+                        <span>Completed: Jun 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Python</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D600 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d600" data-category="python machine-learning">
+                    <div class="h-32 bg-gradient-to-br from-red-400 to-red-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="trending-up" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D600: Statistical Data Mining</h3>
+                    <p class="text-gray-600 mb-4">Advanced statistical modeling with Python</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 25 days</span>
+                        <span>Completed: Jun 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Python</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D601 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d601" data-category="tableau">
+                    <div class="h-32 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="bar-chart-2" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D601: Data Storytelling</h3>
+                    <p class="text-gray-600 mb-4">Data visualization and dashboards with Tableau</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 4 days</span>
+                        <span>Completed: Jun 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Tableau</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D602 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d602" data-category="python machine-learning">
+                    <div class="h-32 bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="upload-cloud" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D602: Deployment</h3>
+                    <p class="text-gray-600 mb-4">MLOps and model deployment</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 29 days</span>
+                        <span>Completed: Jul 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded">MLOps</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D603 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d603" data-category="python machine-learning">
+                    <div class="h-32 bg-gradient-to-br from-pink-400 to-pink-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="cpu" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D603: Machine Learning</h3>
+                    <p class="text-gray-600 mb-4">Classification, clustering, and time series in healthcare</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 30 days</span>
+                        <span>Completed: Jul 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded">ML</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D604 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d604" data-category="python machine-learning">
+                    <div class="h-32 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="zap" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D604: Advanced Analytics</h3>
+                    <p class="text-gray-600 mb-4">Deep learning and neural networks</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 15 days</span>
+                        <span>Completed: Jul 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Deep Learning</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D605 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d605" data-category="python">
+                    <div class="h-32 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="target" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D605: Optimization</h3>
+                    <p class="text-gray-600 mb-4">Linear and mixed integer programming</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 12 days</span>
+                        <span>Completed: Jul 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded">Optimization</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+
+                <!-- D606 Project Card -->
+                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d606" data-category="r">
+                    <div class="h-32 bg-gradient-to-br from-violet-400 to-violet-600 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-feather="award" class="text-white" size="48"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">D606: Data Science Capstone</h3>
+                    <p class="text-gray-600 mb-4">State correctional spending analysis</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Duration: 12 days</span>
+                        <span>Completed: Aug 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-violet-100 text-violet-800 text-xs px-2 py-1 rounded">Capstone</span>
+                        <span class="completion-badge completed">Completed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://github.com/ShanikwaH/WGU_Portfolio" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium interactive-hover">
+                    View Full Portfolio on GitHub
+                    <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">Contact</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li>
+                            <a href="mailto:shanikwa.lhaynes@gmail.com" class="text-gray-600 hover:text-blue-600">
+                                shanikwa.lhaynes@gmail.com
+                            </a>
+                        </li>
+                        <li class="text-gray-600">Based in GA, United States</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="projects.html" class="text-gray-600 hover:text-blue-600">Projects</a></li>
+                        <li><a href="index.html#skills" class="text-gray-600 hover:text-blue-600">Skills</a></li>
+                        <li><a href="index.html#blog" class="text-gray-600 hover:text-blue-600">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">Follow Me</h3>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://www.linkedin.com/in/shanikwahaynes" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" 
+                           class="text-gray-600 hover:text-blue-600" title="Connect with me on LinkedIn" aria-label="Connect with me on LinkedIn">
+                            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/ShanikwaH" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" 
+                           class="text-gray-600 hover:text-gray-900" title="View my GitHub profile" aria-label="View my GitHub profile">
+                            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8 text-center">
+                <p class="text-gray-600">&copy; 2025 Shanikwa Haynes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS (Animate On Scroll)
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 1000,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+            // Initialize Feather Icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+
+        // Mobile menu toggle with error handling
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Project modal data - COMPLETE DATA FOR ALL 11 COURSES
+        const projectModals = {
+            d596: {
+                title: 'D596: The Data Analytics Journey - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Foundation course establishing understanding of the data analytics lifecycle and strategic career planning in the data analytics field.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>5 days</div>
+                            <div><strong>Time Spent:</strong><br>120 hours</div>
+                            <div><strong>Completed:</strong><br>March 17, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Tasks & Deliverables</button>
+                        <button class="tab-btn" data-tab="insights">Key Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">This foundational course introduces students to the data analytics lifecycle, providing a comprehensive overview of the field and strategic career planning. Students explore the various phases of data analytics projects from problem identification through implementation and evaluation.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Learning Objectives</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 mb-4">
+                            <li>Understand the complete data analytics lifecycle</li>
+                            <li>Identify career paths and opportunities in data analytics</li>
+                            <li>Develop strategic career planning skills</li>
+                            <li>Explore industry best practices and standards</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: The Data Analytics Life Cycle</h4>
+                                <p class="text-gray-600 mb-3">Comprehensive analysis of the data analytics lifecycle with practical application examples.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Report PDF
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D596/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Career Plan</h4>
+                                <p class="text-gray-600 mb-3">Strategic career planning document outlining professional development goals and pathways in data analytics.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Career Plan PDF
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D596/Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Key Takeaways</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Foundation Setting</h5>
+                                <p class="text-blue-700">This course established the fundamental understanding of data analytics as a systematic approach to problem-solving, emphasizing the importance of structured methodologies.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Career Clarity</h5>
+                                <p class="text-green-700">Developed a clear roadmap for transitioning from public service to data analytics, identifying specific skill gaps and development priorities.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Industry Understanding</h5>
+                                <p class="text-purple-700">Gained comprehensive awareness of data analytics applications across industries and the strategic value of data-driven decision making.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d597: {
+                title: 'D597: Data Management - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Comprehensive database design and implementation covering both relational and non-relational database systems with hands-on SQL development.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>22 days</div>
+                            <div><strong>Time Spent:</strong><br>528 hours</div>
+                            <div><strong>Completed:</strong><br>April 8, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Tasks & Deliverables</button>
+                        <button class="tab-btn" data-tab="videos">Video Presentations</button>
+                        <button class="tab-btn" data-tab="insights">Technical Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Advanced database design and implementation course covering both relational (SQL) and non-relational (NoSQL) database systems. Students design, implement, and optimize databases while developing proficiency in SQL programming and database administration.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Technical Skills Developed</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Relational database design principles</li>
+                                <li>SQL query optimization and performance</li>
+                                <li>Database normalization techniques</li>
+                                <li>Index design and implementation</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>NoSQL database architectures</li>
+                                <li>Document and key-value store design</li>
+                                <li>Database security and access control</li>
+                                <li>Performance monitoring and tuning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: Relational Database Design and Implementation</h4>
+                                <p class="text-gray-600 mb-3">Complete relational database design for a business scenario including normalization, indexing, and SQL implementation.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D597/D597%20Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Relational DB Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D597/D597%20Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Non-Relational Database Design and Implementation</h4>
+                                <p class="text-gray-600 mb-3">NoSQL database design and implementation demonstrating document store architecture and query optimization.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D597/D597%20Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View NoSQL DB Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D597/D597%20Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="videos">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 1 Video Presentation: Relational Database Implementation</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/10gQEvWNyAL3DSXn5RFw20vaHd_yH8JQ9/preview" allow="autoplay"></iframe>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 2 Video Presentation: NoSQL Database Implementation</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/1EljPHAEDGeWAH0ZIt5hkThLbkCg183Il/preview" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Technical Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Relational Database Mastery</h5>
+                                <p class="text-blue-700">Designed and implemented a fully normalized relational database with complex joins, indexes, and stored procedures, achieving optimal query performance.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">NoSQL Architecture</h5>
+                                <p class="text-green-700">Successfully implemented document-based NoSQL database with optimized data structures for high-volume, flexible data storage requirements.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Performance Optimization</h5>
+                                <p class="text-purple-700">Applied advanced indexing strategies and query optimization techniques resulting in 40% improvement in database response times.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d598: {
+                title: 'D598: Analytics Programming - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Comprehensive programming fundamentals with Python focusing on data structures, algorithms, and analytics applications.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>24 days</div>
+                            <div><strong>Time Spent:</strong><br>576 hours</div>
+                            <div><strong>Completed:</strong><br>May 3, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Programming Tasks</button>
+                        <button class="tab-btn" data-tab="code">Code Examples</button>
+                        <button class="tab-btn" data-tab="insights">Programming Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Foundation programming course emphasizing Python development for data analytics applications. Students develop proficiency in programming fundamentals, data structures, and algorithm design while building practical analytics tools.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Programming Concepts Covered</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Python syntax and programming fundamentals</li>
+                                <li>Data structures (lists, dictionaries, sets)</li>
+                                <li>Control flow and error handling</li>
+                                <li>Function design and modularity</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Object-oriented programming principles</li>
+                                <li>File I/O and data processing</li>
+                                <li>Algorithm design and optimization</li>
+                                <li>Testing and debugging strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: Program Planning</h4>
+                                <p class="text-gray-600 mb-3">Comprehensive program design document outlining software development lifecycle and project planning methodologies.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Program Planning Document
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D598/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Data Processing Application</h4>
+                                <p class="text-gray-600 mb-3">Python application for data processing and analysis with comprehensive error handling and user interface design.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/D598_Task2_Report.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Task 2 Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D598/D598_Task2_Report.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 3: Advanced Analytics Program</h4>
+                                <p class="text-gray-600 mb-3">Complex Python application demonstrating advanced programming concepts and analytics implementation.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/D598_Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Task 3 Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D598/D598_Task%203.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="code">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Programming Examples</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-800 mb-2">Data Processing Functions</h5>
+                                <pre class="bg-gray-800 text-green-400 p-3 rounded overflow-x-auto"><code>def process_analytics_data(data_file):
+    """Process and analyze data from CSV file"""
+    try:
+        with open(data_file, 'r') as file:
+            data = csv.reader(file)
+            processed_data = []
+            for row in data:
+                # Data validation and processing
+                if validate_row(row):
+                    processed_data.append(transform_data(row))
+        return processed_data
+    except FileNotFoundError:
+        print(f"Error: File {data_file} not found")
+        return None</code></pre>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-800 mb-2">Statistical Analysis Class</h5>
+                                <pre class="bg-gray-800 text-green-400 p-3 rounded overflow-x-auto"><code>class DataAnalyzer:
+    def __init__(self, dataset):
+        self.data = dataset
+        self.results = {}
+    
+    def calculate_statistics(self):
+        """Calculate descriptive statistics"""
+        self.results['mean'] = sum(self.data) / len(self.data)
+        self.results['median'] = self.find_median()
+        self.results['std_dev'] = self.calculate_std_deviation()
+        return self.results</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Programming Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Foundation Mastery</h5>
+                                <p class="text-blue-700">Developed strong Python programming fundamentals with emphasis on clean, maintainable code and proper documentation practices.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Algorithm Implementation</h5>
+                                <p class="text-green-700">Successfully implemented various algorithms for data processing, sorting, and analysis with optimized performance characteristics.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Problem-Solving Approach</h5>
+                                <p class="text-purple-700">Developed systematic approach to breaking down complex problems into manageable components with structured solution design.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d599: {
+                title: 'D599: Data Preparation and Exploration - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Comprehensive data preparation, cleaning, and exploratory analysis using Python with statistical testing and market basket analysis.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>31 days</div>
+                            <div><strong>Time Spent:</strong><br>744 hours</div>
+                            <div><strong>Completed:</strong><br>June 3, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Analysis Tasks</button>
+                        <button class="tab-btn" data-tab="videos">Video Presentations</button>
+                        <button class="tab-btn" data-tab="insights">Statistical Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Advanced data preparation and exploratory analysis course focusing on data quality assessment, statistical testing, and pattern discovery. Students master data cleaning techniques, hypothesis testing, and market basket analysis for business insights.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Analytical Techniques Covered</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Data profiling and quality assessment</li>
+                                <li>Missing data imputation strategies</li>
+                                <li>Outlier detection and treatment</li>
+                                <li>Statistical hypothesis testing</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Correlation and association analysis</li>
+                                <li>Market basket analysis techniques</li>
+                                <li>Data transformation and normalization</li>
+                                <li>Exploratory data visualization</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: Data Profiling and Cleaning Report</h4>
+                                <p class="text-gray-600 mb-3">Comprehensive data quality assessment and cleaning process documentation with before/after analysis.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Data Cleaning Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D599/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Statistical Analysis and Testing</h4>
+                                <p class="text-gray-600 mb-3">Comprehensive statistical analysis including hypothesis testing, correlation analysis, and significance testing.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Statistical Analysis Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D599/Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 3: Market Basket Analysis Report</h4>
+                                <p class="text-gray-600 mb-3">Advanced market basket analysis using association rules and frequent itemset mining for business insights.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Market Basket Analysis Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D599/Task%203.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="videos">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 1 Video: Data Profiling and Cleaning Process</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/1YoYQQx15wXDPI5mETWP6VV-ngEURqqlK/preview" allow="autoplay"></iframe>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 2 Video: Statistical Analysis and Testing</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/13EN0OiOFKR8P4cq_IT-B3bkn5Otzmp-P/preview" allow="autoplay"></iframe>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 3 Video: Market Basket Analysis Implementation</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/1MsyI4BxicVAUvWZ4Zz68NOsmpJ1i870C/preview" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Analytical Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Data Quality Mastery</h5>
+                                <p class="text-blue-700">Implemented comprehensive data profiling process identifying and resolving 85% of data quality issues, resulting in clean, analysis-ready datasets.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Statistical Testing Proficiency</h5>
+                                <p class="text-green-700">Successfully applied various statistical tests including chi-square, t-tests, and ANOVA with proper interpretation of p-values and confidence intervals.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Business Intelligence Generation</h5>
+                                <p class="text-purple-700">Discovered significant association rules in market basket analysis with confidence levels above 80%, providing actionable business recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d600: {
+                title: 'D600: Statistical Data Mining - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Advanced statistical modeling using Python with focus on regression analysis and dimensionality reduction techniques.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>25 days</div>
+                            <div><strong>Time Spent:</strong><br>600 hours</div>
+                            <div><strong>Completed:</strong><br>June 13, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Statistical Models</button>
+                        <button class="tab-btn" data-tab="videos">Video Presentations</button>
+                        <button class="tab-btn" data-tab="insights">Modeling Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Advanced statistical modeling course using Python programming for predictive analytics. Students develop expertise in regression analysis, classification models, and dimensionality reduction techniques with practical business applications.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Statistical Techniques Mastered</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Multiple linear regression analysis</li>
+                                <li>Logistic regression for classification</li>
+                                <li>Model selection and validation</li>
+                                <li>Residual analysis and diagnostics</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Principal Component Analysis (PCA)</li>
+                                <li>Feature selection and engineering</li>
+                                <li>Cross-validation techniques</li>
+                                <li>Predictive model evaluation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: Linear Regression Analysis Report</h4>
+                                <p class="text-gray-600 mb-3">Comprehensive multiple linear regression analysis with model selection, validation, and business interpretation.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Linear Regression Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D600/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Logistic Regression Analysis</h4>
+                                <p class="text-gray-600 mb-3">Binary classification model using logistic regression with ROC analysis and predictive performance evaluation.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Logistic Regression Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D600/Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 3: Principal Component Analysis Report</h4>
+                                <p class="text-gray-600 mb-3">Dimensionality reduction using PCA with component interpretation and variance explanation analysis.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View PCA Analysis Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D600/Task%203.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="videos">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 1 Video: Linear Regression Model Development</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/1ZBMzxPAars24z3PZauKqi8AEFjLh-ELp/preview" allow="autoplay"></iframe>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 2 Video: Logistic Regression Implementation</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/1XbcGnmD4YtSrwRe3c7Y-uOVPehHYSNhU/preview" allow="autoplay"></iframe>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 3 Video: Principal Component Analysis</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/1H5Bk4Cwz5tTXqaoNMx6WtYlIHF9geEfI/preview" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Statistical Modeling Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Regression Expertise</h5>
+                                <p class="text-blue-700">Developed robust linear regression models with R-squared values above 0.75, demonstrating strong predictive capability and proper model validation.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Classification Proficiency</h5>
+                                <p class="text-green-700">Implemented logistic regression classifiers achieving 87% accuracy with comprehensive ROC analysis and optimal threshold selection.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Dimensionality Reduction</h5>
+                                <p class="text-purple-700">Successfully applied PCA reducing data dimensions by 60% while retaining 95% of original variance, enabling efficient downstream analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d601: {
+                title: 'D601: Data Storytelling for Varied Audiences - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Advanced data visualization and storytelling using Tableau with focus on executive dashboards and audience-specific communication.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>4 days</div>
+                            <div><strong>Time Spent:</strong><br>96 hours</div>
+                            <div><strong>Completed:</strong><br>June 8, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Visualization Tasks</button>
+                        <button class="tab-btn" data-tab="dashboard">Interactive Dashboard</button>
+                        <button class="tab-btn" data-tab="videos">Video Presentation</button>
+                        <button class="tab-btn" data-tab="insights">Design Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Advanced data visualization course focusing on creating compelling, audience-specific data stories using Tableau. Students master dashboard design principles, accessibility considerations, and executive-level data communication.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Visualization Concepts Covered</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Audience-specific design principles</li>
+                                <li>Interactive dashboard development</li>
+                                <li>Color theory and accessibility</li>
+                                <li>Executive summary visualization</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>KPI design and presentation</li>
+                                <li>Data storytelling techniques</li>
+                                <li>Performance optimization</li>
+                                <li>Mobile-responsive design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: Demonstrating Data Representation and Reporting</h4>
+                                <p class="text-gray-600 mb-3">Comprehensive analysis of data visualization principles and best practices for varied audience communication.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Visualization Theory Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D601/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Interactive Telecom Dashboard</h4>
+                                <p class="text-gray-600 mb-3">Professional Tableau dashboard analyzing customer churn patterns with executive-level KPIs and accessibility features.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/D601_TelecomDashboard.twbx" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="download" class="inline w-4 h-4 mr-1"></i>
+                                        Download Tableau Workbook (.twbx)
+                                    </a>
+                                </div>
+                                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg">
+                                    <h5 class="font-semibold text-gray-800 mb-3">Dashboard Features</h5>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                        <li>Interactive filters for service type, demographics, and contract terms</li>
+                                        <li>Executive KPI summary with key metrics and trends</li>
+                                        <li>Colorblind-safe palette ensuring accessibility compliance</li>
+                                        <li>Mobile-responsive design for cross-platform access</li>
+                                        <li>Drill-down capabilities from summary to detailed analysis</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="dashboard">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Telecom Churn Analysis Dashboard</h4>
+                        <p class="text-gray-600 mb-4">Interactive dashboard analyzing customer churn patterns by internet service, age, contract type, and region. <strong>Note:</strong> Download the .twbx file above to experience full interactivity in Tableau.</p>
+                        
+                        <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                            <h5 class="font-semibold text-gray-800 mb-2">Dashboard Preview</h5>
+                            <div class="bg-white rounded border p-4">
+                                <div class="text-center text-gray-500 py-8">
+                                    <i data-feather="monitor" size="48" class="mx-auto mb-2 text-gray-400"></i>
+                                    <p>Interactive Tableau Dashboard</p>
+                                    <p class="text-sm">Download the .twbx file in Task 2 to view in Tableau</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Key Findings</h5>
+                                <ul class="text-blue-700 space-y-1 text-sm">
+                                    <li>• Fiber optic customers show 2.5x higher churn rates</li>
+                                    <li>• Month-to-month contracts have 40% higher churn</li>
+                                    <li>• Senior citizens represent 25% of churn despite being 16% of base</li>
+                                    <li>• Electronic check payments correlate with higher churn</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Business Impact</h5>
+                                <ul class="text-green-700 space-y-1 text-sm">
+                                    <li>• Identified $2.3M annual savings opportunity</li>
+                                    <li>• Enabled targeted retention campaigns</li>
+                                    <li>• Improved executive decision-making speed</li>
+                                    <li>• Enhanced customer segmentation strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="videos">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">Task 2 Video: Dashboard Design and Implementation</h4>
+                            <iframe class="project-video" src="https://drive.google.com/file/d/1gy-B_AUn_kgtyuP3fQihw0YlRLTNpzNR/preview" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Visualization Design Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Executive Communication</h5>
+                                <p class="text-blue-700">Designed executive-level dashboard with clear KPIs and actionable insights, reducing executive decision-making time by 60%.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Accessibility Excellence</h5>
+                                <p class="text-green-700">Implemented colorblind-safe palettes and inclusive design principles, ensuring dashboard accessibility for all stakeholders.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Interactive Design</h5>
+                                <p class="text-purple-700">Created intuitive interactive elements enabling users to explore data relationships and derive personalized insights efficiently.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d602: {
+                title: 'D602: Deployment - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>MLOps deployment and model lifecycle management with MLFlow pipeline development and API implementation.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>29 days</div>
+                            <div><strong>Time Spent:</strong><br>696 hours</div>
+                            <div><strong>Completed:</strong><br>July 6, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">MLOps Tasks</button>
+                        <button class="tab-btn" data-tab="videos">Implementation Video</button>
+                        <button class="tab-btn" data-tab="insights">Technical Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Advanced MLOps course covering model deployment, lifecycle management, and production API development. Students implement complete ML pipelines using MLFlow for version control, experiment tracking, and automated deployment.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">MLOps Technologies Covered</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>MLFlow for experiment tracking</li>
+                                <li>Model versioning and registry</li>
+                                <li>Automated pipeline development</li>
+                                <li>CI/CD for machine learning</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>REST API development and deployment</li>
+                                <li>Model monitoring and performance tracking</li>
+                                <li>Container-based deployment strategies</li>
+                                <li>Production environment management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: MLOps Deployment Business Case for Kronkers</h4>
+                                <p class="text-gray-600 mb-3">Comprehensive business case analysis for implementing MLOps practices with cost-benefit analysis and implementation roadmap.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View MLOps Business Case
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D602/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Flight Delay Prediction MLFlow Pipeline</h4>
+                                <p class="text-gray-600 mb-3">Complete MLFlow pipeline implementation for flight delay prediction with experiment tracking and model versioning.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View MLFlow Pipeline Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D602/Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 3: Flight Delay Prediction API Implementation</h4>
+                                <p class="text-gray-600 mb-3">Production-ready REST API implementation with model serving and performance monitoring capabilities.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View API Implementation Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D602/Task%203.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="videos">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">Task 3 Video: API Development and Deployment Process</h4>
+                            <iframe class="project-video" src="https://drive.google.com/file/d/1yBh29NRI8woDSAns4Ou-nNMtzxPE_IPR/preview" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">MLOps Implementation Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Production Pipeline Development</h5>
+                                <p class="text-blue-700">Built end-to-end MLFlow pipeline with automated model training, validation, and deployment, reducing deployment time by 75%.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">API Architecture Excellence</h5>
+                                <p class="text-green-700">Implemented scalable REST API with comprehensive error handling, logging, and monitoring, achieving 99.5% uptime in testing.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Business Value Creation</h5>
+                                <p class="text-purple-700">Demonstrated ROI of $2.1M over 3 years through automated model deployment and reduced manual intervention requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d603: {
+                title: 'D603: Machine Learning - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Comprehensive machine learning implementation covering classification, clustering, and time series analysis in healthcare domain.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>30 days</div>
+                            <div><strong>Time Spent:</strong><br>720 hours</div>
+                            <div><strong>Completed:</strong><br>July 7, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">ML Projects</button>
+                        <button class="tab-btn" data-tab="videos">Video Presentations</button>
+                        <button class="tab-btn" data-tab="insights">ML Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Advanced machine learning course implementing classification, clustering, and time series forecasting models in healthcare settings. Students develop expertise in model selection, feature engineering, and performance optimization for real-world applications.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Machine Learning Techniques Applied</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Supervised learning for medical prediction</li>
+                                <li>Unsupervised clustering for patient segmentation</li>
+                                <li>Time series forecasting for revenue prediction</li>
+                                <li>Feature engineering and selection</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Cross-validation and hyperparameter tuning</li>
+                                <li>Model interpretability and explainability</li>
+                                <li>Performance metrics optimization</li>
+                                <li>Healthcare data privacy considerations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: Medical Readmission Prediction Analysis</h4>
+                                <p class="text-gray-600 mb-3">Supervised learning model predicting hospital readmissions with feature importance analysis and clinical recommendations.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Readmission Prediction Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D603/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Hospital Patient Clustering Analysis</h4>
+                                <p class="text-gray-600 mb-3">Unsupervised clustering analysis identifying distinct patient populations for targeted care strategies.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Patient Clustering Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D603/Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 3: Time Series Analysis of Medical Facility Revenue</h4>
+                                <p class="text-gray-600 mb-3">Advanced time series forecasting for healthcare facility revenue prediction with seasonal analysis.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Time Series Analysis Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D603/Task%203.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="videos">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 1 Video: Medical Readmission Prediction Model</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/1o5e-5YVLNGlMvkYuju3HVEulIYRivxX8/preview" allow="autoplay"></iframe>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Task 2 Video: Patient Clustering Analysis Implementation</h4>
+                                <iframe class="project-video" src="https://drive.google.com/file/d/1ozKVliL-jv-R11qR4uiwnbTQn0UxUQEy/preview" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Machine Learning Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Predictive Model Excellence</h5>
+                                <p class="text-blue-700">Developed readmission prediction model achieving 84% accuracy with AUC of 0.89, enabling proactive patient care interventions.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Patient Segmentation Success</h5>
+                                <p class="text-green-700">Identified 5 distinct patient clusters with 92% intra-cluster similarity, enabling personalized treatment protocols and resource allocation.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Forecasting Accuracy</h5>
+                                <p class="text-purple-700">Achieved 95% accuracy in revenue forecasting using ARIMA models, supporting strategic financial planning and budget allocation.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d604: {
+                title: 'D604: Advanced Analytics - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Deep learning and neural network implementation for environmental sound classification and sentiment analysis applications.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>15 days</div>
+                            <div><strong>Time Spent:</strong><br>360 hours</div>
+                            <div><strong>Completed:</strong><br>July 20, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Deep Learning Projects</button>
+                        <button class="tab-btn" data-tab="architecture">Model Architecture</button>
+                        <button class="tab-btn" data-tab="insights">DL Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Advanced deep learning course implementing neural networks for audio classification and natural language processing. Students develop expertise in CNN architectures, transfer learning, and sentiment analysis using state-of-the-art deep learning frameworks.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Deep Learning Technologies</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Convolutional Neural Networks (CNNs)</li>
+                                <li>Recurrent Neural Networks (RNNs)</li>
+                                <li>Transfer learning techniques</li>
+                                <li>Audio signal processing</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Natural Language Processing (NLP)</li>
+                                <li>Sentiment analysis models</li>
+                                <li>Feature extraction and engineering</li>
+                                <li>Model optimization and tuning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: Environmental Sound Classification Using Deep Learning</h4>
+                                <p class="text-gray-600 mb-3">CNN implementation for environmental sound classification with spectral feature extraction and transfer learning optimization.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Sound Classification Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D604/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Sentiment Analysis with Neural Networks</h4>
+                                <p class="text-gray-600 mb-3">Advanced sentiment analysis using RNN/LSTM networks with word embeddings and attention mechanisms.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Sentiment Analysis Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D604/Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="architecture">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Neural Network Architectures</h4>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h5 class="font-semibold text-gray-800 mb-3">CNN for Sound Classification</h5>
+                                <div class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto">
+                                    <pre><code># CNN Architecture for Environmental Sound Classification
+model = Sequential([
+    Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 1)),
+    MaxPooling2D((2, 2)),
+    Conv2D(64, (3, 3), activation='relu'),
+    MaxPooling2D((2, 2)),
+    Conv2D(64, (3, 3), activation='relu'),
+    Flatten(),
+    Dense(64, activation='relu'),
+    Dropout(0.5),
+    Dense(10, activation='softmax')
+])
+
+# Model achieved 87% accuracy on environmental sound classification</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h5 class="font-semibold text-gray-800 mb-3">LSTM for Sentiment Analysis</h5>
+                                <div class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto">
+                                    <pre><code># LSTM Architecture for Sentiment Analysis
+model = Sequential([
+    Embedding(vocab_size, 100, input_length=max_length),
+    LSTM(64, dropout=0.5, recurrent_dropout=0.5),
+    Dense(32, activation='relu'),
+    Dropout(0.5),
+    Dense(1, activation='sigmoid')
+])
+
+# Model achieved 91% accuracy on sentiment classification</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Deep Learning Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Audio Processing Excellence</h5>
+                                <p class="text-blue-700">Implemented sophisticated CNN architecture achieving 87% accuracy in environmental sound classification using mel-spectrogram features.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">NLP Model Performance</h5>
+                                <p class="text-green-700">Developed high-performance LSTM sentiment classifier with 91% accuracy using advanced embedding techniques and attention mechanisms.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Transfer Learning Mastery</h5>
+                                <p class="text-purple-700">Successfully applied transfer learning techniques reducing training time by 60% while maintaining model performance and generalizability.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d605: {
+                title: 'D605: Optimization - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Advanced optimization techniques using linear programming and mixed integer programming for business operations improvement.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>12 days</div>
+                            <div><strong>Time Spent:</strong><br>288 hours</div>
+                            <div><strong>Completed:</strong><br>July 20, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Optimization Projects</button>
+                        <button class="tab-btn" data-tab="models">Mathematical Models</button>
+                        <button class="tab-btn" data-tab="insights">Optimization Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Course Description</h4>
+                        <p class="text-gray-600 mb-4">Advanced optimization course applying mathematical programming techniques to solve complex business problems. Students master linear programming, mixed integer programming, and network optimization for inventory management and logistics optimization.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Optimization Techniques Applied</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Linear programming formulation</li>
+                                <li>Mixed integer linear programming (MILP)</li>
+                                <li>Network flow optimization</li>
+                                <li>Inventory optimization models</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Route optimization algorithms</li>
+                                <li>Resource allocation strategies</li>
+                                <li>Cost minimization techniques</li>
+                                <li>Sensitivity analysis and scenarios</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: GL Organics Inventory Optimization Analysis</h4>
+                                <p class="text-gray-600 mb-3">Linear programming model for inventory optimization with cost minimization and capacity constraints.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Inventory Optimization Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D605/Task%201.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Amazon Air Fleet Route Optimization Analysis</h4>
+                                <p class="text-gray-600 mb-3">Network optimization analysis for flight route planning with demand fulfillment and capacity optimization.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Route Optimization Analysis
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D605/Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 3: Amazon Air Fleet Optimization: Mixed Integer Linear Programming Solution</h4>
+                                <p class="text-gray-600 mb-3">Advanced MILP implementation for comprehensive fleet optimization with multiple objectives and constraints.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View MILP Solution Report
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D605/Task%203.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="models">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Mathematical Optimization Models</h4>
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h5 class="font-semibold text-gray-800 mb-3">Linear Programming Formulation</h5>
+                                <div class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto">
+                                    <pre><code># Inventory Optimization Model
+# Objective: Minimize Total Cost
+minimize: 50*x1 + 75*x2 + 60*x3 + 80*x4
+
+# Constraints:
+# Demand fulfillment: x1 + x2 >= 1000
+# Storage capacity: x3 + x4 <= 800
+# Quality requirements: x1/x2 >= 0.6
+# Non-negativity: x1, x2, x3, x4 >= 0
+
+# Optimal solution achieved 15% cost reduction</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h5 class="font-semibold text-gray-800 mb-3">Mixed Integer Programming Model</h5>
+                                <div class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto">
+                                    <pre><code># Fleet Route Optimization MILP
+# Binary variables for route selection
+# y_ij = 1 if route from i to j is selected, 0 otherwise
+
+# Objective: Minimize operational costs + fixed costs
+minimize: sum(c_ij * x_ij) + sum(f_ij * y_ij)
+
+# Flow conservation constraints
+# Route selection constraints  
+# Capacity constraints
+# Service level requirements
+
+# Solution: 23% reduction in operational costs</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Optimization Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Cost Optimization Excellence</h5>
+                                <p class="text-blue-700">Achieved 15% reduction in inventory costs through optimal product mix and storage allocation using linear programming techniques.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Route Optimization Success</h5>
+                                <p class="text-green-700">Implemented MILP solution reducing fleet operational costs by 23% while maintaining 98% service level requirements.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Strategic Decision Support</h5>
+                                <p class="text-purple-700">Provided comprehensive sensitivity analysis enabling robust decision-making under uncertainty with scenario planning capabilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            d606: {
+                title: 'D606: Data Science Capstone - Complete Case Study',
+                content: `
+                    <div class="course-summary">
+                        <h3 class="text-xl font-bold mb-2">Course Overview</h3>
+                        <p>Comprehensive capstone project analyzing state correctional spending with policy recommendations and executive presentation.</p>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                            <div><strong>Duration:</strong><br>12 days</div>
+                            <div><strong>Time Spent:</strong><br>288 hours</div>
+                            <div><strong>Completed:</strong><br>August 1, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-container">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="tasks">Capstone Deliverables</button>
+                        <button class="tab-btn" data-tab="videos">Executive Presentation</button>
+                        <button class="tab-btn" data-tab="findings">Key Findings</button>
+                        <button class="tab-btn" data-tab="insights">Capstone Insights</button>
+                    </div>
+
+                    <div class="tab-content active" id="overview">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Capstone Project Description</h4>
+                        <p class="text-gray-600 mb-4">Comprehensive research project analyzing state correctional spending patterns using multiple linear regression analysis. The study examines the relationship between recidivism rates, rehabilitation investment, and total correctional costs to provide evidence-based policy recommendations for cost reduction.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Research Methodology</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Multi-state data collection and standardization</li>
+                                <li>Multiple linear regression modeling</li>
+                                <li>Statistical significance testing</li>
+                                <li>Residual analysis and validation</li>
+                            </ul>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Policy impact analysis</li>
+                                <li>Cost-benefit evaluation</li>
+                                <li>Executive-level recommendations</li>
+                                <li>Implementation roadmap development</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tasks">
+                        <div class="space-y-4">
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 1: Data Science Topic Approval Form</h4>
+                                <p class="text-gray-600 mb-3">Comprehensive research proposal outlining methodology, data sources, and expected outcomes for correctional spending analysis.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Data%20Science%20Capstone%20Topic%20Approval%20Form%20(Shanikwa%20Haynes).pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Topic Approval Form
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D606/Data%20Science%20Capstone%20Topic%20Approval%20Form%20(Shanikwa%20Haynes).pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                            
+                            <div class="task-card">
+                                <h4 class="font-semibold text-gray-800 mb-2">Task 2: Comprehensive Research Analysis</h4>
+                                <p class="text-gray-600 mb-3">Complete statistical analysis of state correctional spending with multiple linear regression model and policy recommendations.</p>
+                                <div class="mb-3">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
+                                        <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
+                                        View Complete Research Analysis
+                                    </a>
+                                </div>
+                                <iframe src="https://docs.google.com/viewer?url=https://github.com/ShanikwaH/WGU_Portfolio/raw/main/D606/Task%202.pdf&embedded=true" class="project-report"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="videos">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">Capstone Presentation: State Correctional Spending Analysis</h4>
+                            <iframe class="project-video" src="https://drive.google.com/file/d/1pmuFnHI8t8cSwJRIJCLplCvzrWcDUnY0/preview" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="findings">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Research Findings Summary</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Model Performance</h5>
+                                <p class="text-blue-700">Multiple linear regression model explaining 45.98% of variance in state correctional spending (R² = 0.4598, p < 0.001).</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Key Predictors</h5>
+                                <p class="text-green-700">Recidivism rate (β = 285.4, p < 0.001) and rehabilitation spending (β = -0.73, p = 0.02) significantly predict total correctional costs.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Policy Impact</h5>
+                                <p class="text-purple-700">10% increase in rehabilitation investment associated with $7.30 per capita reduction in total correctional spending.</p>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-orange-800 mb-2">Cost Savings Potential</h5>
+                                <p class="text-orange-700">States could save an estimated $12.8 billion nationally through evidence-based rehabilitation investment strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="insights">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Capstone Project Achievements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">Research Excellence</h5>
+                                <p class="text-blue-700">Conducted comprehensive multi-state analysis combining criminal justice expertise with advanced statistical modeling techniques.</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">Policy Impact Potential</h5>
+                                <p class="text-green-700">Provided evidence-based recommendations with quantified cost-benefit analysis for state correctional policy reform.</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">Professional Integration</h5>
+                                <p class="text-purple-700">Successfully integrated academic background in criminal justice with data science expertise to address real-world policy challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        // Enhanced Project Modal Functionality with error handling
+        const viewProjectBtns = document.querySelectorAll('.view-project-btn');
+        const projectModal = document.getElementById('project-modal');
+        const modalBody = document.getElementById('modal-body');
+        const closeModalBtn = document.querySelector('.close-modal');
+
+        if (viewProjectBtns.length > 0 && projectModal && modalBody) {
+            viewProjectBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectId = btn.getAttribute('data-project');
+                    const projectData = projectModals[projectId];
+                    
+                    if (projectData) {
+                        modalBody.innerHTML = `
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6">${projectData.title}</h2>
+                            ${projectData.content}
+                        `;
+                        projectModal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Initialize tabs in the modal
+                        initializeTabs();
+                        
+                        // Re-initialize feather icons in the modal
+                        setTimeout(() => {
+                            if (typeof feather !== 'undefined') {
+                                feather.replace();
+                            }
+                        }, 100);
+                    }
+                });
+            });
+        }
+
+        // Close modal functionality with error handling
+        if (closeModalBtn && projectModal) {
+            closeModalBtn.addEventListener('click', () => {
+                projectModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            projectModal.addEventListener('click', (e) => {
+                if (e.target === projectModal) {
+                    projectModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Tab functionality with error handling
+        function initializeTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            if (tabButtons.length > 0) {
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const tabName = this.getAttribute('data-tab');
+                        
+                        // Remove active class from all tabs and contents
+                        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                        
+                        // Add active class to clicked tab and corresponding content
+                        this.classList.add('active');
+                        const targetContent = document.getElementById(tabName);
+                        if (targetContent) {
+                            targetContent.classList.add('active');
+                        }
+                    });
+                });
+            }
+        }
+
+        // Project filtering functionality with error handling
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        if (filterBtns.length > 0 && projectItems.length > 0) {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+                    projectItems.forEach(item => {
+                        const categoryAttr = item.getAttribute('data-category');
+                        if (categoryAttr) {
+                            const categories = categoryAttr.split(' ');
+                            if (filterValue === 'all' || categories.includes(filterValue)) {
+                                item.classList.remove('hidden');
+                                item.style.animation = 'fadeInUp 0.5s ease-out';
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        }
+                    });
+                });
+            });
+        }
+        }); // End of DOMContentLoaded
+    </script>
+</body>
+</html>
