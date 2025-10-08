@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Portfolio Projects by Shanikwa Haynes - Data Analysis, Visualization, and Machine Learning Projects">
     <meta name="keywords" content="data analysis projects, Python projects, R projects, SQL projects, Tableau dashboards, machine learning projects">
     
@@ -29,7 +29,6 @@
     </script>
     
     <!-- External CSS -->
-    <link rel="stylesheet" href="styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Load JavaScript after CSS -->
@@ -37,17 +36,293 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #e2e8f0;
+            --footer-light-bg: #f8fafc;
+            --footer-dark-bg: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+        
+        .dark {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        .dark .bg-white {
+            background-color: var(--dark-card);
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #0f172a;
+        }
+        
+        .dark .text-gray-900 {
+            color: var(--dark-text);
+        }
+        
+        .dark .text-gray-800 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-700 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-600 {
+            color: #64748b;
+        }
+        
+        .dark .border-gray-300 {
+            border-color: #475569;
+        }
+        
+        .dark nav {
+            background-color: var(--dark-card);
+        }
+        
+        footer {
+            background-color: var(--footer-light-bg);
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+        
+        .dark footer {
+            background-color: var(--footer-dark-bg);
+            color: var(--dark-text);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 1200px;
+            border-radius: 10px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .dark .modal-content {
+            background-color: var(--dark-card);
+            border-color: #475569;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+
+        .dark .close:hover,
+        .dark .close:focus {
+            color: #fff;
+        }
+
+        /* Header and navigation styles */
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: white;
+        }
+
+        .header-logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .fixed-nav {
+            top: 0;
+        }
+
+        /* Tab styles */
+        .tab-container {
+            display: flex;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .dark .tab-container {
+            border-bottom-color: #475569;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: #6b7280;
+            transition: all 0.3s;
+        }
+
+        .dark .tab-btn {
+            color: #94a3b8;
+        }
+
+        .tab-btn.active {
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .project-report {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .dark .project-report {
+            border-color: #475569;
+        }
+
+        .project-video {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .task-card {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dark .task-card {
+            background: var(--dark-card);
+        }
+
+        .course-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .interactive-hover {
+            transition: all 0.3s ease;
+        }
+
+        .interactive-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .project-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        .dark .filter-btn {
+            background: var(--dark-card);
+            border-color: #475569;
+            color: #94a3b8;
+        }
+
+        .project-item {
+            transition: all 0.3s ease;
+        }
+
+        .project-item.hidden {
+            display: none;
+        }
+
+        .completion-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .completed {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header with Logo -->
-    <div class="header-container" style="display: flex; justify-content: center; align-items: center; padding: 20px; background: white;">
+    <div class="header-container">
         <img src="https://raw.githubusercontent.com/ShanikwaH/analyticsbyshanikwa.com/main/analytics_logo.svg" 
              alt="Analytics by Shanikwa Logo" 
-             style="height: 100px; width: auto;">
+             class="header-logo">
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full z-20 transition-colors duration-300" style="top: 0;">
+    <nav class="bg-white shadow-sm fixed w-full z-20 transition-colors duration-300 fixed-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex space-x-8 items-center">
@@ -59,8 +334,8 @@
                     <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
                     <a href="index.html#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
                     <a href="projects.html" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
-                    <a href="https://shanikwah.github.io/shanikwa-ai-portfolio" target="_blank" class="text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
-                    <a href="https://ai-bi-dashboard-yajxi5tkqxsrpguy7yh8zu.streamlit.app/" target="_blank" class="text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
+                    <a href="https://shanikwah.github.io/shanikwa-ai-portfolio" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
+                    <a href="https://ai-bi-dashboard-yajxi5tkqxsrpguy7yh8zu.streamlit.app/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
                     <a href="index.html#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
                     <a href="index.html#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
                     <a href="index.html#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
@@ -69,8 +344,8 @@
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none" aria-label="Toggle mobile menu" title="Toggle mobile menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
                     </button>
@@ -82,8 +357,8 @@
             <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Home</a>
             <a href="index.html#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">About</a>
             <a href="projects.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projects</a>
-            <a href="https://shanikwah.github.io/shanikwa-ai-portfolio" target="_blank" class="block py-2 text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
-            <a href="https://ai-bi-dashboard-yajxi5tkqxsrpguy7yh8zu.streamlit.app/" target="_blank" class="block py-2 text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
+            <a href="https://shanikwah.github.io/shanikwa-ai-portfolio" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="block py-2 text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
+            <a href="https://ai-bi-dashboard-yajxi5tkqxsrpguy7yh8zu.streamlit.app/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="block py-2 text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
             <a href="index.html#skills" class="block py-2 text-gray-700 hover:text-blue-600 transition">Skills</a>
             <a href="index.html#experience" class="block py-2 text-gray-700 hover:text-blue-600 transition">Experience</a>
             <a href="index.html#education" class="block py-2 text-gray-700 hover:text-blue-600 transition">Education</a>
@@ -302,7 +577,7 @@
             </div>
 
             <div class="text-center mt-12">
-                <a href="https://github.com/ShanikwaH/WGU_Portfolio" target="_blank" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium interactive-hover">
+                <a href="https://github.com/ShanikwaH/WGU_Portfolio" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium interactive-hover">
                     View Full Portfolio on GitHub
                     <i class="fas fa-external-link-alt ml-2"></i>
                 </a>
@@ -344,13 +619,13 @@
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900">Follow Me</h3>
                     <div class="mt-4 flex space-x-4">
-                        <a href="https://www.linkedin.com/in/shanikwahaynes" target="_blank" rel="noopener noreferrer" 
-                           class="text-gray-600 hover:text-blue-600">
-                            <i class="fab fa-linkedin fa-2x"></i>
+                        <a href="https://www.linkedin.com/in/shanikwahaynes" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" 
+                           class="text-gray-600 hover:text-blue-600" title="Connect with me on LinkedIn" aria-label="Connect with me on LinkedIn">
+                            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                         </a>
-                        <a href="https://github.com/ShanikwaH" target="_blank" rel="noopener noreferrer" 
-                           class="text-gray-600 hover:text-gray-900">
-                            <i class="fab fa-github fa-2x"></i>
+                        <a href="https://github.com/ShanikwaH" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" 
+                           class="text-gray-600 hover:text-gray-900" title="View my GitHub profile" aria-label="View my GitHub profile">
+                            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -363,23 +638,30 @@
 
     <!-- JavaScript -->
     <script>
-        // Initialize AOS
-        AOS.init();
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS (Animate On Scroll)
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 1000,
+                    once: true,
+                    offset: 100
+                });
+            }
 
-        // Initialize Feather Icons
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }
+            // Initialize Feather Icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
 
-        // Mobile menu toggle
+        // Mobile menu toggle with error handling
         const mobileMenuButton = document.getElementById('mobile-menu-button');
-        if (mobileMenuButton) {
-            mobileMenuButton.onclick = function() {
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (mobileMenu) {
-                    mobileMenu.classList.toggle('hidden');
-                }
-            };
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
         }
 
         // Project modal data - COMPLETE DATA FOR ALL 11 COURSES
@@ -422,7 +704,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: The Data Analytics Life Cycle</h4>
                                 <p class="text-gray-600 mb-3">Comprehensive analysis of the data analytics lifecycle with practical application examples.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Report PDF
                                     </a>
@@ -434,7 +716,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Career Plan</h4>
                                 <p class="text-gray-600 mb-3">Strategic career planning document outlining professional development goals and pathways in data analytics.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D596/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Career Plan PDF
                                     </a>
@@ -510,7 +792,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: Relational Database Design and Implementation</h4>
                                 <p class="text-gray-600 mb-3">Complete relational database design for a business scenario including normalization, indexing, and SQL implementation.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D597/D597%20Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D597/D597%20Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Relational DB Report
                                     </a>
@@ -522,7 +804,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Non-Relational Database Design and Implementation</h4>
                                 <p class="text-gray-600 mb-3">NoSQL database design and implementation demonstrating document store architecture and query optimization.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D597/D597%20Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D597/D597%20Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View NoSQL DB Report
                                     </a>
@@ -612,7 +894,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: Program Planning</h4>
                                 <p class="text-gray-600 mb-3">Comprehensive program design document outlining software development lifecycle and project planning methodologies.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Program Planning Document
                                     </a>
@@ -624,7 +906,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Data Processing Application</h4>
                                 <p class="text-gray-600 mb-3">Python application for data processing and analysis with comprehensive error handling and user interface design.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/D598_Task2_Report.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/D598_Task2_Report.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Task 2 Report
                                     </a>
@@ -636,7 +918,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 3: Advanced Analytics Program</h4>
                                 <p class="text-gray-600 mb-3">Complex Python application demonstrating advanced programming concepts and analytics implementation.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/D598_Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D598/D598_Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Task 3 Report
                                     </a>
@@ -749,7 +1031,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: Data Profiling and Cleaning Report</h4>
                                 <p class="text-gray-600 mb-3">Comprehensive data quality assessment and cleaning process documentation with before/after analysis.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Data Cleaning Report
                                     </a>
@@ -761,7 +1043,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Statistical Analysis and Testing</h4>
                                 <p class="text-gray-600 mb-3">Comprehensive statistical analysis including hypothesis testing, correlation analysis, and significance testing.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Statistical Analysis Report
                                     </a>
@@ -773,7 +1055,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 3: Market Basket Analysis Report</h4>
                                 <p class="text-gray-600 mb-3">Advanced market basket analysis using association rules and frequent itemset mining for business insights.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D599/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Market Basket Analysis Report
                                     </a>
@@ -868,7 +1150,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: Linear Regression Analysis Report</h4>
                                 <p class="text-gray-600 mb-3">Comprehensive multiple linear regression analysis with model selection, validation, and business interpretation.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Linear Regression Report
                                     </a>
@@ -880,7 +1162,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Logistic Regression Analysis</h4>
                                 <p class="text-gray-600 mb-3">Binary classification model using logistic regression with ROC analysis and predictive performance evaluation.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Logistic Regression Report
                                     </a>
@@ -892,7 +1174,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 3: Principal Component Analysis Report</h4>
                                 <p class="text-gray-600 mb-3">Dimensionality reduction using PCA with component interpretation and variance explanation analysis.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D600/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View PCA Analysis Report
                                     </a>
@@ -988,7 +1270,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: Demonstrating Data Representation and Reporting</h4>
                                 <p class="text-gray-600 mb-3">Comprehensive analysis of data visualization principles and best practices for varied audience communication.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Visualization Theory Report
                                     </a>
@@ -1000,7 +1282,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Interactive Telecom Dashboard</h4>
                                 <p class="text-gray-600 mb-3">Professional Tableau dashboard analyzing customer churn patterns with executive-level KPIs and accessibility features.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/D601_TelecomDashboard.twbx" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D601/D601_TelecomDashboard.twbx" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="download" class="inline w-4 h-4 mr-1"></i>
                                         Download Tableau Workbook (.twbx)
                                     </a>
@@ -1129,7 +1411,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: MLOps Deployment Business Case for Kronkers</h4>
                                 <p class="text-gray-600 mb-3">Comprehensive business case analysis for implementing MLOps practices with cost-benefit analysis and implementation roadmap.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View MLOps Business Case
                                     </a>
@@ -1141,7 +1423,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Flight Delay Prediction MLFlow Pipeline</h4>
                                 <p class="text-gray-600 mb-3">Complete MLFlow pipeline implementation for flight delay prediction with experiment tracking and model versioning.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View MLFlow Pipeline Report
                                     </a>
@@ -1153,7 +1435,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 3: Flight Delay Prediction API Implementation</h4>
                                 <p class="text-gray-600 mb-3">Production-ready REST API implementation with model serving and performance monitoring capabilities.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D602/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View API Implementation Report
                                     </a>
@@ -1236,7 +1518,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: Medical Readmission Prediction Analysis</h4>
                                 <p class="text-gray-600 mb-3">Supervised learning model predicting hospital readmissions with feature importance analysis and clinical recommendations.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Readmission Prediction Report
                                     </a>
@@ -1248,7 +1530,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Hospital Patient Clustering Analysis</h4>
                                 <p class="text-gray-600 mb-3">Unsupervised clustering analysis identifying distinct patient populations for targeted care strategies.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Patient Clustering Report
                                     </a>
@@ -1260,7 +1542,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 3: Time Series Analysis of Medical Facility Revenue</h4>
                                 <p class="text-gray-600 mb-3">Advanced time series forecasting for healthcare facility revenue prediction with seasonal analysis.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D603/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Time Series Analysis Report
                                     </a>
@@ -1350,7 +1632,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: Environmental Sound Classification Using Deep Learning</h4>
                                 <p class="text-gray-600 mb-3">CNN implementation for environmental sound classification with spectral feature extraction and transfer learning optimization.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Sound Classification Report
                                     </a>
@@ -1362,7 +1644,7 @@
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Sentiment Analysis with Neural Networks</h4>
                                 <p class="text-gray-600 mb-3">Advanced sentiment analysis using RNN/LSTM networks with word embeddings and attention mechanisms.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D604/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Sentiment Analysis Report
                                     </a>
@@ -1479,7 +1761,7 @@ model = Sequential([
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: GL Organics Inventory Optimization Analysis</h4>
                                 <p class="text-gray-600 mb-3">Linear programming model for inventory optimization with cost minimization and capacity constraints.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%201.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Inventory Optimization Report
                                     </a>
@@ -1491,7 +1773,7 @@ model = Sequential([
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Amazon Air Fleet Route Optimization Analysis</h4>
                                 <p class="text-gray-600 mb-3">Network optimization analysis for flight route planning with demand fulfillment and capacity optimization.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Route Optimization Analysis
                                     </a>
@@ -1503,7 +1785,7 @@ model = Sequential([
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 3: Amazon Air Fleet Optimization: Mixed Integer Linear Programming Solution</h4>
                                 <p class="text-gray-600 mb-3">Advanced MILP implementation for comprehensive fleet optimization with multiple objectives and constraints.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D605/Task%203.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View MILP Solution Report
                                     </a>
@@ -1621,7 +1903,7 @@ minimize: sum(c_ij * x_ij) + sum(f_ij * y_ij)
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 1: Data Science Topic Approval Form</h4>
                                 <p class="text-gray-600 mb-3">Comprehensive research proposal outlining methodology, data sources, and expected outcomes for correctional spending analysis.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Data%20Science%20Capstone%20Topic%20Approval%20Form%20(Shanikwa%20Haynes).pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Data%20Science%20Capstone%20Topic%20Approval%20Form%20(Shanikwa%20Haynes).pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Topic Approval Form
                                     </a>
@@ -1633,7 +1915,7 @@ minimize: sum(c_ij * x_ij) + sum(f_ij * y_ij)
                                 <h4 class="font-semibold text-gray-800 mb-2">Task 2: Comprehensive Research Analysis</h4>
                                 <p class="text-gray-600 mb-3">Complete statistical analysis of state correctional spending with multiple linear regression model and policy recommendations.</p>
                                 <div class="mb-3">
-                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">
+                                    <a href="https://github.com/ShanikwaH/WGU_Portfolio/blob/main/D606/Task%202.pdf" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank" rel="noopener noreferrer">
                                         <i data-feather="file-text" class="inline w-4 h-4 mr-1"></i>
                                         View Complete Research Analysis
                                     </a>
@@ -1693,98 +1975,110 @@ minimize: sum(c_ij * x_ij) + sum(f_ij * y_ij)
             }
         };
 
-        // Enhanced Project Modal Functionality
+        // Enhanced Project Modal Functionality with error handling
         const viewProjectBtns = document.querySelectorAll('.view-project-btn');
         const projectModal = document.getElementById('project-modal');
         const modalBody = document.getElementById('modal-body');
         const closeModalBtn = document.querySelector('.close-modal');
 
-        viewProjectBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const projectId = btn.getAttribute('data-project');
-                const projectData = projectModals[projectId];
-                
-                if (projectData) {
-                    modalBody.innerHTML = `
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6">${projectData.title}</h2>
-                        ${projectData.content}
-                    `;
-                    projectModal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
+        if (viewProjectBtns.length > 0 && projectModal && modalBody) {
+            viewProjectBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectId = btn.getAttribute('data-project');
+                    const projectData = projectModals[projectId];
                     
-                    // Initialize tabs in the modal
-                    initializeTabs();
-                    
-                    // Re-initialize feather icons in the modal
-                    setTimeout(() => {
-                        if (typeof feather !== 'undefined') {
-                            feather.replace();
-                        }
-                    }, 100);
-                }
-            });
-        });
-
-        // Close modal functionality
-        closeModalBtn.addEventListener('click', () => {
-            projectModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        // Close modal when clicking outside
-        projectModal.addEventListener('click', (e) => {
-            if (e.target === projectModal) {
-                projectModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Tab functionality
-        function initializeTabs() {
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const tabName = this.getAttribute('data-tab');
-                    
-                    // Remove active class from all tabs and contents
-                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                    
-                    // Add active class to clicked tab and corresponding content
-                    this.classList.add('active');
-                    const targetContent = document.getElementById(tabName);
-                    if (targetContent) {
-                        targetContent.classList.add('active');
+                    if (projectData) {
+                        modalBody.innerHTML = `
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6">${projectData.title}</h2>
+                            ${projectData.content}
+                        `;
+                        projectModal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Initialize tabs in the modal
+                        initializeTabs();
+                        
+                        // Re-initialize feather icons in the modal
+                        setTimeout(() => {
+                            if (typeof feather !== 'undefined') {
+                                feather.replace();
+                            }
+                        }, 100);
                     }
                 });
             });
         }
 
-        // Project filtering functionality
+        // Close modal functionality with error handling
+        if (closeModalBtn && projectModal) {
+            closeModalBtn.addEventListener('click', () => {
+                projectModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            projectModal.addEventListener('click', (e) => {
+                if (e.target === projectModal) {
+                    projectModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Tab functionality with error handling
+        function initializeTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            if (tabButtons.length > 0) {
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const tabName = this.getAttribute('data-tab');
+                        
+                        // Remove active class from all tabs and contents
+                        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                        
+                        // Add active class to clicked tab and corresponding content
+                        this.classList.add('active');
+                        const targetContent = document.getElementById(tabName);
+                        if (targetContent) {
+                            targetContent.classList.add('active');
+                        }
+                    });
+                });
+            }
+        }
+
+        // Project filtering functionality with error handling
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectItems = document.querySelectorAll('.project-item');
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filterValue = btn.getAttribute('data-filter');
-                
-                projectItems.forEach(item => {
-                    const categories = item.getAttribute('data-category').split(' ');
-                    if (filterValue === 'all' || categories.includes(filterValue)) {
-                        item.classList.remove('hidden');
-                        item.style.animation = 'fadeInUp 0.5s ease-out';
-                    } else {
-                        item.classList.add('hidden');
-                    }
+        if (filterBtns.length > 0 && projectItems.length > 0) {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+                    projectItems.forEach(item => {
+                        const categoryAttr = item.getAttribute('data-category');
+                        if (categoryAttr) {
+                            const categories = categoryAttr.split(' ');
+                            if (filterValue === 'all' || categories.includes(filterValue)) {
+                                item.classList.remove('hidden');
+                                item.style.animation = 'fadeInUp 0.5s ease-out';
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        }
+                    });
                 });
             });
-        });
+        }
+        }); // End of DOMContentLoaded
     </script>
 </body>
 </html>
