@@ -1686,25 +1686,58 @@ minimize: sum(c_ij * x_ij) + sum(f_ij * y_ij)
             }
         };
 
-        // Enhanced Project Modal Functionality
+        // Enhanced Project Modal Functionality with Debugging
+        console.log('🚀 Initializing project modal functionality...');
+        
         const viewProjectBtns = document.querySelectorAll('.view-project-btn');
         const projectModal = document.getElementById('project-modal');
         const modalBody = document.getElementById('modal-body');
         const closeModalBtn = document.querySelector('.close-modal');
 
-        viewProjectBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const projectId = btn.getAttribute('data-project');
-                const projectData = projectModals[projectId];
+        console.log('✅ Found project buttons:', viewProjectBtns.length);
+        console.log('✅ Modal element:', projectModal ? 'Found' : '❌ NOT FOUND');
+        console.log('✅ Modal body:', modalBody ? 'Found' : '❌ NOT FOUND');
+        console.log('✅ Close button:', closeModalBtn ? 'Found' : '❌ NOT FOUND');
+
+        if (!projectModal) {
+            console.error('❌ ERROR: Project modal element not found! Check HTML for id="project-modal"');
+        }
+        
+        if (!modalBody) {
+            console.error('❌ ERROR: Modal body element not found! Check HTML for id="modal-body"');
+        }
+        
+        if (viewProjectBtns.length === 0) {
+            console.error('❌ ERROR: No project buttons found! Check HTML for class="view-project-btn"');
+        }
+
+        viewProjectBtns.forEach((btn, index) => {
+            console.log(`🔗 Attaching click handler to button ${index + 1}/${viewProjectBtns.length}`);
+            
+            btn.addEventListener('click', function(e) {
+                console.log('🎯 PROJECT CARD CLICKED!');
+                console.log('   Button:', this);
                 
-                if (projectData) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const projectId = this.getAttribute('data-project');
+                console.log('   Project ID:', projectId);
+                
+                const projectData = projectModals[projectId];
+                console.log('   Project data exists:', !!projectData);
+                
+                if (projectData && projectModal && modalBody) {
+                    console.log('   ✅ Opening modal for:', projectData.title);
+                    
                     modalBody.innerHTML = `
                         <h2 class="text-3xl font-bold text-gray-800 mb-6">${projectData.title}</h2>
                         ${projectData.content}
                     `;
                     projectModal.style.display = 'block';
                     document.body.style.overflow = 'hidden';
+                    
+                    console.log('   ✅ Modal opened successfully!');
                     
                     // Initialize tabs in the modal
                     initializeTabs();
@@ -1715,23 +1748,42 @@ minimize: sum(c_ij * x_ij) + sum(f_ij * y_ij)
                             feather.replace();
                         }
                     }, 100);
+                } else {
+                    console.error('❌ ERROR: Cannot open modal');
+                    if (!projectData) console.error('   - Project data not found for ID:', projectId);
+                    if (!projectModal) console.error('   - Modal element is null');
+                    if (!modalBody) console.error('   - Modal body is null');
                 }
             });
         });
 
+        console.log('✅ All click handlers attached successfully!');
+
         // Close modal functionality
-        closeModalBtn.addEventListener('click', () => {
-            projectModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                console.log('❌ Close button clicked');
+                if (projectModal) {
+                    projectModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            console.log('✅ Close button handler attached');
+        } else {
+            console.error('❌ ERROR: Close modal button not found!');
+        }
 
         // Close modal when clicking outside
-        projectModal.addEventListener('click', (e) => {
-            if (e.target === projectModal) {
-                projectModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
+        if (projectModal) {
+            projectModal.addEventListener('click', (e) => {
+                if (e.target === projectModal) {
+                    console.log('❌ Clicked outside modal, closing');
+                    projectModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            console.log('✅ Outside click handler attached');
+        }
 
         // Tab functionality
         function initializeTabs() {
