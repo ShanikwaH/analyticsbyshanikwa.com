@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shanikwa Haynes - Data Analyst specializing in statistical modeling, predictive analytics, and data visualization. Expert in Python, R, SQL, and Tableau. Based in GA.">
+    <meta name="keywords" content="data analyst Shanikwa Haynes, statistical modeling, predictive analytics, Python R SQL, Tableau dashboard, Georgia data analyst">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Shanikwa Haynes | Data Analyst Portfolio">
+    <meta property="og:description" content="Data analyst specializing in statistical modeling and predictive analytics. View my projects and skills.">
+    <meta property="og:image" content="https://analyticsbyshanikwa.com/og-image.jpg">
+    <meta property="og:url" content="https://analyticsbyshanikwa.com">
+    <meta property="og:type" content="website">
+    
+    <title>Shanikwa Haynes | Data Analyst Portfolio</title>
+    
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P47R83QBPK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P47R83QBPK');
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Shanikwa Haynes",
+      "jobTitle": "Data Analyst",
+      "url": "https://analyticsbyshanikwa.com",
+      "email": "shanikwa.lhaynes@gmail.com",
+      "knowsAbout": [
+        "Data Analysis", "Statistical Modeling", "Predictive Analytics", "Machine Learning",
+        "SQL", "Python", "R", "Tableau", "Power BI", "Data Visualization",
+        "ETL Pipelines", "Data Cleaning", "Feature Engineering", "Regression Analysis",
+        "Classification Models", "Time Series Forecasting", "A/B Testing", "Dashboard Design",
+        "Business Intelligence", "HTML/CSS/JavaScript", "Bash Scripting", "Git", "GitHub", "GitLab"
+      ]
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #e2e8f0;
+            --footer-light-bg: #f8fafc;
+            --footer-dark-bg: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+        
+        .dark {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        .dark .bg-white {
+            background-color: var(--dark-card);
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #0f172a;
+        }
+        
+        .dark .text-gray-900 {
+            color: var(--dark-text);
+        }
+        
+        .dark .text-gray-800 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-700 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-600 {
+            color: #64748b;
+        }
+        
+        .dark .border-gray-300 {
+            border-color: #475569;
+        }
+        
+        .dark nav {
+            background-color: var(--dark-card);
+        }
+        
+        /* Footer theming styles */
+        footer {
+            background-color: var(--footer-light-bg);
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+        
+        .dark footer {
+            background-color: var(--footer-dark-bg);
+            color: var(--dark-text);
+        }
+        
+        footer .text-gray-400 {
+            color: #6b7280;
+        }
+        
+        .dark footer .text-gray-400 {
+            color: #94a3b8;
+        }
+        
+        footer .border-gray-800 {
+            border-color: #d1d5db;
+        }
+        
+        .dark footer .border-gray-800 {
+            border-color: #374151;
+        }
+        
+        footer .bg-gray-800 {
+            background-color: #e5e7eb;
+        }
+        
+        footer .bg-gray-800:hover {
+            background-color: #d1d5db;
+        }
+        
+        .dark footer .bg-gray-800 {
+            background-color: #374151;
+        }
+        
+        .dark footer .bg-gray-800:hover {
+            background-color: #475569;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) { animation-delay: 0s; }
+        .floating-shape:nth-child(2) { animation-delay: 2s; }
+        .floating-shape:nth-child(3) { animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .interactive-hover {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .interactive-hover:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <span class="text-xl font-bold gradient-text">Shanikwa Haynes</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#interactive-portfolio" class="text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
+                    <a href="#streamlit-dashboard" class="text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
+                    <a href="#blog" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
+                        <i data-feather="sun" id="sun-icon"></i>
+                        <i data-feather="moon" id="moon-icon" class="hidden"></i>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors">
+                        <i data-feather="sun" id="sun-icon-mobile"></i>
+                        <i data-feather="moon" id="moon-icon-mobile" class="hidden"></i>
+                    </button>
+                    <button id="menu-toggle" class="text-gray-700 hover:text-blue-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg transition-colors duration-300">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">About</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projects</a>
+            <a href="#interactive-portfolio" class="block py-2 text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
+            <a href="#streamlit-dashboard" class="block py-2 text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
+            <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600 transition">Skills</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600 transition">Experience</a>
+            <a href="#education" class="block py-2 text-gray-700 hover:text-blue-600 transition">Education</a>
+            <a href="#blog" class="block py-2 text-gray-700 hover:text-blue-600 transition">Blog</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <div class="floating-elements">
+            <div class="floating-shape w-20 h-20 bg-blue-500 rounded-full" style="top: 10%; left: 10%;"></div>
+            <div class="floating-shape w-16 h-16 bg-green-500 rounded-lg" style="top: 20%; right: 15%;"></div>
+            <div class="floating-shape w-12 h-12 bg-purple-500 rounded-full" style="bottom: 30%; left: 20%;"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Turning Data <span class="gradient-text">Into Insights</span></h1>
+                <p class="text-lg text-gray-600 mb-6">I'm Shanikwa Haynes, a passionate data analyst with expertise in statistical modeling, predictive analytics, and data visualization. I transform complex datasets into actionable business intelligence.</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">R</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">SQL</span>
+                    <span class="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">Tableau</span>
+                    <span class="bg-pink-100 text-pink-800 text-sm px-3 py-1 rounded-full">Excel</span>
+                </div>
+
+                <!-- Interactive Stats -->
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    <div class="text-center">
+                        <div class="stats-counter" data-target="11">0</div>
+                        <p class="text-sm text-gray-600">Courses Completed</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stats-counter" data-target="29">0</div>
+                        <p class="text-sm text-gray-600">Projects Delivered</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stats-counter" data-target="6">0</div>
+                        <p class="text-sm text-gray-600">Months to Complete</p>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition interactive-hover">View My Projects</a>
+                    <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition interactive-hover">Contact Me</a>
+                </div>
+            </div>
+            <div data-aos="fade-left" class="flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-green-400 rounded-2xl transform rotate-6"></div>
+                    <img src="/static/hero-portrait.jpg" alt="Shanikwa Haynes, Data Analyst" width="640" height="800" loading="eager" class="relative rounded-2xl w-full max-w-md border-4 border-white shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Fixed Theme -->
+    <footer class="py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold gradient-text mb-4">Shanikwa Haynes</h3>
+                    <p class="text-gray-400">Transforming data into actionable insights that drive business growth and operational efficiency. Specializing in statistical modeling and predictive analytics.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-600 transition">About</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-blue-600 transition">Projects</a></li>
+                        <li><a href="#interactive-portfolio" class="text-gray-400 hover:text-blue-600 transition">Interactive Portfolio</a></li>
+                        <li><a href="https://ai-bi-dashboard-yajxi5tkqxsrpguy7yh8zu.streamlit.app/" target="_blank" class="text-gray-400 hover:text-blue-600 transition">Streamlit App</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-blue-600 transition">Skills</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-blue-600 transition">Experience</a></li>
+                        <li><a href="#education" class="text-gray-400 hover:text-blue-600 transition">Education</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-blue-600 transition">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://www.linkedin.com/in/shanikwahaynes/" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition">
+                            <i data-feather="linkedin" class="text-gray-700"></i>
+                        </a>
+                        <a href="https://github.com/ShanikwaH/WGU_Portfolio" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition">
+                            <i data-feather="github" class="text-gray-700"></i>
+                        </a>
+                        <a href="https://medium.com/@shanikwa.lhaynes" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition" aria-label="Medium">
+                            <i class="fa-brands fa-medium text-gray-700 text-[20px]" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Shanikwa Haynes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Dark/Light Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const body = document.body;
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIconMobile = document.getElementById('sun-icon-mobile');
+        const moonIconMobile = document.getElementById('moon-icon-mobile');
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            sunIconMobile.classList.add('hidden');
+            moonIconMobile.classList.remove('hidden');
+        }
+
+        function toggleTheme() {
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            
+            // Toggle desktop icons
+            sunIcon.classList.toggle('hidden', isDark);
+            moonIcon.classList.toggle('hidden', !isDark);
+            
+            // Toggle mobile icons
+            sunIconMobile.classList.toggle('hidden', isDark);
+            moonIconMobile.classList.toggle('hidden', !isDark);
+            
+            // Save theme preference
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Enhanced Animated Counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 50;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 30);
+            });
+        }
+
+        // Trigger counters when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        // Observe hero section for counter animation
+        setTimeout(() => {
+            const heroSection = document.querySelector('section');
+            if (heroSection) {
+                heroObserver.observe(heroSection);
+            } else {
+                animateCounters();
+            }
+        }, 1000);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.backdropFilter = 'blur(10px)';
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            } else {
+                nav.style.backdropFilter = 'none';
+                nav.style.backgroundColor = '';
+            }
+        });
+
+        // Initialize feather icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+
+        console.log('Homepage initialized successfully!');
+    </script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skills and Expertise of Shanikwa Haynes - Data Analysis, Python, R, SQL, Machine Learning, and More">
+    <meta name="keywords" content="data analysis skills, Python programming, R programming, SQL, machine learning, data visualization, Tableau">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Skills | Shanikwa Haynes - Data Analyst">
+    <meta property="og:description" content="Explore my technical skills and expertise in data analysis, programming, and visualization.">
+    <meta property="og:image" content="https://analyticsbyshanikwa.com/og-image.jpg">
+    <meta property="og:url" content="https://analyticsbyshanikwa.com/skills">
+    <meta property="og:type" content="website">
+    
+    <title>Skills | Shanikwa Haynes - Data Analyst</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P47R83QBPK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P47R83QBPK');
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #e2e8f0;
+            --footer-light-bg: #f8fafc;
+            --footer-dark-bg: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+        
+        .dark {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        .dark .bg-white {
+            background-color: var(--dark-card);
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #0f172a;
+        }
+        
+        .dark .text-gray-900 {
+            color: var(--dark-text);
+        }
+        
+        .dark .text-gray-800 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-700 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-600 {
+            color: #64748b;
+        }
+        
+        .dark .border-gray-300 {
+            border-color: #475569;
+        }
+        
+        .dark nav {
+            background-color: var(--dark-card);
+        }
+        
+        footer {
+            background-color: var(--footer-light-bg);
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+        
+        .dark footer {
+            background-color: var(--footer-dark-bg);
+            color: var(--dark-text);
+        }
+
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .dark .skill-bar {
+            background-color: #374151;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+            width: 0%;
+            transition: width 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex space-x-8 items-center">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-xl font-semibold text-gray-800">Shanikwa Haynes</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="projects.html" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="interactive-portfolio.html" class="text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
+                    <a href="streamlit-app.html" class="text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
+                    <a href="skills.html" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="experience.html" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="education.html" class="text-gray-700 hover:text-blue-600 transition">Education</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 py-2">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Home</a>
+            <a href="about.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">About</a>
+            <a href="projects.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projects</a>
+            <a href="interactive-portfolio.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Interactive Portfolio</a>
+            <a href="streamlit-app.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Streamlit App</a>
+            <a href="skills.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Skills</a>
+            <a href="experience.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Experience</a>
+            <a href="education.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Education</a>
+            <a href="blog.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Blog</a>
+            <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Enhanced Skills Section -->
+    <section id="skills" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white transition-colors duration-300" style="margin-top: 64px;">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-green-400 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">Programming & Analytics</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">SQL</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress interactive-skill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Python (Pandas, NumPy, Scikit-learn)</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress interactive-skill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">R (Tidyverse)</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress interactive-skill" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Tableau</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress interactive-skill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">Tools & Technologies</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Excel & Data Analysis</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress interactive-skill" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Statistical Modeling</span>
+                            <span class="text-gray-500">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress interactive-skill" style="width: 87%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">HTML/CSS/JavaScript</span>
+                            <span class="text-gray-500">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress interactive-skill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Bash Scripting</span>
+                            <span class="text-gray-500">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress interactive-skill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mt-16">
+            <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Certifications</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div data-aos="fade-up" class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="award" class="text-blue-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Google Data Analytics Professional Certificate</h4>
+                    <p class="text-gray-600 text-sm">Coursera</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="award" class="text-green-600"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Data Analytics Certificate Course</h4>
+                    <p class="text-gray-600 text-sm">Break Into Tech</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">Contact</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li>
+                            <a href="mailto:shanikwa.lhaynes@gmail.com" class="text-gray-600 hover:text-blue-600">
+                                shanikwa.lhaynes@gmail.com
+                            </a>
+                        </li>
+                        <li class="text-gray-600">Based in GA, United States</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="projects.html" class="text-gray-600 hover:text-blue-600">Projects</a></li>
+                        <li><a href="skills.html" class="text-gray-600 hover:text-blue-600">Skills</a></li>
+                        <li><a href="blog.html" class="text-gray-600 hover:text-blue-600">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">Follow Me</h3>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://www.linkedin.com/in/shanikwahaynes" target="_blank" rel="noopener noreferrer" 
+                           class="text-gray-600 hover:text-blue-600">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/ShanikwaH" target="_blank" rel="noopener noreferrer" 
+                           class="text-gray-600 hover:text-gray-900">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8 text-center">
+                <p class="text-gray-600">&copy; 2025 Shanikwa Haynes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle and animations -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Enhanced Skill Bar Animation
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Trigger skill bar animation when skills section is visible
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            skillsObserver.observe(skillsSection);
+        }
+
+        // Initialize feather icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    </script>
+</body>
+</html>
