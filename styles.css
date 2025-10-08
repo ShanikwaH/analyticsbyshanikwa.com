@@ -606,3 +606,127 @@ footer .bg-gray-800:hover {
     background: rgba(255, 255, 255, 0.2);
     color: white;
 }
+
+/* Modal Styles for Projects Page */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 2% auto;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideDown 0.4s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.dark .modal-content {
+    background-color: var(--dark-card);
+    color: var(--dark-text);
+}
+
+.close {
+    color: #999;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+}
+
+.dark .close:hover,
+.dark .close:focus {
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Modal scrollbar styling */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.dark .modal-content::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark .modal-content::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark .modal-content::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 1.5rem;
+        max-height: 85vh;
+    }
+    
+    .close {
+        font-size: 28px;
+        right: 1rem;
+        top: 0.5rem;
+    }
+}
