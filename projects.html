@@ -37,7 +37,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- CRITICAL INLINE CSS FOR MODAL - Ensures modal works even if styles.css fails -->
+    <!-- CRITICAL INLINE CSS FOR MODAL -->
     <style>
     .modal {
         display: none;
@@ -78,9 +78,11 @@
         position: absolute;
         right: 1.5rem;
         top: 1rem;
+        z-index: 10000;
     }
     
-    .close:hover {
+    .close:hover,
+    .close:focus {
         color: #333;
     }
     
@@ -96,6 +98,126 @@
     
     .project-card {
         cursor: pointer !important;
+        transition: all 0.3s ease;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Tab Styles */
+    .tab-container {
+        display: flex;
+        gap: 0.5rem;
+        margin: 2rem 0 1rem 0;
+        border-bottom: 2px solid #e5e7eb;
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 1.5rem;
+        background: none;
+        border: none;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        font-weight: 500;
+        color: #6b7280;
+        transition: all 0.3s ease;
+    }
+    
+    .tab-btn:hover {
+        color: #3b82f6;
+    }
+    
+    .tab-btn.active {
+        color: #3b82f6;
+        border-bottom-color: #3b82f6;
+    }
+    
+    .tab-content {
+        display: none;
+        padding: 2rem 0;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+    
+    /* Task Card Styles */
+    .task-card {
+        background: #f9fafb;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-report {
+        width: 100%;
+        height: 600px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+    
+    .project-video {
+        width: 100%;
+        height: 500px;
+        border: none;
+        border-radius: 8px;
+    }
+    
+    .course-summary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+    }
+    
+    /* Filter Button Styles */
+    .filter-btn {
+        padding: 0.5rem 1.5rem;
+        border-radius: 9999px;
+        border: 2px solid #e5e7eb;
+        background: white;
+        color: #6b7280;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .filter-btn:hover {
+        border-color: #3b82f6;
+        color: #3b82f6;
+    }
+    
+    .filter-btn.active {
+        background: #3b82f6;
+        border-color: #3b82f6;
+        color: white;
+    }
+    
+    .completion-badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-weight: 600;
+    }
+    
+    .completion-badge.completed {
+        background-color: #d1fae5;
+        color: #065f46;
+    }
+    
+    .hidden {
+        display: none !important;
+    }
+    
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
     }
     </style>
 </head>
@@ -175,7 +297,7 @@
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- D596 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d596" data-category="analytics">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d596" data-category="analytics">
                     <div class="h-32 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="compass" class="text-white" size="48"></i>
                     </div>
@@ -192,7 +314,7 @@
                 </div>
 
                 <!-- D597 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d597" data-category="sql database">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d597" data-category="sql database">
                     <div class="h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="database" class="text-white" size="48"></i>
                     </div>
@@ -209,7 +331,7 @@
                 </div>
 
                 <!-- D598 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d598" data-category="python">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d598" data-category="python">
                     <div class="h-32 bg-gradient-to-br from-green-400 to-green-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="code" class="text-white" size="48"></i>
                     </div>
@@ -226,7 +348,7 @@
                 </div>
 
                 <!-- D599 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d599" data-category="python">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d599" data-category="python">
                     <div class="h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="search" class="text-white" size="48"></i>
                     </div>
@@ -243,7 +365,7 @@
                 </div>
 
                 <!-- D600 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d600" data-category="python machine-learning">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d600" data-category="python machine-learning">
                     <div class="h-32 bg-gradient-to-br from-red-400 to-red-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="trending-up" class="text-white" size="48"></i>
                     </div>
@@ -260,7 +382,7 @@
                 </div>
 
                 <!-- D601 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d601" data-category="tableau">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d601" data-category="tableau">
                     <div class="h-32 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="bar-chart-2" class="text-white" size="48"></i>
                     </div>
@@ -277,7 +399,7 @@
                 </div>
 
                 <!-- D602 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d602" data-category="python machine-learning">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d602" data-category="python machine-learning">
                     <div class="h-32 bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="upload-cloud" class="text-white" size="48"></i>
                     </div>
@@ -294,7 +416,7 @@
                 </div>
 
                 <!-- D603 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d603" data-category="python machine-learning">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d603" data-category="python machine-learning">
                     <div class="h-32 bg-gradient-to-br from-pink-400 to-pink-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="cpu" class="text-white" size="48"></i>
                     </div>
@@ -311,7 +433,7 @@
                 </div>
 
                 <!-- D604 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d604" data-category="python machine-learning">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d604" data-category="python machine-learning">
                     <div class="h-32 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="zap" class="text-white" size="48"></i>
                     </div>
@@ -328,7 +450,7 @@
                 </div>
 
                 <!-- D605 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d605" data-category="python">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d605" data-category="python">
                     <div class="h-32 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="target" class="text-white" size="48"></i>
                     </div>
@@ -345,7 +467,7 @@
                 </div>
 
                 <!-- D606 Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 interactive-hover project-card view-project-btn project-item" data-project="d606" data-category="r">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card project-item" data-project="d606" data-category="r">
                     <div class="h-32 bg-gradient-to-br from-violet-400 to-violet-600 rounded-lg mb-4 flex items-center justify-center">
                         <i data-feather="award" class="text-white" size="48"></i>
                     </div>
@@ -363,7 +485,7 @@
             </div>
 
             <div class="text-center mt-12">
-                <a href="https://github.com/ShanikwaH/WGU_Portfolio" target="_blank" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium interactive-hover">
+                <a href="https://github.com/ShanikwaH/WGU_Portfolio" target="_blank" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium">
                     View Full Portfolio on GitHub
                     <i class="fas fa-external-link-alt ml-2"></i>
                 </a>
@@ -374,7 +496,7 @@
     <!-- Project Modal -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
-            <span class="close close-modal">&times;</span>
+            <span class="close close-modal" role="button" aria-label="Close modal">&times;</span>
             <div id="modal-body"></div>
         </div>
     </div>
@@ -424,19 +546,208 @@
 
     <!-- JavaScript -->
     <script>
-        // Initialize AOS
-        AOS.init();
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ DOM Content Loaded - Initializing...');
+            
+            // Initialize AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init();
+                console.log('✅ AOS initialized');
+            }
 
-        // Initialize Feather Icons
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }
+            // Initialize Feather Icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+                console.log('✅ Feather icons initialized');
+            }
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    console.log('📱 Mobile menu toggled');
+                });
+                console.log('✅ Mobile menu handler attached');
+            }
+
+            // Project filtering functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            console.log(`✅ Found ${filterBtns.length} filter buttons`);
+            console.log(`✅ Found ${projectItems.length} project items`);
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    console.log(`🔍 Filtering by: ${filterValue}`);
+                    
+                    projectItems.forEach(item => {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            item.classList.remove('hidden');
+                            item.style.animation = 'fadeIn 0.5s ease-out';
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // Initialize Project Modal Functionality
+            initializeProjectModals();
         });
 
+        // Project Modal Initialization
+        function initializeProjectModals() {
+            console.log('🚀 Initializing project modals...');
+            
+            const projectCards = document.querySelectorAll('.project-card');
+            const projectModal = document.getElementById('project-modal');
+            const modalBody = document.getElementById('modal-body');
+            const closeBtn = document.querySelector('.close-modal');
+
+            console.log(`✅ Found ${projectCards.length} project cards`);
+            console.log(`✅ Modal: ${projectModal ? 'Found' : '❌ NOT FOUND'}`);
+            console.log(`✅ Modal body: ${modalBody ? 'Found' : '❌ NOT FOUND'}`);
+            console.log(`✅ Close button: ${closeBtn ? 'Found' : '❌ NOT FOUND'}`);
+
+            // Attach click handlers to project cards
+            projectCards.forEach((card, index) => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const projectId = this.getAttribute('data-project');
+                    console.log(`🎯 Project card clicked: ${projectId}`);
+                    
+                    openProjectModal(projectId);
+                });
+                
+                console.log(`✅ Click handler attached to card ${index + 1}`);
+            });
+
+            // Close button handler
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeProjectModal();
+                });
+                console.log('✅ Close button handler attached');
+            }
+
+            // Click outside to close
+            if (projectModal) {
+                projectModal.addEventListener('click', function(e) {
+                    if (e.target === projectModal) {
+                        closeProjectModal();
+                    }
+                });
+                console.log('✅ Outside click handler attached');
+            }
+
+            // ESC key to close
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && projectModal && projectModal.style.display === 'block') {
+                    closeProjectModal();
+                }
+            });
+            console.log('✅ ESC key handler attached');
+        }
+
+        // Open Project Modal
+        function openProjectModal(projectId) {
+            const projectModal = document.getElementById('project-modal');
+            const modalBody = document.getElementById('modal-body');
+            
+            if (!projectModal || !modalBody) {
+                console.error('❌ Modal elements not found!');
+                return;
+            }
+
+            // Check if project data exists
+            if (!window.projectModals || !window.projectModals[projectId]) {
+                console.error(`❌ Project data not found for: ${projectId}`);
+                modalBody.innerHTML = `
+                    <div class="text-center py-12">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Project Not Found</h2>
+                        <p class="text-gray-600">Sorry, the project data for ${projectId.toUpperCase()} is not available.</p>
+                    </div>
+                `;
+            } else {
+                const projectData = window.projectModals[projectId];
+                console.log(`✅ Opening modal for: ${projectData.title}`);
+                
+                modalBody.innerHTML = `
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">${projectData.title}</h2>
+                    ${projectData.content}
+                `;
+                
+                // Initialize tabs
+                setTimeout(() => {
+                    initializeTabs();
+                    if (typeof feather !== 'undefined') {
+                        feather.replace();
+                    }
+                }, 100);
+            }
+            
+            // Show modal
+            projectModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            console.log('✅ Modal opened successfully');
+        }
+
+        // Close Project Modal
+        function closeProjectModal() {
+            const projectModal = document.getElementById('project-modal');
+            if (projectModal) {
+                projectModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                console.log('❌ Modal closed');
+            }
+        }
+
+        // Tab functionality
+        function initializeTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            console.log(`📑 Initializing ${tabButtons.length} tabs`);
+            
+            tabButtons.forEach(button => {
+                // Remove existing listeners by cloning
+                const newButton = button.cloneNode(true);
+                button.parentNode.replaceChild(newButton, button);
+                
+                newButton.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    console.log(`📑 Switching to tab: ${tabName}`);
+                    
+                    // Remove active class from all tabs
+                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    const targetContent = document.getElementById(tabName);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                        console.log(`✅ Tab ${tabName} activated`);
+                    }
+                });
+            });
+        }
+        
         // Project modal data - COMPLETE DATA FOR ALL 11 COURSES
         const projectModals = {
             d596: {
@@ -1741,157 +2052,16 @@ minimize: sum(c_ij * x_ij) + sum(f_ij * y_ij)
                             <div class="bg-purple-50 p-4 rounded-lg">
                                 <h5 class="font-semibold text-purple-800 mb-2">Professional Integration</h5>
                                 <p class="text-purple-700">Successfully integrated academic background in criminal justice with data science expertise to address real-world policy challenges.</p>
-                            </div>
                         </div>
                     </div>
+                    <div class="mt-6 text-center">
+                        <p class="text-gray-600">Click to explore full project details...</p>
+                    </div>
                 `
-            }
-        };
-
-        // Enhanced Project Modal Functionality with Debugging
-        console.log('🚀 Initializing project modal functionality...');
-        
-        const viewProjectBtns = document.querySelectorAll('.view-project-btn');
-        const projectModal = document.getElementById('project-modal');
-        const modalBody = document.getElementById('modal-body');
-        const closeModalBtn = document.querySelector('.close-modal');
-
-        console.log('✅ Found project buttons:', viewProjectBtns.length);
-        console.log('✅ Modal element:', projectModal ? 'Found' : '❌ NOT FOUND');
-        console.log('✅ Modal body:', modalBody ? 'Found' : '❌ NOT FOUND');
-        console.log('✅ Close button:', closeModalBtn ? 'Found' : '❌ NOT FOUND');
-
-        if (!projectModal) {
-            console.error('❌ ERROR: Project modal element not found! Check HTML for id="project-modal"');
-        }
-        
-        if (!modalBody) {
-            console.error('❌ ERROR: Modal body element not found! Check HTML for id="modal-body"');
-        }
-        
-        if (viewProjectBtns.length === 0) {
-            console.error('❌ ERROR: No project buttons found! Check HTML for class="view-project-btn"');
-        }
-
-        viewProjectBtns.forEach((btn, index) => {
-            console.log(`🔗 Attaching click handler to button ${index + 1}/${viewProjectBtns.length}`);
+            },
             
-            btn.addEventListener('click', function(e) {
-                console.log('🎯 PROJECT CARD CLICKED!');
-                console.log('   Button:', this);
-                
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const projectId = this.getAttribute('data-project');
-                console.log('   Project ID:', projectId);
-                
-                const projectData = projectModals[projectId];
-                console.log('   Project data exists:', !!projectData);
-                
-                if (projectData && projectModal && modalBody) {
-                    console.log('   ✅ Opening modal for:', projectData.title);
-                    
-                    modalBody.innerHTML = `
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6">${projectData.title}</h2>
-                        ${projectData.content}
-                    `;
-                    projectModal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                    
-                    console.log('   ✅ Modal opened successfully!');
-                    
-                    // Initialize tabs in the modal
-                    initializeTabs();
-                    
-                    // Re-initialize feather icons in the modal
-                    setTimeout(() => {
-                        if (typeof feather !== 'undefined') {
-                            feather.replace();
-                        }
-                    }, 100);
-                } else {
-                    console.error('❌ ERROR: Cannot open modal');
-                    if (!projectData) console.error('   - Project data not found for ID:', projectId);
-                    if (!projectModal) console.error('   - Modal element is null');
-                    if (!modalBody) console.error('   - Modal body is null');
-                }
-            });
-        });
-
-        console.log('✅ All click handlers attached successfully!');
-
-        // Close modal functionality
-        if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', () => {
-                console.log('❌ Close button clicked');
-                if (projectModal) {
-                    projectModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            console.log('✅ Close button handler attached');
-        } else {
-            console.error('❌ ERROR: Close modal button not found!');
-        }
-
-        // Close modal when clicking outside
-        if (projectModal) {
-            projectModal.addEventListener('click', (e) => {
-                if (e.target === projectModal) {
-                    console.log('❌ Clicked outside modal, closing');
-                    projectModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            console.log('✅ Outside click handler attached');
-        }
-
-        // Tab functionality
-        function initializeTabs() {
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const tabName = this.getAttribute('data-tab');
-                    
-                    // Remove active class from all tabs and contents
-                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                    
-                    // Add active class to clicked tab and corresponding content
-                    this.classList.add('active');
-                    const targetContent = document.getElementById(tabName);
-                    if (targetContent) {
-                        targetContent.classList.add('active');
-                    }
-                });
-            });
-        }
-
-        // Project filtering functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectItems = document.querySelectorAll('.project-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filterValue = btn.getAttribute('data-filter');
-                
-                projectItems.forEach(item => {
-                    const categories = item.getAttribute('data-category').split(' ');
-                    if (filterValue === 'all' || categories.includes(filterValue)) {
-                        item.classList.remove('hidden');
-                        item.style.animation = 'fadeInUp 0.5s ease-out';
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-            });
-        });
+        };
     </script>
 </body>
 </html>
+
