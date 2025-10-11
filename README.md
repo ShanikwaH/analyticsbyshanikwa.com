@@ -14,7 +14,7 @@ This is my personal portfolio website.
   Built with <a href="https://enzostvs-deepsite.hf.space/projects/new"> DeepSite </a>
 </p>
 
-![homepage](https://github.com/ShanikwaH/analyticsbyshanikwa.com/blob/main/AnalyticsByShanikwa.png)
+![homepage](https://github.com/ShanikwaH/analyticsbyshanikwa.com/blob/main/homepage.png)
 
 # Credits
 
