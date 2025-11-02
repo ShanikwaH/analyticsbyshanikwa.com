@@ -952,262 +952,145 @@
         
         <!-- Additional Info -->
         <div class="mt-8 text-center max-w-3xl mx-auto transition-colors duration-300">
-            <p class="text-gray-600 text-sm">
+            <p class="text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">
                 <strong>Note:</strong> The dashboard is hosted on Streamlit Cloud and may take a few seconds to load initially. 
                 All data processing happens in real-time within the application.
             </p>
         </div>
-<!-- Inline Styles for Presentation Viewers -->
-<style>
-.presentation-viewer-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
-    padding: 2rem;
-    overflow-y: auto;
-    transition: background-color 0.3s ease;
-}
-
-.presentation-viewer-modal.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.presentation-modal-content {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-
-.presentation-card {
-    transition: all 0.3s ease;
-}
-
-.presentation-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.dark .presentation-viewer-modal {
-    background: rgba(0, 0, 0, 0.95);
-}
-
-.dark .presentation-card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.dark .presentation-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-    .presentation-viewer-modal {
-        padding: 1rem;
-    }
-    
-    #pdf-viewer-frame,
-    #pptx-viewer-frame {
-        height: 60vh !important;
-    }
-}
-</style>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 transition-colors duration-300">📊 Dashboard Presentation Materials</h3>
-        <p class="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
-        Explore the comprehensive presentation showcasing the AI-Powered Business Intelligence Dashboard's 
-        features, capabilities, and business value proposition.
-        </p>
-    </div>
-    
-    <div class="grid md:grid-cols-2 gap-6 mb-6 transition-colors duration-300">
-        <!-- PDF Presentation Card -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden presentation-card transition-colors duration-300">
-            <div class="p-6 transition-colors duration-300">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                        </svg>
+        
+        <!-- Dashboard Presentation Materials Section -->
+        <div class="mt-8 text-center max-w-3xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 text-center transition-colors duration-300">📊 Dashboard Presentation Materials</h3>
+            <p class="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto text-center transition-colors duration-300">
+                Explore the comprehensive presentation showcasing the AI-Powered Business Intelligence Dashboard's 
+                features, capabilities, and business value proposition.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <!-- PDF Presentation Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden presentation-card transition-colors duration-300">
+                <div class="p-6 transition-colors duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 dark:text-gray-200">PDF Presentation</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">View or download the full presentation</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 class="font-bold text-gray-800 dark:text-gray-200">PDF Presentation</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">View or download the full presentation</p>
+                    
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Complete feature overview
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Technical architecture details
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Business value proposition
+                        </li>
+                    </ul>
+
+                    <div class="space-y-3">
+                        <button onclick="showPDFViewer()" 
+                        class="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-4 py-3 rounded-lg font-medium transition flex items-center justify-center interactive-hover">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            View Presentation
+                        </button>
+                        <a href="https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf" 
+                           download
+                           class="block w-full bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-medium transition text-center interactive-hover">
+                            <svg class="inline w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            Download PDF
+                        </a>
                     </div>
                 </div>
-                
-                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-4">
-                    <li class="flex items-center">
-                        <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Complete feature overview
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Technical architecture details
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Business value proposition
-                    </li>
-                </ul>
+            </div>
 
-                <div class="space-y-3">
-                    <button onclick="showPDFViewer()" 
-                    class="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-4 py-3 rounded-lg font-medium transition flex items-center justify-center interactive-hover">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                        </svg>
-                        View Presentation
-                    </button>
-                    <a href="https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf" 
-                       download
-                       class="block w-full bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-medium transition text-center interactive-hover">
-                        <svg class="inline w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                        </svg>
-                        Download PDF
-                    </a>
+            <!-- PPTX Presentation Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden presentation-card transition-colors duration-300">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 dark:text-gray-200">PowerPoint Presentation</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Download the editable presentation</p>
+                        </div>
+                    </div>
+
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Fully editable slides
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Professional design templates
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Customizable for your needs
+                        </li>
+                    </ul>
+
+                    <div class="space-y-3">
+                        <button onclick="showPPTXViewer()" 
+                                class="w-full bg-orange-600 hover:bg-orange-700 dark:bg-orange-700 dark:hover:bg-orange-600 text-white px-4 py-3 rounded-lg font-medium transition flex items-center justify-center interactive-hover">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Preview PowerPoint
+                        </button>
+                        <a href="https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx" 
+                           download
+                           class="block w-full bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-medium transition text-center interactive-hover">
+                            <svg class="inline w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            Download PPTX
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- PPTX Presentation Card -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden presentation-card transition-colors duration-300">
-            <div class="p-6">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-800 dark:text-gray-200">PowerPoint Presentation</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Download the editable presentation</p>
-                    </div>
-                </div>
-
-                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-4">
-                    <li class="flex items-center">
-                        <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Fully editable slides
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Professional design templates
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-4 h-4 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        Customizable for your needs
-                    </li>
-                </ul>
-
-                <div class="space-y-3">
-                    <button onclick="showPPTXViewer()" 
-                            class="w-full bg-orange-600 hover:bg-orange-700 dark:bg-orange-700 dark:hover:bg-orange-600 text-white px-4 py-3 rounded-lg font-medium transition flex items-center justify-center interactive-hover">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                        </svg>
-                        Preview PowerPoint
-                    </button>
-                    <a href="https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx" 
-                       download
-                       class="block w-full bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-medium transition text-center interactive-hover">
-                        <svg class="inline w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                        </svg>
-                        Download PPTX
-                    </a>
-                </div>
-            </div>
+        <!-- Enhanced Tip Section with Better Dark Mode Support -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-center border border-blue-200 dark:border-blue-700 transition-colors duration-300">
+            <p class="text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300">
+                <strong class="text-gray-900 dark:text-gray-100">💡 Tip:</strong> The PDF viewer works best in Chrome/Edge browsers. For PowerPoint, 
+                download the file for the best editing experience in Microsoft PowerPoint or Google Slides.
+            </p>
         </div>
     </div>
-
-    <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-center border border-blue-100 dark:border-blue-800 transition-colors duration-300">
-    <p class="text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300">
-        <strong>💡 Tip:</strong> The PDF viewer works best in Chrome/Edge browsers. For PowerPoint, 
-        download the file for the best editing experience in Microsoft PowerPoint or Google Slides.
-    </p>
-    </div>
-</div>
-
-<div id="pdf-viewer-modal" class="presentation-viewer-modal">
-    <div class="presentation-modal-content">
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden transition-colors duration-300">
-            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 flex justify-between items-center">
-                <h4 class="text-white font-bold text-lg">AI-Powered BI Dashboard Presentation (PDF)</h4>
-                <button onclick="closePDFViewer()" class="text-white hover:text-gray-200 transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <iframe id="pdf-viewer-frame" 
-                    src=""
-                    class="w-full"
-                    style="height: 75vh; border: none;"></iframe>
-            <div class="p-4 bg-gray-50 dark:bg-gray-900 flex flex-col sm:flex-row justify-between items-center gap-3 transition-colors duration-300">
-                <span class="text-sm text-gray-600 dark:text-gray-400">Use the viewer controls to navigate through the presentation</span>
-                <a href="https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf" 
-                   download
-                   class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium text-sm">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                    </svg>
-                    Download PDF
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="pptx-viewer-modal" class="presentation-viewer-modal">
-    <div class="presentation-modal-content">
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden transition-colors duration-300">
-            <div class="bg-gradient-to-r from-orange-600 to-red-600 p-4 flex justify-between items-center">
-                <h4 class="text-white font-bold text-lg">PowerPoint Presentation Preview</h4>
-                <button onclick="closePPTXViewer()" class="text-white hover:text-gray-200 transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <iframe id="pptx-viewer-frame" 
-                    src=""
-                    class="w-full"
-                    style="height: 75vh; border: none;"></iframe>
-            <div class="p-4 bg-gray-50 dark:bg-gray-900 flex flex-col sm:flex-row justify-between items-center gap-3 transition-colors duration-300">
-                <span class="text-sm text-gray-600 dark:text-gray-400">Preview mode - Download for full editing capabilities</span>
-                <a href="https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx" 
-                   download
-                   class="inline-flex items-center text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 font-medium text-sm">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                    </svg>
-                    Download PPTX
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Inline JavaScript for Presentation Viewers -->
 <script>
