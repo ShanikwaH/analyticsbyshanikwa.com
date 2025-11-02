@@ -3729,6 +3729,93 @@ ${data.message}
             element.style.pointerEvents = '';
         }
 
+        // PDF and PPTX Viewer Functions
+function showPDFViewer() {
+    const pdfUrl = 'https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf';
+    
+    // Create modal for PDF viewer
+    const modal = document.createElement('div');
+    modal.className = 'project-modal';
+    modal.style.display = 'block';
+    modal.innerHTML = `
+        <div class="modal-content" style="max-width: 90vw; max-height: 90vh;">
+            <span class="close-modal" onclick="this.parentElement.parentElement.remove(); document.body.style.overflow='auto';">&times;</span>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">AI-Powered BI Dashboard Presentation (PDF)</h3>
+            <iframe src="https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true" 
+                    style="width: 100%; height: 80vh; border: none; border-radius: 8px;">
+            </iframe>
+            <div class="mt-4 text-center">
+                <a href="${pdfUrl}" download class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Download PDF
+                </a>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+function showPPTXViewer() {
+    const pptxUrl = 'https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx';
+    
+    // Create modal for PPTX viewer
+    const modal = document.createElement('div');
+    modal.className = 'project-modal';
+    modal.style.display = 'block';
+    modal.innerHTML = `
+        <div class="modal-content" style="max-width: 90vw; max-height: 90vh;">
+            <span class="close-modal" onclick="this.parentElement.parentElement.remove(); document.body.style.overflow='auto';">&times;</span>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">AI-Powered BI Dashboard Presentation (PowerPoint)</h3>
+            
+            <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
+                <p class="text-sm text-blue-800 dark:text-blue-300">
+                    <strong>💡 Preview Options:</strong> PowerPoint files can be viewed using Microsoft Office Online viewer below, or downloaded for full functionality.
+                </p>
+            </div>
+            
+            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(pptxUrl)}" 
+                    style="width: 100%; height: 70vh; border: none; border-radius: 8px;">
+            </iframe>
+            
+            <div class="mt-4 text-center space-x-4">
+                <a href="${pptxUrl}" download class="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 font-medium transition">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Download PowerPoint
+                </a>
+                <a href="https://docs.google.com/presentation/d/${extractGoogleDocsId(pptxUrl)}/edit?usp=sharing" 
+                   target="_blank"
+                   class="inline-flex items-center px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 font-medium transition">
+                    Open in Google Slides
+                </a>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
         // Initialize all interactive features
         console.log('Portfolio initialized successfully!');
     </script>
