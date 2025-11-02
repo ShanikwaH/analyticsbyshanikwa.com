@@ -3777,51 +3777,30 @@ function showPPTXViewer() {
     modal.innerHTML = `
         <div class="modal-content" style="max-width: 90vw; max-height: 90vh;">
             <span class="close-modal" onclick="this.parentElement.parentElement.remove(); document.body.style.overflow='auto';">&times;</span>
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">AI-Powered BI Dashboard Presentation (PowerPoint)</h3>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">AI-Powered BI Dashboard Presentation (PowerPoint)</h3>
             
-            <div class="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-6 mb-4">
-                <div class="flex items-start space-x-4">
-                    <svg class="w-12 h-12 text-orange-600 dark:text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                    <div>
-                        <h4 class="font-bold text-orange-800 dark:text-orange-300 mb-2">Preview Options</h4>
-                        <p class="text-sm text-orange-700 dark:text-orange-400 mb-4">
-                            PowerPoint presentations work best when downloaded or viewed in Google Slides. 
-                            Choose your preferred option below:
-                        </p>
-                        <div class="space-y-3">
-                            <a href="${pptxUrl}" 
-                               download
-                               class="block w-full bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-lg font-medium transition text-center">
-                                <svg class="inline w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                                </svg>
-                                Download PowerPoint File
-                            </a>
-                            <button onclick="window.open('https://docs.google.com/viewer?url=${encodeURIComponent(pptxUrl)}&embedded=true', '_blank')"
-                                    class="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition text-center">
-                                <svg class="inline w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                                </svg>
-                                Open in Google Docs Viewer
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
+                <p class="text-sm text-blue-800 dark:text-blue-300">
+                    <strong>💡 Preview Options:</strong> PowerPoint files can be viewed using Microsoft Office Online viewer below, or downloaded for full functionality.
+                </p>
             </div>
             
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-                <h5 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">📄 Presentation Contents:</h5>
-                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-                    <li>Dashboard Overview & Key Features</li>
-                    <li>AI-Powered Business Intelligence Capabilities</li>
-                    <li>Technical Architecture & Implementation</li>
-                    <li>Real-Time Analytics & Visualizations</li>
-                    <li>Business Value Proposition & ROI</li>
-                    <li>Use Cases & Applications</li>
-                </ul>
+            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(pptxUrl)}" 
+                    style="width: 100%; height: 70vh; border: none; border-radius: 8px;">
+            </iframe>
+            
+            <div class="mt-4 text-center space-x-4">
+                <a href="${pptxUrl}" download class="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 font-medium transition">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Download PowerPoint
+                </a>
+                <a href="https://docs.google.com/presentation/d/${extractGoogleDocsId(pptxUrl)}/edit?usp=sharing" 
+                   target="_blank"
+                   class="inline-flex items-center px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 font-medium transition">
+                    Open in Google Slides
+                </a>
             </div>
         </div>
     `;
@@ -3836,16 +3815,13 @@ function showPPTXViewer() {
             document.body.style.overflow = 'auto';
         }
     });
-    
-    // Close on Escape key
-    const escHandler = (e) => {
-        if (e.key === 'Escape') {
-            modal.remove();
-            document.body.style.overflow = 'auto';
-            document.removeEventListener('keydown', escHandler);
-        }
-    };
-    document.addEventListener('keydown', escHandler);
+}
+
+// Helper function (optional, for Google Docs integration)
+function extractGoogleDocsId(url) {
+    // This is a placeholder - you'd need to upload to Google Drive and get the ID
+    // For now, return empty string
+    return '';
         }
     });
 }
