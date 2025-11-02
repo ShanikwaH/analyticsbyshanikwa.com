@@ -3729,7 +3729,7 @@ ${data.message}
             element.style.pointerEvents = '';
         }
 
-        // PDF and PPTX Viewer Functions
+// PDF and PPTX Viewer Functions
 function showPDFViewer() {
     const pdfUrl = 'https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf';
     
@@ -3813,15 +3813,6 @@ function showPPTXViewer() {
         if (e.target === modal) {
             modal.remove();
             document.body.style.overflow = 'auto';
-        }
-    });
-}
-
-// Helper function (optional, for Google Docs integration)
-function extractGoogleDocsId(url) {
-    // This is a placeholder - you'd need to upload to Google Drive and get the ID
-    // For now, return empty string
-    return '';
         }
     });
 }
