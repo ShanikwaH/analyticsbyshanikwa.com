@@ -1100,30 +1100,33 @@ function showPDFViewer() {
     const iframe = document.getElementById('pdf-viewer-frame');
     const loading = document.getElementById('pdf-loading');
     
-    // Show loading
-    loading.style.display = 'block';
-    iframe.style.display = 'none';
+    if (!modal || !iframe || !loading) {
+        console.error('PDF viewer elements not found');
+        return;
+    }
     
-    // Set iframe source
-    iframe.src = 'https://docs.google.com/viewer?url=https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf&embedded=true';
-    
-    // Show modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    loading.style.display = 'block';
     
-    // Hide loading after iframe loads
+    iframe.src = 'https://docs.google.com/viewer?url=https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf&embedded=true';
+    
     iframe.onload = function() {
         loading.style.display = 'none';
-        iframe.style.display = 'block';
     };
 }
 
 function closePDFViewer() {
     const modal = document.getElementById('pdf-viewer-modal');
     const iframe = document.getElementById('pdf-viewer-frame');
+    const loading = document.getElementById('pdf-loading');
+    
+    if (!modal || !iframe || !loading) return;
+    
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
     iframe.src = '';
+    loading.style.display = 'block';
 }
 
 // PowerPoint Viewer Functions
@@ -1132,50 +1135,56 @@ function showPPTXViewer() {
     const iframe = document.getElementById('pptx-viewer-frame');
     const loading = document.getElementById('pptx-loading');
     
-    // Show loading
-    loading.style.display = 'block';
-    iframe.style.display = 'none';
+    if (!modal || !iframe || !loading) {
+        console.error('PowerPoint viewer elements not found');
+        return;
+    }
     
-    // Set iframe source
-    iframe.src = 'https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx';
-    
-    // Show modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    loading.style.display = 'block';
     
-    // Hide loading after iframe loads
+    iframe.src = 'https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx';
+    
     iframe.onload = function() {
         loading.style.display = 'none';
-        iframe.style.display = 'block';
     };
 }
 
 function closePPTXViewer() {
     const modal = document.getElementById('pptx-viewer-modal');
     const iframe = document.getElementById('pptx-viewer-frame');
+    const loading = document.getElementById('pptx-loading');
+    
+    if (!modal || !iframe || !loading) return;
+    
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
     iframe.src = '';
+    loading.style.display = 'block';
 }
 
-// Close modals on outside click or ESC key
+// Close modals on outside click
 document.addEventListener('click', function(e) {
     const pdfModal = document.getElementById('pdf-viewer-modal');
     const pptxModal = document.getElementById('pptx-viewer-modal');
+    
     if (e.target === pdfModal) closePDFViewer();
     if (e.target === pptxModal) closePPTXViewer();
 });
 
+// Close modals on ESC key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const pdfModal = document.getElementById('pdf-viewer-modal');
         const pptxModal = document.getElementById('pptx-viewer-modal');
+        
         if (pdfModal && pdfModal.classList.contains('active')) closePDFViewer();
         if (pptxModal && pptxModal.classList.contains('active')) closePPTXViewer();
     }
 });
 
-console.log('✅ Presentation viewer with dark mode support initialized!');
+console.log('✅ Presentation viewers initialized successfully!');
 </script>
     </section>
 
@@ -3819,37 +3828,31 @@ ${data.message}
         // Initialize all interactive features
         console.log('Portfolio initialized successfully!');
     </script>
-    <!-- PDF Viewer Modal -->
-<div id="pdf-viewer-modal" class="presentation-modal">
-    <div class="presentation-modal-content">
-        <div class="presentation-modal-header">
-            <h3 class="presentation-modal-title">AI-Powered BI Dashboard Presentation (PDF)</h3>
-            <button class="presentation-modal-close" onclick="closePDFViewer()" aria-label="Close PDF viewer">
-                ×
+<!-- PDF Viewer Modal -->
+<div id="pdf-viewer-modal" class="viewer-modal">
+    <div class="viewer-container">
+        <div class="viewer-header">
+            <h3 class="viewer-title">📄 AI-Powered BI Dashboard Presentation (PDF)</h3>
+            <button onclick="closePDFViewer()" class="viewer-close">
+                Close
             </button>
         </div>
-        <div class="presentation-modal-loading" id="pdf-loading">
-            <div class="loading-spinner"></div>
-            <p>Loading PDF presentation...</p>
-        </div>
-        <iframe id="pdf-viewer-frame" class="presentation-modal-iframe"></iframe>
+        <div class="viewer-loading" id="pdf-loading">Loading PDF...</div>
+        <iframe id="pdf-viewer-frame" class="viewer-iframe" title="PDF Presentation Viewer"></iframe>
     </div>
 </div>
 
 <!-- PowerPoint Viewer Modal -->
-<div id="pptx-viewer-modal" class="presentation-modal">
-    <div class="presentation-modal-content">
-        <div class="presentation-modal-header">
-            <h3 class="presentation-modal-title">AI-Powered BI Dashboard Presentation (PowerPoint)</h3>
-            <button class="presentation-modal-close" onclick="closePPTXViewer()" aria-label="Close PowerPoint viewer">
-                ×
+<div id="pptx-viewer-modal" class="viewer-modal">
+    <div class="viewer-container">
+        <div class="viewer-header">
+            <h3 class="viewer-title">📊 AI-Powered BI Dashboard Presentation (PowerPoint)</h3>
+            <button onclick="closePPTXViewer()" class="viewer-close">
+                Close
             </button>
         </div>
-        <div class="presentation-modal-loading" id="pptx-loading">
-            <div class="loading-spinner"></div>
-            <p>Loading PowerPoint presentation...</p>
-        </div>
-        <iframe id="pptx-viewer-frame" class="presentation-modal-iframe"></iframe>
+        <div class="viewer-loading" id="pptx-loading">Loading PowerPoint...</div>
+        <iframe id="pptx-viewer-frame" class="viewer-iframe" title="PowerPoint Presentation Viewer"></iframe>
     </div>
 </div>
     
