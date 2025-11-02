@@ -1005,12 +1005,12 @@
                 </ul>
 
                 <div class="space-y-3">
-<button onclick="showPDFViewer()" 
-        class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition flex items-center justify-center">
-    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-    </svg>
+                    <button onclick="showPDFViewer()" 
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
                         View Presentation
                     </button>
                     <a href="https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf" 
@@ -1062,12 +1062,12 @@
                 </ul>
 
                 <div class="space-y-3">
-<button onclick="showPPTXViewer()" 
-        class="w-full bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-lg font-medium transition flex items-center justify-center">
-    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-    </svg>
+                    <button onclick="showPPTXViewer()" 
+                            class="w-full bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-lg font-medium transition flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
                         Preview PowerPoint
                     </button>
                     <a href="https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx" 
@@ -1091,138 +1091,195 @@
     </div>
 </section>
 
+<!-- PDF Viewer Modal -->
+<div id="pdf-viewer-modal" class="presentation-viewer-modal">
+    <div class="presentation-viewer-content">
+        <div class="presentation-viewer-header">
+            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200">PDF Presentation</h3>
+            <button onclick="closePDFViewer()" class="presentation-viewer-close" aria-label="Close">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="presentation-viewer-body">
+            <div id="pdf-loading" class="presentation-viewer-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading PDF presentation...</p>
+            </div>
+            <iframe id="pdf-viewer-frame" 
+                    class="presentation-viewer-frame"
+                    style="display: none;"
+                    title="PDF Presentation Viewer"></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- PowerPoint Viewer Modal -->
+<div id="pptx-viewer-modal" class="presentation-viewer-modal">
+    <div class="presentation-viewer-content">
+        <div class="presentation-viewer-header">
+            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200">PowerPoint Presentation</h3>
+            <button onclick="closePPTXViewer()" class="presentation-viewer-close" aria-label="Close">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="presentation-viewer-body">
+            <div id="pptx-loading" class="presentation-viewer-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading PowerPoint presentation...</p>
+            </div>
+            <iframe id="pptx-viewer-frame" 
+                    class="presentation-viewer-frame"
+                    style="display: none;"
+                    title="PowerPoint Presentation Viewer"></iframe>
+        </div>
+    </div>
+</div>
+
+    <!-- Info Box -->
+    <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 text-center">
+        <p class="text-sm text-blue-800 dark:text-blue-300">
+            <strong>💡 Tip:</strong> For best results, use Chrome or Edge browsers. PowerPoint files can be downloaded and edited in Microsoft PowerPoint or Google Slides.
+        </p>
+    </div>
+</section>
+
 <!-- Inline JavaScript for Presentation Viewers -->
 <script>
-    // PDF Viewer Functions
-    window.showPDFViewer = function() {
-        const modal = document.getElementById('pdf-viewer-modal');
-        const iframe = document.getElementById('pdf-viewer-frame');
-        const loading = document.getElementById('pdf-loading');
-        
-        if (!modal || !iframe || !loading) {
-            console.error('PDF viewer elements not found');
-            return;
-        }
-        
-        // Show modal
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        loading.style.display = 'block';
-        iframe.style.display = 'none';
-        
-        // GitHub raw URL
-        const pdfUrl = 'https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf';
-        
-        // Use Google Docs Viewer (most reliable)
-        iframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
-        
-        // Handle load
-        iframe.onload = function() {
-            setTimeout(() => {
-                loading.style.display = 'none';
-                iframe.style.display = 'block';
-            }, 1000);
-        };
-        
-        // Fallback timeout
+// Presentation Viewer Functions
+function showPDFViewer() {
+    const modal = document.getElementById('pdf-viewer-modal');
+    const iframe = document.getElementById('pdf-viewer-frame');
+    const loading = document.getElementById('pdf-loading');
+    
+    if (!modal || !iframe || !loading) {
+        console.error('PDF viewer elements not found');
+        alert('PDF viewer is not available. Please download the file instead.');
+        return;
+    }
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    loading.style.display = 'flex';
+    iframe.style.display = 'none';
+    
+    // GitHub raw URL
+    const pdfUrl = 'https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pdf';
+    
+    // Use Google Docs Viewer (most reliable)
+    iframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+    
+    // Handle load
+    iframe.onload = function() {
         setTimeout(() => {
             loading.style.display = 'none';
             iframe.style.display = 'block';
-        }, 8000);
+        }, 1000);
     };
     
-    window.closePDFViewer = function() {
-        const modal = document.getElementById('pdf-viewer-modal');
-        const iframe = document.getElementById('pdf-viewer-frame');
-        const loading = document.getElementById('pdf-loading');
-        
-        if (!modal) return;
-        
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-        
-        if (iframe) iframe.src = '';
-        if (loading) loading.style.display = 'block';
-    };
+    // Fallback timeout
+    setTimeout(() => {
+        loading.style.display = 'none';
+        iframe.style.display = 'block';
+    }, 8000);
+}
+
+function closePDFViewer() {
+    const modal = document.getElementById('pdf-viewer-modal');
+    const iframe = document.getElementById('pdf-viewer-frame');
+    const loading = document.getElementById('pdf-loading');
     
-    // PowerPoint Viewer Functions
-    window.showPPTXViewer = function() {
-        const modal = document.getElementById('pptx-viewer-modal');
-        const iframe = document.getElementById('pptx-viewer-frame');
-        const loading = document.getElementById('pptx-loading');
-        
-        if (!modal || !iframe || !loading) {
-            console.error('PowerPoint viewer elements not found');
-            return;
-        }
-        
-        // Show modal
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        loading.style.display = 'block';
-        iframe.style.display = 'none';
-        
-        // GitHub raw URL
-        const pptxUrl = 'https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx';
-        
-        // Use Office Web Apps Viewer
-        iframe.src = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(pptxUrl)}`;
-        
-        // Handle load
-        iframe.onload = function() {
-            setTimeout(() => {
-                loading.style.display = 'none';
-                iframe.style.display = 'block';
-            }, 1000);
-        };
-        
-        // Fallback timeout
+    if (!modal) return;
+    
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    
+    if (iframe) iframe.src = '';
+    if (loading) loading.style.display = 'flex';
+}
+
+function showPPTXViewer() {
+    const modal = document.getElementById('pptx-viewer-modal');
+    const iframe = document.getElementById('pptx-viewer-frame');
+    const loading = document.getElementById('pptx-loading');
+    
+    if (!modal || !iframe || !loading) {
+        console.error('PowerPoint viewer elements not found');
+        alert('PowerPoint viewer is not available. Please download the file instead.');
+        return;
+    }
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    loading.style.display = 'flex';
+    iframe.style.display = 'none';
+    
+    // GitHub raw URL
+    const pptxUrl = 'https://github.com/ShanikwaH/ai-bi-dashboard/raw/main/AI-Powered-BI-Dashboard-Presentation.pptx';
+    
+    // Use Office Web Apps Viewer
+    iframe.src = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(pptxUrl)}`;
+    
+    // Handle load
+    iframe.onload = function() {
         setTimeout(() => {
             loading.style.display = 'none';
             iframe.style.display = 'block';
-        }, 8000);
+        }, 1000);
     };
     
-    window.closePPTXViewer = function() {
-        const modal = document.getElementById('pptx-viewer-modal');
-        const iframe = document.getElementById('pptx-viewer-frame');
-        const loading = document.getElementById('pptx-loading');
-        
-        if (!modal) return;
-        
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-        
-        if (iframe) iframe.src = '';
-        if (loading) loading.style.display = 'block';
-    };
+    // Fallback timeout
+    setTimeout(() => {
+        loading.style.display = 'none';
+        iframe.style.display = 'block';
+    }, 8000);
+}
+
+function closePPTXViewer() {
+    const modal = document.getElementById('pptx-viewer-modal');
+    const iframe = document.getElementById('pptx-viewer-frame');
+    const loading = document.getElementById('pptx-loading');
     
-    // Close on outside click
-    document.addEventListener('click', function(e) {
-        if (e.target.id === 'pdf-viewer-modal') {
+    if (!modal) return;
+    
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    
+    if (iframe) iframe.src = '';
+    if (loading) loading.style.display = 'flex';
+}
+
+// Close on outside click
+document.addEventListener('click', function(e) {
+    if (e.target.id === 'pdf-viewer-modal') {
+        closePDFViewer();
+    }
+    if (e.target.id === 'pptx-viewer-modal') {
+        closePPTXViewer();
+    }
+});
+
+// Close on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const pdfModal = document.getElementById('pdf-viewer-modal');
+        const pptxModal = document.getElementById('pptx-viewer-modal');
+        
+        if (pdfModal && pdfModal.classList.contains('active')) {
             closePDFViewer();
         }
-        if (e.target.id === 'pptx-viewer-modal') {
+        if (pptxModal && pptxModal.classList.contains('active')) {
             closePPTXViewer();
         }
-    });
-    
-    // Close on ESC key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            const pdfModal = document.getElementById('pdf-viewer-modal');
-            const pptxModal = document.getElementById('pptx-viewer-modal');
-            
-            if (pdfModal && pdfModal.classList.contains('active')) {
-                closePDFViewer();
-            }
-            if (pptxModal && pptxModal.classList.contains('active')) {
-                closePPTXViewer();
-            }
-        }
-    });
-    
-    console.log('✅ Presentation viewers initialized');
+    }
+});
+
+console.log('✅ Presentation viewers initialized successfully');
 })();
 </script>
     </section>
@@ -3867,41 +3924,5 @@ ${data.message}
         // Initialize all interactive features
         console.log('Portfolio initialized successfully!');
     </script>
-<!-- PDF Viewer Modal -->
-<div id="pdf-viewer-modal" class="viewer-modal">
-    <div class="viewer-container">
-        <div class="viewer-header">
-            <h3 class="viewer-title">📄 AI-Powered BI Dashboard Presentation</h3>
-            <button onclick="closePDFViewer()" class="viewer-close">✕ Close</button>
-        </div>
-        <div class="viewer-body">
-            <div class="viewer-loading" id="pdf-loading">
-                <div class="viewer-loading-spinner"></div>
-                <div class="viewer-loading-text">Loading PDF...</div>
-                <div class="viewer-loading-subtext">This may take a moment</div>
-            </div>
-            <iframe id="pdf-viewer-frame" class="viewer-iframe" title="PDF Viewer"></iframe>
-        </div>
-    </div>
-</div>
-
-<!-- PowerPoint Viewer Modal -->
-<div id="pptx-viewer-modal" class="viewer-modal">
-    <div class="viewer-container">
-        <div class="viewer-header">
-            <h3 class="viewer-title">📊 AI-Powered BI Dashboard Presentation</h3>
-            <button onclick="closePPTXViewer()" class="viewer-close">✕ Close</button>
-        </div>
-        <div class="viewer-body">
-            <div class="viewer-loading" id="pptx-loading">
-                <div class="viewer-loading-spinner"></div>
-                <div class="viewer-loading-text">Loading PowerPoint...</div>
-                <div class="viewer-loading-subtext">This may take a moment</div>
-            </div>
-            <iframe id="pptx-viewer-frame" class="viewer-iframe" title="PowerPoint Viewer"></iframe>
-        </div>
-    </div>
-</div>
-    
 </body>
 </html>
