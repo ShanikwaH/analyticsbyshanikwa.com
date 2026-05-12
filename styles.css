@@ -919,3 +919,116 @@ button { font-family: var(--font-sans); }
   background: var(--grad-indigo-plum);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   ============================================================ */
+.theme-toggle {
+  width: 36px; height: 36px; border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface); color: var(--slate-600);
+  cursor: pointer; flex-shrink: 0;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+.theme-toggle:hover { color: var(--signal-blue); border-color: var(--signal-blue); }
+.theme-toggle svg { width: 18px; height: 18px; pointer-events: none; }
+.theme-toggle .icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun  { display: none; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   Elements that use hardcoded colours need explicit dark rules.
+   CSS-var–based elements switch automatically via tokens.css.
+   ============================================================ */
+
+/* Nav */
+[data-theme="dark"] .site-nav { background: rgba(15,23,42,0.90); border-bottom-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .nav-links a { color: var(--slate-300); }
+[data-theme="dark"] .nav-links a:hover  { background: rgba(255,255,255,0.06); color: #fff; }
+[data-theme="dark"] .nav-links a.active { background: rgba(59,130,246,0.18); color: #93C5FD; }
+[data-theme="dark"] .nav-icon  { background: var(--surface); color: var(--slate-300); border-color: var(--border); }
+[data-theme="dark"] .nav-icon:hover { background: rgba(59,130,246,0.15); color: #93C5FD; border-color: var(--signal-blue); }
+[data-theme="dark"] .nav-mobile { background: var(--slate-900); border-color: rgba(255,255,255,0.08); }
+[data-theme="dark"] .nav-mobile a { color: var(--slate-200); border-color: rgba(255,255,255,0.06); }
+[data-theme="dark"] .nav-mobile a.active { color: #93C5FD; }
+
+/* Cards & surfaces */
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .cert-card,
+[data-theme="dark"] .benefit-card,
+[data-theme="dark"] .channel-card,
+[data-theme="dark"] .testimonial,
+[data-theme="dark"] .proj-card { background: var(--surface); border-color: var(--border); }
+[data-theme="dark"] .product-card.featured { border-color: var(--signal-blue); }
+[data-theme="dark"] .product-card.best-val { border-color: #F59E0B; }
+
+/* Stats strip */
+[data-theme="dark"] .stats-strip { background: var(--surface); border-color: var(--border); }
+[data-theme="dark"] .stat-num { color: var(--signal-blue); }
+
+/* Bands */
+[data-theme="dark"] .band-cream { background: var(--slate-800); }
+[data-theme="dark"] .reflection-band { background: var(--slate-900); }
+
+/* Skill bars */
+[data-theme="dark"] .skill-track { background: var(--slate-700); }
+
+/* Timeline */
+[data-theme="dark"] .tl-item::before { background: var(--border); }
+[data-theme="dark"] .tl-dot { border-color: var(--signal-blue); background: var(--slate-900); }
+[data-theme="dark"] .tl-card { background: var(--surface); border-color: var(--border); }
+
+/* Contact form */
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form select,
+[data-theme="dark"] .contact-form textarea { background: var(--surface); border-color: var(--border); color: var(--fg); }
+[data-theme="dark"] .contact-info { background: var(--slate-800); }
+
+/* Signup form */
+[data-theme="dark"] .signup input { background: var(--surface); border-color: var(--border); color: var(--fg); }
+
+/* Motto band */
+[data-theme="dark"] .motto-band { background: var(--slate-900); }
+[data-theme="dark"] .pillar { border-color: var(--border); }
+
+/* CTA band */
+[data-theme="dark"] .cta-card { background: var(--surface); box-shadow: none; border: 1px solid var(--border); }
+
+/* Page hero */
+[data-theme="dark"] .page-hero { background: var(--slate-900); }
+[data-theme="dark"] .eyebrow-pill { background: var(--slate-800); border-color: var(--border); color: var(--slate-300); }
+
+/* Archive & content cards */
+[data-theme="dark"] .content-card,
+[data-theme="dark"] .archive-card { background: var(--surface); border-color: var(--border); }
+
+/* Project cards */
+[data-theme="dark"] .proj-card .proj-body { background: var(--surface); }
+
+/* Reflection card */
+[data-theme="dark"] .reflection-card { background: var(--surface); border-color: var(--border); }
+[data-theme="dark"] .reflection-body { background: var(--surface); }
+
+/* Trust strip */
+[data-theme="dark"] .trust-strip { background: var(--slate-800); border-color: var(--border); }
+
+/* Footer stays dark always — no overrides needed */
+
+/* Mobile nav theme row */
+.nav-theme-mob {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; padding: 14px 20px;
+  background: none; border: none;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.70); font-size: 15px; font-weight: 500;
+  cursor: pointer; font-family: var(--font-sans); text-align: left;
+  transition: color 150ms ease;
+}
+.nav-theme-mob:hover { color: #fff; }
+.nav-theme-mob svg { width: 20px; height: 20px; flex-shrink: 0; }
+.nav-theme-mob .icon-moon { display: none; }
+[data-theme="dark"] .nav-theme-mob .icon-sun  { display: none; }
+[data-theme="dark"] .nav-theme-mob .icon-moon { display: block; }
+[data-theme="dark"] .nav-theme-mob { color: rgba(255,255,255,0.80); }
