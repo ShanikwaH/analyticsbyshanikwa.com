@@ -1,0 +1,238 @@
+/* ============================================================
+   AnalyticsByShanikwa — Colors & Type Tokens
+   Source of truth: AnalyticsByShanikwa_Brand_Style_Guide.pdf v1.0
+   Two-track palette. NEVER mix tracks on the same surface.
+   ============================================================ */
+
+/* Fonts (CDN) — Inter, Pinyon Script, Montserrat, JetBrains Mono.
+   The system prefers Inter throughout for UI/body; Pinyon Script
+   is reserved for the wordmark/banners; Montserrat for taglines
+   and eyebrows (ALWAYS UPPERCASE + wide tracking). */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&family=Pinyon+Script&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- TRACK 1 · WEB / PORTFOLIO / RESUMES / DASHBOARDS ---------- */
+  --signal-blue:   #3B82F6;  /* primary · action */
+  --insight-green: #10B981;  /* secondary · growth */
+  --deep-navy:     #0F172A;  /* anchor · dark mode */
+  --paper-white:   #F8FAFC;  /* light mode base */
+
+  /* Slate ramp — neutrals for body, borders, dividers, code */
+  --slate-50:  #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+
+  /* ---------- TRACK 2 · SOCIAL / YOUTUBE / TIKTOK / PINTEREST / LOGO ---------- */
+  --signature-purple: #7B6FB8;  /* banner left */
+  --soft-lavender:    #B591D4;  /* banner right */
+  --electric-pink:    #E879C9;  /* logo inner glow */
+  --royal-plum:       #5B3A9E;  /* logo outer ring */
+
+  /* ---------- SKILL-TAG ACCENTS (pill backgrounds only) ---------- */
+  --tag-python-bg:     #DBEAFE;  --tag-python-fg:     #1E40AF;
+  --tag-r-bg:          #DCFCE7;  --tag-r-fg:          #166534;
+  --tag-sql-bg:        #F3E8FF;  --tag-sql-fg:        #6B21A8;
+  --tag-tableau-bg:    #FED7AA;  --tag-tableau-fg:    #9A3412;
+  --tag-excel-bg:      #FCE7F3;  --tag-excel-fg:      #9D174D;
+  --tag-accounting-bg: #FEF3C7;  --tag-accounting-fg: #92400E;
+
+  /* ---------- SIX APPROVED GRADIENTS (no improvising) ---------- */
+  --grad-primary-hero:   linear-gradient(90deg,  #3B82F6 0%, #10B981 100%);
+  --grad-indigo-plum:    linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  --grad-sky-cyan:       linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
+  --grad-triple-indigo:  linear-gradient(135deg, #2563EB 0%, #6366F1 50%, #9333EA 100%);
+  --grad-social-purple:  linear-gradient(90deg,  #7B6FB8 0%, #B591D4 100%);
+  --grad-dark-mode-plum: linear-gradient(135deg, #1E3A8A 0%, #581C87 100%);
+
+  /* ---------- SEMANTIC · LIGHT MODE (web track) ---------- */
+  --bg:         var(--paper-white);
+  --surface:    #FFFFFF;
+  --surface-2:  var(--slate-50);
+  --border:     var(--slate-200);
+  --divider:    var(--slate-200);
+  --fg:         var(--slate-900);   /* primary text */
+  --fg-muted:   var(--slate-700);   /* body */
+  --fg-subtle:  var(--slate-500);   /* captions, meta */
+  --fg-inverse: var(--paper-white);
+  --action:     var(--signal-blue);
+  --action-hover: #2563EB;
+  --success:    var(--insight-green);
+  --focus-ring: var(--signal-blue);
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-script:  'Pinyon Script', 'Lucida Handwriting', 'Apple Chancery', cursive; /* wordmark/banners only · never < 22px */
+  --font-display: 'Montserrat', var(--font-sans);  /* taglines, eyebrows · UPPERCASE + wide tracking */
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* ---------- TYPE SCALE (web) ---------- */
+  --h1-size: 52px; --h1-weight: 800; --h1-lh: 1.05; --h1-track: -0.02em;
+  --h2-size: 34px; --h2-weight: 700; --h2-lh: 1.15; --h2-track: -0.015em;
+  --h3-size: 22px; --h3-weight: 600; --h3-lh: 1.3;  --h3-track: -0.01em;
+  --body-lg-size: 18px; --body-lg-lh: 1.6;
+  --body-size:    16px; --body-lh:    1.55;
+  --caption-size: 13px; --caption-lh: 1.5;
+  --eyebrow-size: 12px; --eyebrow-weight: 700; --eyebrow-track: 0.22em;
+  --wordmark-min: 22px; /* never set Pinyon Script below this */
+  --code-size:    14px;
+
+  /* ---------- RADII (no sharp corners) ---------- */
+  --radius-pill:   9999px;
+  --radius-card:   12px;  /* 10–12px on cards & surfaces */
+  --radius-card-sm: 10px;
+  --radius-button: 8px;   /* 6–8px on buttons & pills */
+  --radius-button-sm: 6px;
+
+  /* ---------- SHADOWS (soft, modern) ---------- */
+  --shadow-sm:   0 1px 2px rgba(15,23,42,0.06);
+  --shadow-md:   0 4px 12px rgba(15,23,42,0.08);
+  --shadow-lg:   0 10px 25px -5px rgba(15,23,42,0.10), 0 8px 10px -6px rgba(15,23,42,0.05);
+  --shadow-xl:   0 25px 50px -12px rgba(15,23,42,0.25);
+  --shadow-focus: 0 0 0 3px rgba(59,130,246,0.35);
+
+  /* ---------- SPACING (4px base) ---------- */
+  --space-1: 4px;  --space-2: 8px;   --space-3: 12px;
+  --space-4: 16px; --space-5: 20px;  --space-6: 24px;
+  --space-8: 32px; --space-10: 40px; --space-12: 48px;
+  --space-16: 64px; --space-20: 80px; --space-24: 96px;
+
+  /* ---------- MOTION ---------- */
+  --ease-standard: cubic-bezier(.4,0,.2,1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+}
+
+/* ---------- DARK MODE · anchored on Deep Navy ---------- */
+.dark, [data-theme="dark"] {
+  --bg:        var(--deep-navy);
+  --surface:   #1E293B;        /* slate-800 cards */
+  --surface-2: #0F172A;
+  --border:    #334155;
+  --divider:   #1E293B;
+  --fg:        var(--slate-200);   /* body text on dark = Slate 200 */
+  --fg-muted:  #CBD5E1;
+  --fg-subtle: #94A3B8;
+}
+
+/* ============================================================
+   SEMANTIC TYPE — drop-in classes that match the brand scale
+   ============================================================ */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--body-size);
+  line-height: var(--body-lh);
+  color: var(--fg-muted);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.h1, h1 {
+  font-family: var(--font-sans);
+  font-weight: var(--h1-weight);
+  font-size: var(--h1-size);
+  line-height: var(--h1-lh);
+  letter-spacing: var(--h1-track);
+  color: var(--fg);
+  text-wrap: balance;
+}
+
+.h2, h2 {
+  font-family: var(--font-sans);
+  font-weight: var(--h2-weight);
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  letter-spacing: var(--h2-track);
+  color: var(--fg);
+}
+
+.h3, h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--h3-weight);
+  font-size: var(--h3-size);
+  line-height: var(--h3-lh);
+  letter-spacing: var(--h3-track);
+  color: var(--fg);
+}
+
+.body-lg { font-size: var(--body-lg-size); line-height: var(--body-lg-lh); }
+.body    { font-size: var(--body-size);    line-height: var(--body-lh); }
+.caption { font-size: var(--caption-size); line-height: var(--caption-lh); color: var(--fg-subtle); }
+
+/* Eyebrow / section label — Montserrat UPPERCASE, wide tracking */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--eyebrow-weight);
+  font-size: var(--eyebrow-size);
+  letter-spacing: var(--eyebrow-track);
+  text-transform: uppercase;
+  color: var(--signal-blue);
+}
+.eyebrow--muted { color: var(--slate-500); }
+
+/* Tagline — Montserrat ExtraBold UPPERCASE 0.22–0.30em */
+.tagline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+/* Wordmark — Pinyon Script, never below 22px */
+.wordmark {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.wordmark--sm  { font-size: 22px; }  /* absolute floor */
+.wordmark--lg  { font-size: 72px; }
+.wordmark--xl  { font-size: 120px; }
+
+/* Code blocks */
+code, pre, .code {
+  font-family: var(--font-mono);
+  font-size: var(--code-size);
+  background: var(--surface-2);
+  border-radius: var(--radius-button-sm);
+}
+
+/* Gradient text — the brand's signature move on the word "Insights" */
+.gradient-text {
+  background: var(--grad-primary-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================================
+   SKILL-TAG PILLS — accents allowed ONLY as pill backgrounds,
+   never floated over photos, never on body text.
+   ============================================================ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.tag--python     { background: var(--tag-python-bg);     color: var(--tag-python-fg); }
+.tag--r          { background: var(--tag-r-bg);          color: var(--tag-r-fg); }
+.tag--sql        { background: var(--tag-sql-bg);        color: var(--tag-sql-fg); }
+.tag--tableau    { background: var(--tag-tableau-bg);    color: var(--tag-tableau-fg); }
+.tag--excel      { background: var(--tag-excel-bg);      color: var(--tag-excel-fg); }
+.tag--accounting { background: var(--tag-accounting-bg); color: var(--tag-accounting-fg); }

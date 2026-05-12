@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Weekly reflections pairing Bible stories with data stewardship — the Talents parable, Joseph's forecast, the Widow's Oil, and more. By Shanikwa Haynes." />
+  <meta name="keywords" content="Bible stories data analytics, faith and finance, stewardship newsletter, Talents parable, data stewardship, analytics faith, Shanikwa Haynes" />
+  <meta property="og:title" content="Bible Stories &amp; Data Stewardship | Analytics by Shanikwa" />
+  <meta property="og:description" content="Weekly reflections pairing Bible stories with real datasets — the letter for analysts, CPAs, and finance folks who want their work to mean something." />
+  <meta property="og:url" content="https://analyticsbyshanikwa.com/bible-stories" />
+  <meta property="og:type" content="website" />
+  <title>Bible Stories &amp; Data Stewardship | Analytics by Shanikwa</title>
+  <link rel="icon" href="/static/favicon.ico" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P47R83QBPK"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P47R83QBPK');</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-orb" src="static/logo-orb.png" alt="Analytics by Shanikwa" width="38" height="38" />
+        <div>
+          <div class="brand-name">Analytics by Shanikwa</div>
+          <div class="brand-sub">Data · Faith · Finance</div>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="accounting.html">Accounting</a></li>
+        <li><a href="data-analytics.html">Data Analytics</a></li>
+        <li><a href="bible-stories.html" class="active">Bible Stories</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-right">
+        <a class="nav-icon" href="https://www.tiktok.com/@analyticsbyshanikwa" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.52V6.76a4.85 4.85 0 01-1.02-.07z"/></svg>
+        </a>
+        <a class="nav-icon" href="https://www.youtube.com/@analyticsbyshanikwa" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a class="nav-cta" href="about.html#contact">Contact</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="accounting.html">Accounting</a>
+    <a href="data-analytics.html">Data Analytics</a>
+    <a href="bible-stories.html" class="active">Bible Stories</a>
+    <a href="shop.html">Shop</a>
+    <a href="community.html">Community</a>
+    <a href="about.html">About</a>
+    <div class="nav-mobile-divider"></div>
+    <div class="nav-mobile-icons">
+      <a class="nav-icon" href="https://www.tiktok.com/@analyticsbyshanikwa" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.52V6.76a4.85 4.85 0 01-1.02-.07z"/></svg></a>
+      <a class="nav-icon" href="https://www.youtube.com/@analyticsbyshanikwa" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+    </div>
+    <a class="nav-cta-mob" href="about.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-content">
+      <div class="eyebrow-pill">
+        <span class="dot"></span>
+        <span class="label">Weekly Letter · Issue №&nbsp;47</span>
+      </div>
+      <h1>One story. One dataset.<br />One question for Monday.</h1>
+      <p>Every Sunday, I hold a Bible story up next to real numbers and ask what it means for the work you do. For analysts, accountants, and finance folks who want their craft to mean something beyond the quarterly close.</p>
+      <div class="hero-chips">
+        <span class="chip chip-amber">Matthew 25</span>
+        <span class="chip chip-blue">Genesis 41</span>
+        <span class="chip chip-green">Luke 12:48</span>
+        <span class="chip chip-purple">Proverbs 27:23</span>
+        <span class="chip chip-pink">1 Kings 17</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED REFLECTION -->
+<section class="band reflection-band" id="this-week">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow warm">This Week · Issue №&nbsp;46</span>
+      <h2 class="section-h2">The parable of the talents, audited.</h2>
+      <p class="section-lede">What the servant who buried his talent understood about risk management — and got completely wrong about stewardship.</p>
+    </div>
+    <article class="reflection-card">
+      <div class="reflection-art">
+        <div class="r-label"><span></span>Reflection №&nbsp;46 · Matthew 25</div>
+        <div class="r-verse">
+          <div class="r-scripture">"To whom much is given,<br />much will be required."</div>
+          <div class="r-ref">Luke 12:48</div>
+        </div>
+      </div>
+      <div class="reflection-body">
+        <div class="r-date">Posted Sunday, November 8 · 7 min read</div>
+        <h3>The parable of the talents, audited.</h3>
+        <p>The servant who buried his talent didn't lose money. He just refused to put it to work. That's a perfectly acceptable financial control — and a perfectly terrible career move. This week we audit what we've been entrusted with, and what it costs to bury it.</p>
+        <p>The master gave each servant talents in proportion to their ability. Not equally — proportionally. The return expected wasn't identical; it was commensurate with what was given. That's also how performance reviews work. And how stewardship works.</p>
+        <ul class="takeaways">
+          <li><span class="chk">✓</span><span>The difference between <strong>preservation</strong> and <strong>stewardship</strong> — and why your boss is paying for the second.</span></li>
+          <li><span class="chk">✓</span><span>A 5-minute self-audit: what skills, accounts, and people have you been handed?</span></li>
+          <li><span class="chk">✓</span><span>Free template: <strong>Talents Ledger.xlsx</strong> — a journal for the work you haven't done yet.</span></li>
+        </ul>
+        <div class="r-actions">
+          <a href="#join" class="btn btn-primary">Subscribe to read in full</a>
+          <a href="shop.html" class="btn btn-ghost">Get the Talents Ledger</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- STEWARDSHIP AUDIT -->
+<section class="band band-surface2" id="audit">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Stewardship Audit</span>
+      <h2 class="section-h2">Five questions for the numbers you actually own.</h2>
+      <p class="section-lede">From Issue 43. A free weekly framework — based on Proverbs 27:23 — for any analyst, accountant, or finance person who wants to account for their own work, not just their employer's.</p>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon amber">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>What was I given?</h3>
+        <p>List the skills, relationships, data access, and responsibilities that landed in your lap this week — earned or not.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3>What did I produce?</h3>
+        <p>Name one output — a report, a query, a conversation — that used what you were given. Be specific. No filler.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H5l-1 2V4z"/><path d="M8 9h8M8 13h5"/></svg>
+        </div>
+        <h3>What did I bury?</h3>
+        <p>Name one thing you knew how to do — but didn't. One insight you had — but didn't surface. This is where the audit gets honest.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>What does the next week require?</h3>
+        <p>One commitment. Not a goal. A commitment. Something you'll have done by Friday that uses what you've been given.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="motto-band">
+  <div class="wrap motto-inner">
+    <p class="motto-script">Numbers tie. Sources cite.<br />Promises ship.</p>
+    <div class="motto-sub">The Three Disciplines of This Letter</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">№ 01</div>
+        <h4>Numbers tie</h4>
+        <p>Every figure I share reconciles to a source. If a row doesn't tie, it doesn't ship — in the letter or in your model.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">№ 02</div>
+        <h4>Sources cite</h4>
+        <p>Scripture references in full. Datasets linked. Claims sourced. Stewardship is showing your work.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">№ 03</div>
+        <h4>Promises ship</h4>
+        <p>The letter goes out every Sunday. The templates open every month. What we say will arrive, arrives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHIVE -->
+<section class="band" id="archive">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Issue Archive</span>
+      <h2 class="section-h2">Recent issues from the letter.</h2>
+      <p class="section-lede">A look at the most recent reflections. The full archive is available to subscribers.</p>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-thumb thumb-plum">
+          <div class="thumb-overlay">
+            <span class="thumb-kind">Reflection · Matthew 25</span>
+            <span class="thumb-script">Talents.</span>
+          </div>
+        </div>
+        <div class="card-meta"><span>Issue 46</span><span class="meta-dot"></span><span>Stewardship</span><span class="meta-dot"></span><span>Nov 8</span></div>
+        <div class="card-body">
+          <h3>The parable of the talents, audited.</h3>
+          <p>The servant who buried his talent didn't lose money — he just refused to put it to work. This week we ask what you've been burying.</p>
+          <a class="card-more" href="#join">Read this issue <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-thumb thumb-indigo">
+          <div class="thumb-overlay">
+            <span class="thumb-kind">Reflection · Genesis 41</span>
+            <span class="thumb-script">Seven years.</span>
+          </div>
+        </div>
+        <div class="card-meta"><span>Issue 45</span><span class="meta-dot"></span><span>Forecasting</span><span class="meta-dot"></span><span>Nov 1</span></div>
+        <div class="card-body">
+          <h3>Joseph kept a 14-year forecast. Your boss won't.</h3>
+          <p>What Pharaoh's dream actually teaches about scenario planning — and why most quarterly forecasts are spiritual, not statistical.</p>
+          <a class="card-more" href="#join">Read this issue <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-thumb thumb-plum">
+          <div class="thumb-overlay">
+            <span class="thumb-kind">Reflection · Matthew 25</span>
+            <span class="thumb-script">Cleanest books.</span>
+          </div>
+        </div>
+        <div class="card-meta"><span>Issue 44</span><span class="meta-dot"></span><span>Career</span><span class="meta-dot"></span><span>Oct 25</span></div>
+        <div class="card-body">
+          <h3>The third servant had the cleanest books.</h3>
+          <p>How "playing it safe" with your career, your skills, and your accounts looks identical to obedience — and isn't.</p>
+          <a class="card-more" href="#join">Read this issue <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-thumb thumb-amber">
+          <div class="thumb-overlay">
+            <span class="thumb-kind">Template · Proverbs 27:23</span>
+            <span class="thumb-script">Know the flock.</span>
+          </div>
+        </div>
+        <div class="card-meta"><span>Issue 43</span><span class="meta-dot"></span><span>Tooling</span><span class="meta-dot"></span><span>Oct 18</span></div>
+        <div class="card-body">
+          <h3>A weekly check-in for the numbers you actually own.</h3>
+          <p>A free spreadsheet that asks five questions about the work you're responsible for. Use it Friday afternoon, before you forget.</p>
+          <a class="card-more" href="#join">Get the template <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-thumb thumb-teal">
+          <div class="thumb-overlay">
+            <span class="thumb-kind">Reflection · 1 Kings 17</span>
+            <span class="thumb-script">Widow's oil.</span>
+          </div>
+        </div>
+        <div class="card-meta"><span>Issue 42</span><span class="meta-dot"></span><span>Scarcity</span><span class="meta-dot"></span><span>Oct 11</span></div>
+        <div class="card-body">
+          <h3>The widow's oil didn't run out while she was pouring.</h3>
+          <p>What Elijah and the widow's jars teach about scarcity thinking, budget constraints, and why our models always underestimate the margin.</p>
+          <a class="card-more" href="#join">Read this issue <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-thumb thumb-pink">
+          <div class="thumb-overlay">
+            <span class="thumb-kind">Reflection · Luke 16:10</span>
+            <span class="thumb-script">Faithful in little.</span>
+          </div>
+        </div>
+        <div class="card-meta"><span>Issue 41</span><span class="meta-dot"></span><span>Integrity</span><span class="meta-dot"></span><span>Oct 4</span></div>
+        <div class="card-body">
+          <h3>The footnote is where trust is built or lost.</h3>
+          <p>Luke 16:10 isn't about small tasks — it's about the quality of attention you bring to the work nobody will check. This week: footnotes and reconciliations.</p>
+          <a class="card-more" href="#join">Read this issue <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE CTA -->
+<section class="cta-band" id="join">
+  <div class="wrap">
+    <div class="cta-card">
+      <div class="cta-eyebrow">Join 1,284 readers</div>
+      <h2>Spend seven minutes on Sunday on the work that earns the rest of your week.</h2>
+      <p>One Bible story. One dataset. One question for Monday morning. Free, forever — and unsubscribe whenever you like.</p>
+      <form class="signup" id="signup" novalidate>
+        <div class="signup-row">
+          <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Email address</label>
+          <input id="email" type="email" autocomplete="email" placeholder="you@workplace.com" required />
+          <button type="submit">Send me Sundays</button>
+        </div>
+        <div class="signup-micro">No spam. No upsells. Just the letter. Unsubscribe in one click.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-wordmark">Analytics by Shanikwa</div>
+        <p>A weekly letter where Bible stories meet data stewardship. Written by Shanikwa "Nikki" Haynes from Calhoun, Georgia.</p>
+        <div class="footer-socials">
+          <a class="footer-social-icon" href="https://www.tiktok.com/@analyticsbyshanikwa" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.52V6.76a4.85 4.85 0 01-1.02-.07z"/></svg></a>
+          <a class="footer-social-icon" href="https://www.youtube.com/@analyticsbyshanikwa" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+          <a class="footer-social-icon" href="https://www.linkedin.com/in/shanikwahaynes/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a class="footer-social-icon" href="https://github.com/ShanikwaH/WGU_Portfolio" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="accounting.html">Accounting</a></li>
+          <li><a href="data-analytics.html">Data Analytics</a></li>
+          <li><a href="bible-stories.html">Bible Stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="shop.html">Shop Templates</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="about.html">About Shanikwa</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://www.tiktok.com/@analyticsbyshanikwa" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.youtube.com/@analyticsbyshanikwa" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/shanikwahaynes/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/ShanikwaH/WGU_Portfolio" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Shanikwa Haynes · Analytics by Shanikwa · Calhoun, Georgia</span>
+      <span class="footer-tagline">Built from real work. Not theory.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('navMobile');
+  if (hamburger && navMobile) {
+    hamburger.addEventListener('click', () => {
+      const open = navMobile.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+  }
+  const form = document.getElementById('signup');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const input = form.querySelector('input[type="email"]');
+      const btn = form.querySelector('button');
+      const micro = form.querySelector('.signup-micro');
+      if (!input.value || !/.+@.+\..+/.test(input.value)) { input.focus(); return; }
+      btn.textContent = 'Welcome ✓';
+      btn.style.background = '#10B981';
+      if (micro) micro.textContent = 'Check your inbox — see you Sunday.';
+      input.value = '';
+      input.disabled = true;
+    });
+  }
+</script>
+</body>
+</html>
