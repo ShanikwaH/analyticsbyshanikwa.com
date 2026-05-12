@@ -859,7 +859,7 @@ button { font-family: var(--font-sans); }
   display: grid; grid-template-columns: 1fr; gap: 36px;
   padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.10);
 }
-@media (min-width: 760px) { .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; } }
+@media (min-width: 760px) { .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr; } }
 .footer-wordmark {
   font-family: 'Pinyon Script', cursive; font-size: 38px;
   background: linear-gradient(90deg,#B591D4,#4FACFE);
