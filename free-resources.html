@@ -1,20 +1,48 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Join the Analytics by Shanikwa community — weekly newsletter, TikTok, YouTube, Pinterest, monthly Q&A calls, and a network of analysts, CPAs, and finance professionals." />
-  <meta name="keywords" content="analytics community, data analyst newsletter, CPA community, faith and finance, TikTok analytics, YouTube data, Shanikwa Haynes community" />
-  <meta property="og:title" content="Community | Analytics by Shanikwa" />
-  <meta property="og:description" content="Join 0 readers — weekly newsletter, monthly Q&A calls, TikTok, YouTube, Pinterest, and a community of analysts and CPAs." />
-  <meta property="og:url" content="https://analyticsbyshanikwa.com/community" />
+  <meta name="description" content="Free faith-based templates and trackers for budgeting, Bible study, career pivots, and scripture memory. Download instantly from Analytics by Shanikwa." />
+  <meta name="keywords" content="free budget tracker Christian, Bible study template, career pivot checklist, scripture memory tracker, faith based finance, Analytics by Shanikwa" />
+  <meta property="og:title" content="Free Resources — Analytics by Shanikwa" />
+  <meta property="og:description" content="Four free faith-based templates: budget tracker, Bible study analytics, career pivot checklist, and scripture memory tracker." />
+  <meta property="og:url" content="https://analyticsbyshanikwa.com/free-resources" />
   <meta property="og:type" content="website" />
-  <title>Community | Analytics by Shanikwa</title>
+  <title>Free Resources — Analytics by Shanikwa</title>
   <link rel="icon" href="/static/favicon.ico" />
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles.css" />
+  <script>(function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark');document.documentElement.setAttribute('data-theme','dark');}})();</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-P47R83QBPK"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P47R83QBPK');</script>
+  <style>
+    .resource-section { padding: 64px 0; border-bottom: 1px solid var(--border, #E2E8F0); }
+    .resource-section:last-of-type { border-bottom: none; }
+    .resource-section.alt { background: var(--surface-2, #F8FAFC); }
+    .resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 40px; }
+    @media (max-width: 768px) { .resource-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .resource-art { border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px; position: relative; overflow: hidden; }
+    .resource-art-amber { background: linear-gradient(135deg, #FEF3C7 0%, #F59E0B22 100%); border: 1px solid #F59E0B44; }
+    .resource-art-purple { background: linear-gradient(135deg, #F3E8FF 0%, #7B2FBE22 100%); border: 1px solid #7B2FBE44; }
+    .resource-art-green  { background: linear-gradient(135deg, #D1FAE5 0%, #10B98122 100%); border: 1px solid #10B98144; }
+    .resource-art-navy   { background: linear-gradient(135deg, #E2E8F0 0%, #0F172A22 100%); border: 1px solid #0F172A44; }
+    .resource-art-icon { font-size: 52px; margin-bottom: 12px; }
+    .resource-art-title { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 6px; }
+    .resource-art-label { font-size: 18px; font-weight: 700; color: var(--fg); text-align: center; }
+    .resource-art-tag { position: absolute; top: 16px; right: 16px; background: white; border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: var(--fg-muted); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .resource-info h2 { font-size: 28px; font-weight: 800; color: var(--fg); margin: 0 0 12px; line-height: 1.2; }
+    .resource-info .resource-desc { font-size: 15px; color: var(--fg-muted); line-height: 1.65; margin: 0 0 20px; }
+    .resource-includes { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 8px; }
+    .resource-includes li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--fg); }
+    .resource-includes li::before { content: "✓"; font-weight: 700; color: #10B981; flex-shrink: 0; margin-top: 1px; }
+    .resource-formats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .format-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: var(--surface-2, #F8FAFC); color: var(--fg-muted); border: 1px solid var(--border, #E2E8F0); }
+    .ck-form-wrap { background: var(--surface-2, #F8FAFC); border: 1px solid var(--border, #E2E8F0); border-radius: 12px; padding: 24px; }
+    .ck-form-wrap h4 { margin: 0 0 6px; font-size: 15px; font-weight: 700; color: var(--fg); }
+    .ck-form-wrap p { margin: 0 0 16px; font-size: 13px; color: var(--fg-muted); }
+    .scripture-aside { font-style: italic; color: var(--purple, #7B2FBE); font-size: 13px; margin-top: 16px; display: block; }
+  </style>
 </head>
 <body>
 
@@ -35,7 +63,8 @@
         <li><a href="data-analytics.html">Data Analytics</a></li>
         <li><a href="bible-stories.html">Bible Stories</a></li>
         <li><a href="shop.html">Shop</a></li>
-        <li><a href="community.html" class="active">Community</a></li>
+        <li><a href="free-resources.html" class="active">Free Resources</a></li>
+        <li><a href="community.html">Community</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
       <div class="nav-right">
@@ -62,7 +91,8 @@
     <a href="data-analytics.html">Data Analytics</a>
     <a href="bible-stories.html">Bible Stories</a>
     <a href="shop.html">Shop</a>
-    <a href="community.html" class="active">Community</a>
+    <a href="free-resources.html" class="active">Free Resources</a>
+    <a href="community.html">Community</a>
     <a href="about.html">About</a>
     <div class="nav-mobile-divider"></div>
     <div class="nav-mobile-icons">
@@ -84,205 +114,172 @@
     <div class="page-hero-content">
       <div class="eyebrow-pill">
         <span class="dot"></span>
-        <span class="label">1,284 Readers &amp; Growing</span>
+        <span class="label">Free · No Payment Required</span>
       </div>
-      <h1>A small, honest community for people who count things for a living.</h1>
-      <p>No hustle theology. No prosperity pitches. Just careful work, careful reading, and a few hundred friends asking the same questions you are — every Sunday morning.</p>
+      <h1>Tools for the Faithful Professional.</h1>
+      <p>Four free templates built for analysts, accountants, and faith-driven professionals. Enter your email — download arrives in your inbox instantly.</p>
       <div class="hero-chips">
-        <span class="chip chip-blue">Free Newsletter</span>
-        <span class="chip chip-green">Monthly Q&amp;A</span>
-        <span class="chip chip-purple">TikTok</span>
-        <span class="chip chip-orange">YouTube</span>
-        <span class="chip chip-pink">Pinterest</span>
+        <span class="chip chip-amber">Excel + Google Sheets</span>
+        <span class="chip chip-blue">PDF Printable</span>
+        <span class="chip chip-green">Instant Delivery</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEWSLETTER CTA (prominent) -->
-<section class="cta-band" id="newsletter">
+<!-- RESOURCE 1: FAITH-BASED BUDGET TRACKER -->
+<section class="resource-section" id="budget-tracker">
+  <div class="wrap">
+    <div class="resource-grid">
+      <div class="resource-art resource-art-amber">
+        <span class="resource-art-tag">Free Download</span>
+        <div class="resource-art-icon">📊</div>
+        <div class="resource-art-title">Template 01</div>
+        <div class="resource-art-label">Faith-Based Budget Tracker</div>
+      </div>
+      <div class="resource-info">
+        <h2>Faith-Based Budget Tracker</h2>
+        <p class="resource-desc">A monthly income and expense tracker built around biblical stewardship — with faith-based savings goals, tithe tracking, a full annual overview, and scripture prompts to keep your "why" in view.</p>
+        <ul class="resource-includes">
+          <li>Monthly Budget sheet — income, expenses, and net savings auto-calculated</li>
+          <li>Savings Goals tab — faith-anchored goals with scripture references</li>
+          <li>Annual Overview — full-year picture at a glance</li>
+          <li>Works in Excel and Google Sheets</li>
+          <li>Instructions sheet included</li>
+        </ul>
+        <div class="resource-formats">
+          <span class="format-chip">📄 Excel (.xlsx)</span>
+          <span class="format-chip">📊 Google Sheets</span>
+        </div>
+        <div class="ck-form-wrap">
+          <h4>Download Free — Enter your email</h4>
+          <p>Your file arrives instantly after subscribing. Free, always.</p>
+          <script async data-uid="5f58135989" src="https://analyticsbyshanikwa.kit.com/5f58135989/index.js"></script>
+        </div>
+        <span class="scripture-aside">"The plans of the diligent lead to profit." — Proverbs 21:5</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCE 2: BIBLE STUDY ANALYTICS TEMPLATE -->
+<section class="resource-section alt" id="bible-study">
+  <div class="wrap">
+    <div class="resource-grid" style="direction:rtl">
+      <div class="resource-art resource-art-purple" style="direction:ltr">
+        <span class="resource-art-tag">Free Download</span>
+        <div class="resource-art-icon">📖</div>
+        <div class="resource-art-title">Template 02</div>
+        <div class="resource-art-label">Bible Study Analytics Template</div>
+      </div>
+      <div class="resource-info" style="direction:ltr">
+        <h2>Bible Study Analytics Template</h2>
+        <p class="resource-desc">Bring structure and data to your scripture study. Track every session — book, chapter, time, themes, key insights, and prayer responses — then watch your progress across all 66 books of the Bible.</p>
+        <ul class="resource-includes">
+          <li>Study Log — log every session with date, chapter, time, and insight</li>
+          <li>Books Tracker — all 66 books with status (Not Started / In Progress / Completed)</li>
+          <li>Theme Tracker — tag recurring themes across scripture</li>
+          <li>Stats tab — auto-calculates sessions, hours, and books completed</li>
+          <li>Works in Excel and Google Sheets</li>
+        </ul>
+        <div class="resource-formats">
+          <span class="format-chip">📄 Excel (.xlsx)</span>
+          <span class="format-chip">📊 Google Sheets</span>
+        </div>
+        <div class="ck-form-wrap">
+          <h4>Download Free — Enter your email</h4>
+          <p>Your file arrives instantly after subscribing. Free, always.</p>
+          <script async data-uid="5f58135989" src="https://analyticsbyshanikwa.kit.com/5f58135989/index.js"></script>
+        </div>
+        <span class="scripture-aside">"Your word is a lamp for my feet, a light on my path." — Psalm 119:105</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCE 3: CAREER PIVOT ACTION CHECKLIST -->
+<section class="resource-section" id="career-pivot">
+  <div class="wrap">
+    <div class="resource-grid">
+      <div class="resource-art resource-art-green">
+        <span class="resource-art-tag">Free Download</span>
+        <div class="resource-art-icon">💼</div>
+        <div class="resource-art-title">Template 03</div>
+        <div class="resource-art-label">Career Pivot Action Checklist</div>
+      </div>
+      <div class="resource-info">
+        <h2>Career Pivot Action Checklist</h2>
+        <p class="resource-desc">A step-by-step checklist for faith-driven professionals making a career change. Six phases from self-assessment to offer acceptance — with journal prompts and prayer anchors at every stage.</p>
+        <ul class="resource-includes">
+          <li>6 phases: Self-Assessment → Research → Skill Building → Job Search → Networking → Offer</li>
+          <li>Checkbox + status dropdown for every action item</li>
+          <li>Journal prompt and prayer anchor for each step</li>
+          <li>Printable layout — works as a PDF or workbook</li>
+          <li>Works in Excel and Google Sheets</li>
+        </ul>
+        <div class="resource-formats">
+          <span class="format-chip">📄 Excel (.xlsx)</span>
+          <span class="format-chip">📊 Google Sheets</span>
+          <span class="format-chip">🖨️ Print to PDF</span>
+        </div>
+        <div class="ck-form-wrap">
+          <h4>Download Free — Enter your email</h4>
+          <p>Your file arrives instantly after subscribing. Free, always.</p>
+          <script async data-uid="5f58135989" src="https://analyticsbyshanikwa.kit.com/5f58135989/index.js"></script>
+        </div>
+        <span class="scripture-aside">"Commit to the Lord whatever you do, and He will establish your plans." — Proverbs 16:3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCE 4: 30-DAY SCRIPTURE MEMORY TRACKER -->
+<section class="resource-section alt" id="scripture-memory">
+  <div class="wrap">
+    <div class="resource-grid" style="direction:rtl">
+      <div class="resource-art resource-art-navy" style="direction:ltr">
+        <span class="resource-art-tag">Free Download</span>
+        <div class="resource-art-icon">✝️</div>
+        <div class="resource-art-title">Template 04</div>
+        <div class="resource-art-label">30-Day Scripture Memory Tracker</div>
+      </div>
+      <div class="resource-info" style="direction:ltr">
+        <h2>30-Day Scripture Memory Tracker</h2>
+        <p class="resource-desc">Memorize 30 verses in 30 days using the science of spaced repetition. Log each verse, track your morning and evening practice, and review on a built-in schedule so the words actually stick.</p>
+        <ul class="resource-includes">
+          <li>30-Day Tracker — one row per day, morning + evening status checkboxes</li>
+          <li>10 starter verses pre-loaded (add your own for the rest)</li>
+          <li>Spaced Repetition Review Schedule — Day +1, +3, +7, +30</li>
+          <li>Weekly Accountability Check-In tab</li>
+          <li>Works in Excel and Google Sheets</li>
+        </ul>
+        <div class="resource-formats">
+          <span class="format-chip">📄 Excel (.xlsx)</span>
+          <span class="format-chip">📊 Google Sheets</span>
+          <span class="format-chip">🖨️ Print to PDF</span>
+        </div>
+        <div class="ck-form-wrap">
+          <h4>Download Free — Enter your email</h4>
+          <p>Your file arrives instantly after subscribing. Free, always.</p>
+          <script async data-uid="5f58135989" src="https://analyticsbyshanikwa.kit.com/5f58135989/index.js"></script>
+        </div>
+        <span class="scripture-aside">"I have hidden your word in my heart that I might not sin against you." — Psalm 119:11</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-band">
   <div class="wrap">
     <div class="cta-card">
-      <div class="cta-eyebrow">Start here — it's free</div>
-      <h2>The Sunday letter is where the community lives.</h2>
-      <p>One Bible story, one dataset, one question for Monday morning. Every Sunday at 5:00 am ET. Free, forever — and unsubscribe with one click.</p>
-      <form class="signup" id="signup" novalidate>
-        <div class="signup-row">
-          <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Email address</label>
-          <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required />
-          <button type="submit">Join the letter — free</button>
-        </div>
-        <div class="signup-micro">No spam. No upsells. Just the letter. 1,284 readers and counting.</div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL CHANNELS -->
-<section class="band" id="channels">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Find Me Everywhere</span>
-      <h2 class="section-h2">Pick your platform.</h2>
-      <p class="section-lede">The letter is the main thing. But there's also short-form content on TikTok, longer walkthroughs on YouTube, and visual resources on Pinterest — all free, all linked.</p>
-    </div>
-    <div class="channel-grid">
-      <div class="channel-card">
-        <div class="channel-icon">🎵</div>
-        <h3>TikTok</h3>
-        <p>Short analytics tips, CPA study check-ins, Bible story breakdowns, and behind-the-scenes data work. Fast and direct.</p>
-        <a class="channel-link" href="https://www.tiktok.com/@analyticsbyshanikwa" target="_blank" rel="noopener">
-          Follow @analyticsbyshanikwa
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+      <div class="cta-eyebrow">Want to go deeper?</div>
+      <h2>The Sunday letter pairs Bible stories with real data every week.</h2>
+      <p>Free. One email each Sunday. Unsubscribe anytime.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary btn-lg" href="index.html#join">Join the Letter</a>
+        <a class="btn btn-ghost btn-lg" href="shop.html">Browse the Shop</a>
       </div>
-      <div class="channel-card">
-        <div class="channel-icon">▶️</div>
-        <h3>YouTube</h3>
-        <p>Full walkthroughs: SQL queries, Tableau builds, Python notebooks, WGU project deep-dives, and the backstory on the weekly letter.</p>
-        <a class="channel-link" href="https://www.youtube.com/@analyticsbyshanikwa" target="_blank" rel="noopener">
-          Subscribe on YouTube
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-      <div class="channel-card">
-        <div class="channel-icon">📌</div>
-        <h3>Pinterest</h3>
-        <p>Visual study guides, infographic summaries of the weekly letter, and career resources formatted for saving and sharing.</p>
-        <a class="channel-link" href="https://www.pinterest.com/analyticsbyshanikwa" target="_blank" rel="noopener">
-          Follow on Pinterest
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-      <div class="channel-card">
-        <div class="channel-icon">💼</div>
-        <h3>LinkedIn</h3>
-        <p>Professional updates, career reflections, WGU portfolio milestones, and longer-form posts on analytics and data stewardship.</p>
-        <a class="channel-link" href="https://www.linkedin.com/in/shanikwahaynes/" target="_blank" rel="noopener">
-          Connect on LinkedIn
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MONTHLY Q&A -->
-<section class="band reflection-band" id="qa">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow warm">Monthly Q&amp;A Call</span>
-      <h2 class="section-h2">An open table for real questions.</h2>
-      <p class="section-lede">Once a month, subscribers join a live call where I answer questions about accounting, data analytics, career pivots, CPA prep, and the intersection of faith and work. Recorded for anyone who can't make it live.</p>
-    </div>
-    <article class="reflection-card">
-      <div class="reflection-art">
-        <div class="r-label"><span></span>Monthly · Open Table</div>
-        <div class="r-verse">
-          <div class="r-scripture">Bring your real<br />spreadsheet.</div>
-          <div class="r-ref">Not a hypothetical one.</div>
-        </div>
-      </div>
-      <div class="reflection-body">
-        <div class="r-date">First Sunday of each month · Live + recorded</div>
-        <h3>What gets asked at the open table.</h3>
-        <p>Real questions from real readers — "How do I break into data analytics from accounting?" "What SQL do I actually need for my role?" "How do I keep faith from feeling like a cliche in a finance job?"</p>
-        <ul class="takeaways">
-          <li><span class="chk">✓</span><span>Submit questions in advance or ask live — both work</span></li>
-          <li><span class="chk">✓</span><span>Recording sent to all subscribers within 24 hours</span></li>
-          <li><span class="chk">✓</span><span>No pitch. No upsell. Just the hour.</span></li>
-        </ul>
-        <div class="r-actions">
-          <a href="#newsletter" class="btn btn-primary">Subscribe to get the invite</a>
-          <a href="about.html#contact" class="btn btn-ghost">Send a question early</a>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- WHAT'S INCLUDED -->
-<section class="band band-surface2">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">What You Get</span>
-      <h2 class="section-h2">Everything in the community is free.</h2>
-      <p class="section-lede">Templates are in the shop. The community — the letter, the calls, the channels — is free, always.</p>
-    </div>
-    <div class="benefit-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H5l-1 2V4z"/><path d="M8 9h8M8 13h5"/></svg>
-        </div>
-        <h3>The Sunday letter</h3>
-        <p>One Bible story, one dataset, one question for Monday. Every Sunday at 5 am ET. Under 1,000 words. Always free.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon purple">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
-        </div>
-        <h3>Monthly Q&amp;A call</h3>
-        <p>First Sunday of each month. Live with recording. Career, accounting, data, faith — all on the table. Free for subscribers.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon green">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg>
-        </div>
-        <h3>Resource library</h3>
-        <p>Free templates mentioned in the letter, past issue PDFs, stewardship audit worksheets, and prayer prompts for the work week.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon amber">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <h3>Direct access</h3>
-        <p>Reply to any letter and I read it. Ask a question, share a story, push back — this is a real conversation, not a broadcast.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="band">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">From the inbox</span>
-      <h2 class="section-h2">What readers say.</h2>
-    </div>
-    <div class="test-grid">
-      <article class="testimonial">
-        <div class="big-quote">"</div>
-        <blockquote>I'm a senior accountant who hasn't been to church in eleven years. I still read this every Sunday. It's the only career writing I trust because it actually expects something of me.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar av-blue">DM</div>
-          <div>
-            <div class="test-name">Danielle M.</div>
-            <div class="test-role">Senior Accountant · Atlanta</div>
-          </div>
-        </div>
-      </article>
-      <article class="testimonial">
-        <div class="big-quote">"</div>
-        <blockquote>I forwarded the Genesis 41 issue to my team's forecasting lead. He printed it. We rebuilt our quarterly model around it. I don't know that he believes in any of it, but the numbers got better.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar av-amber">RP</div>
-          <div>
-            <div class="test-name">Reuben P.</div>
-            <div class="test-role">FP&amp;A Manager · Nashville</div>
-          </div>
-        </div>
-      </article>
-      <article class="testimonial">
-        <div class="big-quote">"</div>
-        <blockquote>Nikki writes like someone who's actually had to defend a number to a CFO. The faith piece doesn't feel bolted on — it feels like the floor it's all standing on.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar av-purple">AB</div>
-          <div>
-            <div class="test-name">Adaeze B.</div>
-            <div class="test-role">Data Analyst · Charlotte</div>
-          </div>
-        </div>
-      </article>
     </div>
   </div>
 </section>
@@ -325,18 +322,17 @@
       <div class="footer-col">
         <h5>Connect</h5>
         <ul>
-          <li><a href="https://www.tiktok.com/@analyticsbyshanikwa" target="_blank" rel="noopener">TikTok</a></li>
           <li><a href="https://www.youtube.com/@analyticsbyshanikwa" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@analyticsbyshanikwa" target="_blank" rel="noopener">TikTok</a></li>
           <li><a href="https://www.linkedin.com/in/shanikwahaynes/" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/ShanikwaH/WGU_Portfolio" target="_blank" rel="noopener">GitHub</a></li>
           <li><a href="https://www.pinterest.com/analyticsbyshanikwa" target="_blank" rel="noopener">Pinterest</a></li>
           <li><a href="https://medium.com/@shanikwa.lhaynes" target="_blank" rel="noopener">Medium</a></li>
         </ul>
       </div>
-
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Shanikwa Haynes · Analytics by Shanikwa · Georgia</span>
+      <span>&copy; 2025 Shanikwa Haynes &middot; Analytics by Shanikwa &middot; Georgia</span>
       <span class="footer-tagline">Built from real work. Not theory.</span>
     </div>
   </div>
@@ -351,7 +347,6 @@
       hamburger.setAttribute('aria-expanded', String(open));
     });
   }
-  // Theme toggle — desktop + mobile
   (function(){
     var html = document.documentElement;
     var btns = document.querySelectorAll('.js-theme-toggle');
@@ -372,21 +367,6 @@
       });
     });
   })();
-  const form = document.getElementById('signup');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const input = form.querySelector('input[type="email"]');
-      const btn = form.querySelector('button');
-      const micro = form.querySelector('.signup-micro');
-      if (!input.value || !/.+@.+\..+/.test(input.value)) { input.focus(); return; }
-      btn.textContent = 'Welcome ✓';
-      btn.style.background = '#10B981';
-      if (micro) micro.textContent = 'Check your inbox — see you Sunday at 5 am ET.';
-      input.value = '';
-      input.disabled = true;
-    });
-  }
 </script>
 </body>
 </html>
