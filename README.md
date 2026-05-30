@@ -1,7 +1,7 @@
 # analyticsbyshanikwa.com — v2 (Next.js)
 
 <p align="center">
-  <img src="https://github.com/ShanikwaH/analyticsbyshanikwa.com/blob/main/analytics_logo.svg" height="85px" width="auto"/>
+  <img src="https://github.com/ShanikwaH/analyticsbyshanikwa.com/blob/main/analytics_logo.png" height="85px" width="auto"/>
 </p>
 
 <p align="center">
