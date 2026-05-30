@@ -1,0 +1,27 @@
+# ── Required fields ──────────────────────────────────────────────────────────
+title: "The Woman Who Killed a General With a Tent Peg"
+scripture: "Judges 4:17-22"
+scripture_text: "The LORD will deliver Sisera into the hands of a woman."
+series: "Series 1 — Top 10 Rarely Mentioned Bible Stories"
+theme: "Willing"
+story_slug: "jael-tent-peg"   # maps to stories/jael-tent-peg.html on site
+
+# ── Files (relative to this folder) ──────────────────────────────────────────
+video_path: "video.mp4"         # your actual video file
+thumbnail_path: "thumbnail.jpg" # 1280x720 JPG thumbnail (optional but recommended)
+script_path: "script.txt"       # your full video script
+
+# ── Schedule ─────────────────────────────────────────────────────────────────
+# Use "now" to post immediately, or ISO datetime: "2026-06-01 18:00"
+schedule: "now"
+
+# ── Platforms ────────────────────────────────────────────────────────────────
+# Remove any platform you don't want for this video
+platforms:
+  - youtube
+  - tiktok
+  - pinterest
+  - email
+
+# ── Status (do not edit manually) ────────────────────────────────────────────
+status: pending

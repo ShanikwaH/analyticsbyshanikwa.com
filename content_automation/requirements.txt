@@ -1,0 +1,19 @@
+# Core (always required)
+requests>=2.28.0
+PyYAML>=6.0
+
+# YouTube upload
+google-auth>=2.0.0
+google-auth-oauthlib>=1.0.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.0.0
+
+# AI providers — install only what you use
+# Option A: Anthropic Claude
+anthropic>=0.25.0
+
+# Option B/D/E/F/G/H: OpenAI, OpenRouter, Groq, Together, Ollama, custom
+openai>=1.0.0
+
+# Option C: Google Gemini
+# google-generativeai>=0.5.0

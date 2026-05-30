@@ -1,0 +1,160 @@
+# Analytics by Shanikwa — Content Automation Config
+# 1. Copy this file to config.yaml (same folder)
+# 2. Fill in your keys (run setup_wizard.py for step-by-step help)
+# 3. NEVER commit config.yaml — it contains secrets
+
+# ── AI Caption Generator ──────────────────────────────────────────────────────
+# Pick ONE provider block and delete (or comment out) the others.
+
+# --- Option A: Anthropic Claude (recommended — best writing quality) ----------
+ai:
+  provider: anthropic
+  api_key: "sk-ant-REPLACE_ME"             # console.anthropic.com → API Keys
+  model: "claude-haiku-4-5-20251001"       # fast + cheap; swap to claude-sonnet-4-6 for best quality
+
+# --- Option B: OpenAI ----------------------------------------------------------
+# ai:
+#   provider: openai
+#   api_key: "sk-REPLACE_ME"              # platform.openai.com → API Keys
+#   model: "gpt-4o-mini"                  # or gpt-4o, o1-mini
+
+# --- Option C: Google Gemini ---------------------------------------------------
+# ai:
+#   provider: google
+#   api_key: "REPLACE_ME"                 # aistudio.google.com → Get API Key
+#   model: "gemini-1.5-flash"             # or gemini-1.5-pro
+
+# --- Option D: OpenRouter (200+ models, one key) ------------------------------
+# ai:
+#   provider: openrouter
+#   api_key: "sk-or-REPLACE_ME"           # openrouter.ai → Keys
+#   model: "openai/gpt-4o-mini"           # or anthropic/claude-3-haiku, meta-llama/llama-3-8b
+
+# --- Option E: Groq (free tier, very fast) ------------------------------------
+# ai:
+#   provider: groq
+#   api_key: "gsk_REPLACE_ME"             # console.groq.com → API Keys
+#   model: "llama3-8b-8192"               # or mixtral-8x7b-32768, gemma-7b-it
+
+# --- Option F: Together AI (open-source models) --------------------------------
+# ai:
+#   provider: together
+#   api_key: "REPLACE_ME"                 # api.together.ai → Settings → API Keys
+#   model: "meta-llama/Llama-3-8b-chat-hf"
+
+# --- Option G: Ollama (100% local, no cost, no internet) ----------------------
+# ai:
+#   provider: ollama
+#   api_key: "ollama"                      # any non-empty string; Ollama ignores it
+#   model: "llama3"                        # must be pulled: ollama pull llama3
+
+# --- Option H: Any other OpenAI-compatible API --------------------------------
+# ai:
+#   provider: custom
+#   api_key: "REPLACE_ME"
+#   base_url: "https://your-provider.com/v1"
+#   model: "model-name"
+
+# ── YouTube ──────────────────────────────────────────────────────────────────
+youtube:
+  client_secrets_file: "youtube_secrets.json"  # download from Google Cloud Console
+
+# ── TikTok ───────────────────────────────────────────────────────────────────
+tiktok:
+  client_key: "REPLACE_ME"              # TikTok Developer Portal → app
+  client_secret: "REPLACE_ME"
+  access_token: "REPLACE_ME"            # run setup_wizard.py to get this
+
+# ── Pinterest ─────────────────────────────────────────────────────────────────
+pinterest:
+  access_token: "REPLACE_ME"            # run setup_wizard.py to get this
+  board_id: "REPLACE_ME"                # found in your board URL
+
+# ── Email Newsletter ──────────────────────────────────────────────────────────
+# Pick ONE provider block and delete (or comment out) the others.
+
+# --- Option A: Gmail / any SMTP server (simplest to start) -------------------
+email:
+  provider: smtp
+  smtp_preset: gmail                    # gmail | outlook | yahoo | icloud | office365
+  username: "REPLACE_ME@gmail.com"
+  password: "REPLACE_ME"               # Gmail App Password (not your regular password)
+  from_email: "REPLACE_ME@gmail.com"
+  to_addresses:                         # manual list — add all your subscriber emails
+    - "subscriber1@email.com"
+    - "subscriber2@email.com"
+
+# --- Option B: ConvertKit / Kit (recommended for newsletter creators) ---------
+# email:
+#   provider: convertkit
+#   api_key: "REPLACE_ME"              # app.kit.com → Settings → API
+#   api_secret: "REPLACE_ME"
+
+# --- Option C: Mailchimp -------------------------------------------------------
+# email:
+#   provider: mailchimp
+#   api_key: "REPLACE_ME-us1"          # includes server prefix, e.g. abc123-us1
+#   server_prefix: "us1"               # from your Mailchimp account URL
+#   list_id: "REPLACE_ME"              # Audience → Settings → Audience ID
+#   from_email: "you@yourdomain.com"
+
+# --- Option D: Beehiiv ---------------------------------------------------------
+# email:
+#   provider: beehiiv
+#   api_key: "REPLACE_ME"              # app.beehiiv.com → Settings → API
+#   publication_id: "pub_REPLACE_ME"   # Settings → Publication → ID
+
+# --- Option E: SendGrid --------------------------------------------------------
+# email:
+#   provider: sendgrid
+#   api_key: "SG.REPLACE_ME"           # app.sendgrid.com → Settings → API Keys
+#   from_email: "you@yourdomain.com"
+#   sender_id: 1234567                 # Marketing → Senders → sender ID
+#   list_ids:
+#     - "REPLACE_ME_UUID"              # Marketing → Contacts → Lists → list ID
+
+# --- Option F: Resend (great free tier — 3,000 emails/month) ------------------
+# email:
+#   provider: resend
+#   api_key: "re_REPLACE_ME"           # resend.com → API Keys
+#   from_email: "you@yourdomain.com"   # must be a verified domain in Resend
+#   to_addresses:
+#     - "subscriber1@email.com"
+
+# --- Option G: Brevo (formerly Sendinblue — generous free tier) ---------------
+# email:
+#   provider: brevo
+#   api_key: "REPLACE_ME"              # brevo.com → Account → SMTP & API → API Keys
+#   from_email: "you@yourdomain.com"
+#   list_ids:
+#     - 3                              # Contacts → Lists → list ID (integer)
+
+# --- Option H: MailerLite (generous free tier — 1,000 subscribers free) ------
+# email:
+#   provider: mailerlite
+#   api_key: "REPLACE_ME"              # dashboard.mailerlite.com → Integrations → API
+#   from_email: "you@yourdomain.com"
+#   group_ids:
+#     - "REPLACE_ME"                   # Subscribers → Groups → group ID
+
+# --- Option I: Custom SMTP (Outlook, Yahoo, iCloud, your own mail server) ----
+# email:
+#   provider: smtp
+#   smtp_host: "smtp-mail.outlook.com"
+#   smtp_port: 587
+#   username: "you@outlook.com"
+#   password: "REPLACE_ME"
+#   from_email: "you@outlook.com"
+#   to_addresses:
+#     - "subscriber@email.com"
+
+# ── Defaults ─────────────────────────────────────────────────────────────────
+defaults:
+  from_name: "Analytics by Shanikwa"
+  youtube_category_id: "26"             # 26 = How-to & Style
+  youtube_privacy: "public"             # public | unlisted | private
+  post_to:
+    - youtube
+    - tiktok
+    - pinterest
+    - email
